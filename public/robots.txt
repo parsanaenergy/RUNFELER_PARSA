@@ -1,0 +1,48 @@
+# robots.txt — Parsa Energy
+# GEO-001: Generative Engine Optimization Framework
+# خزنده‌های آموزشی مدل‌های زبانی مسدود؛ خزنده‌های بازیابی زنده و جستجوی آنی مجاز.
+# Training crawlers blocked; live-retrieval & search crawlers allowed.
+
+# --- Blocked: Training crawlers (model training, not live retrieval) ---
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# --- Allowed: Live-retrieval & search crawlers (RAG, answer engines) ---
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# --- Default ---
+User-agent: *
+Allow: /
+
+Sitemap: https://parsenergyco.ir/sitemap.xml

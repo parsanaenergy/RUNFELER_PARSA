@@ -1,0 +1,62 @@
+# پارسا انرژی | Parsa Energy
+
+> شرکت مهندسی پیمانکاری پارسا انرژی در مشهد - منطقه الهیه، در پنج حوزه فعالیت می‌کند: طراحی، فروش و اجرای نیروگاه خورشیدی و تامین برق اضطراری، فروش و سرویس‌کاری تاسیسات مکانیکی، فروش قطعات تهویه مطبوع، و آموزشگاه آزاد فنی‌وحرفه‌ای. تلفن: ۰۹۱۰۸۸۸۸۱۹۹.
+
+## حوزه‌های فعالیت | Divisions
+
+- [تجهیزات و تاسیسات مکانیکی](https://parsenergyco.ir/#divisions): پکیج دیواری، رادیاتور، کولر گازی، هواساز، داکت اسپلیت، پمپ آب
+- [نیروگاه خورشیدی و برق اضطراری](https://parsenergyco.ir/#services): پنل، اینورتر، باتری، UPS، موتور برق، دیزل ژنراتور
+- [سرویس‌کاری و تعمیرات تاسیسات](https://parsenergyco.ir/#divisions): تعمیر کولر، پکیج، پمپ، هواساز
+- [قطعات و لوازم جانبی تهویه مطبوع](https://parsenergyco.ir/#divisions): کمپرسور، برد، خازن، فیلتر، گاز کولر
+- [آموزشگاه آزاد فنی‌وحرفه‌ای](https://parsenergyco.ir/#training): دوره‌های تاسیسات، برق، خورشیدی، تعمیرات
+
+## خدمات نیروگاه خورشیدی | Solar Power Services
+
+- [طراحی و مهندسی](https://parsenergyco.ir/#services): PVsyst، طرح تک‌خطی، سایزینگ کابل، هماهنگی حفاظتی، BoM
+- [نصب و اجرا](https://parsenergyco.ir/#services): تیم EPC، IEC 62446، نصب سازه و سیم‌کشی DC/AC
+- [برق اضطراری](https://parsenergyco.ir/#services): UPS، بانک باتری، دیزل ژنراتور، ATS، انتقال بدون قطعی
+- [نگهداری و تعمیرات](https://parsenergyco.ir/#services): شستشو، ترموگرافی پهپاد، IV-curve، SLA دسترسی ۹۸٪+
+- [تعمیر اینورتر خورشیدی](https://parsenergyco.ir/#services): تعمیر در سطح قطعه، SMA، Victron، Growatt، Deye، Sofar
+- [تعمیر برد الکترونیکی](https://parsenergyco.ir/#services): کاریاب SMD، تشخیص با اسیلوسکوپ، BMS و برد کنترلر
+- [مشاوره میکروگرید](https://parsenergyco.ir/#services): امکان‌سنجی، توپولوژی AC/DC، مدل‌سازی ROI
+- [پایش](https://parsenergyco.ir/#services): دیتالاگر، داشبورد، هشدار، API
+
+## محصولات | Products
+
+- [اینورتر](https://parsenergyco.ir/#products): Deye ۸kW هایبرید، Victron MultiGrid ۵kVA
+- [باتری](https://parsenergyco.ir/#products): LiFePO4 ۴۸V ۱۰۰Ah رکی، ماژولار تا ۵۰+ kWh
+- [پنل خورشیدی](https://parsenergyco.ir/#products): مونو ۴۵۰W نیم‌برش Tier-1
+- [UPS و دیزل ژنراتور](https://parsenergyco.ir/#products): UPS آنلاین ۳kVA، دیزل ژنراتور ۲۰kVA سایلنت
+- [کنترلر شارژ](https://parsenergyco.ir/#products): MPPT ۶۰A، PWM ۳۰A
+- [لوازم جانبی](https://parsenergyco.ir/#products): کابل DC خورشیدی ۶mm²، AC ایزولاتور + SPD
+
+## ابزارهای مهندسی | Engineering Tools
+
+- [محاسبه اندازه سیستم](https://parsenergyco.ir/#tools): kWp = مصرف روزانه / (PSH × PR)
+- [ظرفیت باتری](https://parsenergyco.ir/#tools): kWh = (مصرف × خودکفایی) / (DoD × راندمان × ضریب دما)
+- [سایز کابل](https://parsenergyco.ir/#tools): A = (۲ × L × I × ρ) / Vd
+- [افت ولتاژ](https://parsenergyco.ir/#tools): Vd = (۲ × L × I × ρ) / A
+- [زاویه پنل](https://parsenergyco.ir/#tools): زاویه بهینه = عرض جغرافیایی
+- [مصرف انرژی](https://parsenergyco.ir/#tools): مجموع W × تعداد × ساعت
+- [زمان پشتیبانی](https://parsenergyco.ir/#tools): ساعت = (Ah × V × DoD × راندمان) / بار
+- [بازگشت سرمایه](https://parsenergyco.ir/#tools): بازگشت = هزینه / صرفه‌جویی سالانه
+- [هزینه میکروگرید](https://parsenergyco.ir/#tools): هزینه PV + هزینه باتری
+
+## دانشنامه | Knowledge Center
+
+- [میکروگرید خورشیدی چیست؟](https://parsenergyco.ir/#knowledge)
+- [MPPT یا PWM؟](https://parsenergyco.ir/#knowledge)
+- [سایزینگ بانک باتری](https://parsenergyco.ir/#knowledge)
+- [سایزینگ کابل و افت ولتاژ](https://parsenergyco.ir/#knowledge)
+- [زاویه و جهت پنل](https://parsenergyco.ir/#knowledge)
+- [خرابی‌های رایج اینورتر](https://parsenergyco.ir/#knowledge)
+- [محاسبه اندازه نیروگاه](https://parsenergyco.ir/#knowledge)
+- [چک‌لیست نگهداری پیشگیرانه](https://parsenergyco.ir/#knowledge)
+
+## تماس | Contact
+
+- وب‌سایت: https://parsenergyco.ir
+- تلفن: ۰۹۱۰۸۸۸۸۱۹۹ | +98 910 888 8199
+- آدرس: مشهد، منطقه الهیه
+- ساعات کاری: شنبه تا چهارشنبه، ۸:۰۰ تا ۱۷:۰۰
+- زبان‌ها: فارسی، انگلیسی
