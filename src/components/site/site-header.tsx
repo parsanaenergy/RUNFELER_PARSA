@@ -44,13 +44,13 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="#top" className="flex items-center gap-2.5" aria-label="Parsa Energy home">
-          <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={40} height={40} className="h-9 w-auto shrink-0" priority />
+        <Link href="#top" className="flex items-center gap-2 sm:gap-2.5" aria-label="Parsa Energy home">
+          <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={48} height={48} className="h-11 w-auto shrink-0" priority />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-bold tracking-tight text-foreground">
+            <span className="font-display text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold tracking-tight text-foreground">
               شرکت پارسا <span className="text-primary">انرژی</span> رویش سبز امید
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+            <span className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
               {t("brandTagline")}
             </span>
           </span>
@@ -79,8 +79,10 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <LanguageToggle />
-          <ThemeToggle />
+          <div className="hidden xl:flex items-center gap-1.5">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
           <Button
             onClick={onNavigateContact}
             className="hidden sm:inline-flex shadow-solar"
@@ -95,10 +97,16 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[360px]">
-              <SheetTitle className="flex items-center gap-2 px-1">
-                <Sun className="h-5 w-5 text-primary" />
-                {t("brandName")}
-              </SheetTitle>
+              <div className="flex items-center justify-between border-b border-border/50 pb-4">
+                <SheetTitle className="flex items-center gap-2 px-1">
+                  <Sun className="h-5 w-5 text-primary" />
+                  {t("brandName")}
+                </SheetTitle>
+                <div className="flex items-center gap-1.5">
+                  <LanguageToggle />
+                  <ThemeToggle />
+                </div>
+              </div>
               <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
                 {navItems.map((item) =>
                   item.onClick ? (
