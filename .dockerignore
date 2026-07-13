@@ -1,0 +1,39 @@
+# فایل‌های غیرضروری برای Docker build
+node_modules
+.next
+.git
+.gitignore
+*.log
+dev.log
+server.log
+npm-debug.log*
+
+# فایل‌های محیطی (برای امنیت — روی هاست تنظیم کنید)
+.env
+.env.local
+.env.*.local
+
+# پوشه‌های توسعه و تست
+examples
+mini-services
+download
+upload
+skills
+.zscripts
+agent-ctx
+
+# فایل‌های دیتابیس محلی
+db
+*.db
+*.db-journal
+
+# مستندات (سبک‌سازی image)
+ARCHITECTURE.md
+worklog.md
+README.md
+
+# کانفیگ‌های محیط توسعه (فقط Caddyfile)
+Caddyfile
+
+# نکته: tsconfig.json، next.config.ts، postcss.config.mjs، components.json، eslint.config.mjs
+# و prisma/ نباید exclude شوند چون برای build ضروری هستند.
