@@ -48,7 +48,7 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
           <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={40} height={40} className="h-9 w-auto shrink-0" priority />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-bold tracking-tight text-foreground">
-              پارسا <span className="text-primary">انرژی</span>
+              شرکت پارسا <span className="text-primary">انرژی</span> رویش سبز امید
             </span>
             <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
               {t("brandTagline")}

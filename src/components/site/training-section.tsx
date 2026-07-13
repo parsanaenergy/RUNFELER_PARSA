@@ -81,7 +81,7 @@ export function TrainingSection() {
         <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-primary/5 p-8 sm:flex-row">
           <div>
             <h3 className="font-display text-xl font-bold text-foreground">{isFa ? "برای ثبت‌نام یا مشاوره دوره تماس بگیرید." : "Contact us to enroll or for course advising."}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{isFa ? "تلفن: ۰۹۱۰۸۸۸۸۱۹۹" : "Phone: +98 910 888 8199"}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{isFa ? "تلفن: ۰۹۱۵۸۲۲۲۱۹۹" : "Phone: +98 915 822 2199"}</p>
           </div>
           <Button asChild size="lg" className="shadow-solar">
             <a href="#contact">{isFa ? "ثبت‌نام دوره" : "Enroll now"} <ArrowRight className="mx-1 h-4 w-4 rtl:rotate-180" /></a>

@@ -24,7 +24,7 @@ export function QuickContact() {
         ? `سلام، من ${name || "بدون نام"} هستم. مایل به مشاوره رایگان پارسا انرژی هستم. شماره تماس: ${phone}`
         : `Hi, I'm ${name || "unknown"}. I'd like a free Parsa Energy consultation. Phone: ${phone}`,
     );
-    window.open(`https://wa.me/989108888199?text=${msg}`, "_blank");
+    window.open(`https://wa.me/989158222199?text=${msg}`, "_blank");
   };
 
   return (
@@ -75,12 +75,12 @@ export function QuickContact() {
           </form>
 
           <div className="mt-6 flex flex-col items-center justify-center gap-4 text-sm text-slate-300 sm:flex-row">
-            <a href="tel:+989108888199" className="inline-flex items-center gap-2 hover:text-white">
+            <a href="tel:+989158222199" className="inline-flex items-center gap-2 hover:text-white">
               <Phone className="h-4 w-4 text-primary" />
-              <span style={{ unicodeBidi: "plaintext" }}>+98 910 888 8199</span>
+              <span style={{ unicodeBidi: "plaintext" }}>۰۹۱۵۸۲۲۲۱۹۹</span>
             </a>
             <span className="hidden sm:inline text-slate-500">•</span>
-            <span>{isFa ? "شنبه تا چهارشنبه، ۸ تا ۱۷" : "Sat–Wed, 8:00–17:00"}</span>
+            <span>{isFa ? "ساعت کاری شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰" : "Sat–Wed, 8:00–14:00 and 17:00–20:00"}</span>
           </div>
         </motion.div>
       </div>

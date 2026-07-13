@@ -74,7 +74,7 @@ export function DivisionCards({ onSelect }: DivisionCardsProps) {
                 {isFa ? "مشاوره رایگان" : "Free Consultation"}
               </h3>
               <p className="truncate text-xs text-muted-foreground">
-                {isFa ? "۰۹۱۰۸۸۸۸۱۹۹" : "+98 910 888 8199"}
+                {isFa ? "۰۹۱۵۸۲۲۲۱۹۹" : "+98 915 822 2199"}
               </p>
             </div>
           </a>

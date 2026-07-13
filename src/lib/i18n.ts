@@ -183,7 +183,7 @@ export const ui = {
     contactEmail: "ایمیل",
     contactOffice: "آدرس",
     contactHours: "ساعات کاری",
-    hoursValue: "شنبه تا چهارشنبه، ۸ تا ۱۷",
+    hoursValue: "ساعت کاری شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰",
 
     // Footer
     footerNewsletterTitle: "هر ماه، نکات مهندسی خورشیدی دریافت کنید.",
@@ -407,7 +407,7 @@ export const ui = {
     contactEmail: "Email",
     contactOffice: "Office",
     contactHours: "Hours",
-    hoursValue: "Sat–Wed, 8:00–17:00",
+    hoursValue: "Sat–Wed, 8:00–14:00 and 17:00–20:00",
 
     footerNewsletterTitle: "Get solar engineering insights, monthly.",
     footerNewsletterDesc: "Calculators, case studies and maintenance guides — no spam, unsubscribe anytime.",

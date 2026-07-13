@@ -56,9 +56,9 @@ export function ContactSection() {
   };
 
   const contactInfo = [
-    { icon: Phone, label: t("contactPhone"), value: "+98 910 888 8199", href: "tel:+989108888199", ltr: true },
+    { icon: Phone, label: t("contactPhone"), value: "۰۹۱۵۸۲۲۲۱۹۹", href: "tel:+989158222199", ltr: true },
     { icon: Mail, label: t("contactEmail"), value: "info@parsenergyco.ir", href: "mailto:info@parsenergyco.ir", ltr: true },
-    { icon: MapPin, label: t("contactOffice"), value: "مشهد، منطقه الهیه | Mashhad, Elahieh" },
+    { icon: MapPin, label: t("contactOffice"), value: "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor" },
     { icon: Clock, label: t("contactHours"), value: t("hoursValue") },
   ];
 
@@ -139,7 +139,7 @@ export function ContactSection() {
               </ul>
             </div>
 
-            <a href="https://wa.me/989108888199" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-2xl border border-green-500/30 bg-green-500/5 p-6 transition-all hover:border-green-500/60 hover:shadow-md">
+            <a href="https://wa.me/989158222199" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 rounded-2xl border border-green-500/30 bg-green-500/5 p-6 transition-all hover:border-green-500/60 hover:shadow-md">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-500/15">
                 <MessageCircle className="h-6 w-6 text-green-600" />
               </div>

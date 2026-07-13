@@ -95,11 +95,11 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-2.5 text-sm">
               <li className="flex items-start gap-2.5 text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {t("contactOffice")}: مشهد، منطقه الهیه | Mashhad, Elahieh
+                {t("contactOffice")}: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor
               </li>
               <li dir="rtl" className="flex items-center gap-2.5 text-muted-foreground">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <span className="text-end" style={{ unicodeBidi: "plaintext" }}>+98 910 888 8199</span>
+                <span className="text-end" style={{ unicodeBidi: "plaintext" }}>۰۹۱۵۸۲۲۲۱۹۹</span>
               </li>
               <li dir="rtl" className="flex items-center gap-2.5 text-muted-foreground">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
