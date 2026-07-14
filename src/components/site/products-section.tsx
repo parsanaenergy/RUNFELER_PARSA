@@ -74,7 +74,7 @@ function ProductDialog({ product }: { product: Product }) {
       )}
       <div className="mt-6 flex flex-col gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <div className="text-xs text-muted-foreground">{t("productPriceFrom")}</div>
+          <div className="text-xs text-muted-foreground">{t(product.priceFrom.fa.includes("استعلام") ? "productPrice" : "productPriceFrom")}</div>
           <div className="font-display text-xl font-bold text-foreground">{pick(product.priceFrom)}</div>
         </div>
         <Button asChild className="shadow-solar">
@@ -129,7 +129,7 @@ export function ProductsSection() {
                   <p className="mt-1.5 text-sm text-muted-foreground">{pick(product.tagline)}</p>
                   <div className="mt-auto flex items-center justify-between pt-5">
                     <div>
-                      <div className="text-[11px] uppercase tracking-wide text-muted-foreground">{t("productPriceFrom")}</div>
+                      <div className="text-[11px] uppercase tracking-wide text-muted-foreground">{t(product.priceFrom.fa.includes("استعلام") ? "productPrice" : "productPriceFrom")}</div>
                       <div className="font-display text-lg font-bold text-foreground">{pick(product.priceFrom)}</div>
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">

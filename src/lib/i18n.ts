@@ -112,6 +112,7 @@ export const ui = {
     productApplications: "کاربردها",
     productDatasheet: "دیتاشیت",
     productInstallGuide: "راهنمای نصب",
+    productPrice: "قیمت",
     productPriceFrom: "قیمت از",
     productRelated: "محصولات مرتبط",
 
@@ -343,6 +344,7 @@ export const ui = {
     productApplications: "Applications",
     productDatasheet: "Datasheet",
     productInstallGuide: "Installation guide",
+    productPrice: "Price",
     productPriceFrom: "Price from",
     productRelated: "Related products",
 

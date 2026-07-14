@@ -442,7 +442,7 @@ export const products: Product[] = [
     ],
     applications: [bi("پشتیبان خانگی", "Residential backup"), bi("تجاری کوچک", "Small commercial"), bi("میکروگرید هایبرید", "Hybrid microgrid")],
     faqs: [{ q: bi("بدون باتری کار می‌کند؟", "Can it work without a battery?"), a: bi("بله — از AC-coupled آنگرید بدون باتری پشتیبانی می‌کند و بعداً باتری اضافه می‌شود.", "Yes — supports AC-coupled on-grid operation without a battery, and adds battery later for backup.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
     badge: bi("پرفروش", "Best seller"),
   },
   {
@@ -467,7 +467,7 @@ export const products: Product[] = [
     ],
     applications: [bi("خانه آفگرید", "Off-grid homes"), bi("سایت تلکام", "Telecom sites"), bi("صنعتی", "Industrial")],
     faqs: [{ q: bi("موازی‌بندی پشتیبانی می‌شود؟", "Parallel stacking?"), a: bi("بله — تا ۶ واحد موازی برای ۳۰ kVA و پیکربندی سه‌فاز.", "Yes — up to 6 units in parallel for 30 kVA, plus 3-phase configuration.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
   },
   {
     slug: "lifepo4-48v-100ah",
@@ -491,7 +491,7 @@ export const products: Product[] = [
     ],
     applications: [bi("ذخیره آفگرید", "Off-grid storage"), bi("پشتیبان هایبرید", "Hybrid backup"), bi("تلکام", "Telecom")],
     faqs: [{ q: bi("موازی می‌شود؟", "Can I parallel multiple units?"), a: bi("بله — تا ۱۵ واحد موازی برای ۷۶.۸ kWh روی یک باس.", "Yes — up to 15 units in parallel for 76.8 kWh on a single bus.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
     badge: bi("ماژولار", "Modular"),
   },
   {
@@ -516,7 +516,7 @@ export const products: Product[] = [
     ],
     applications: [bi("پشت‌بم", "Rooftop"), bi("زمینی", "Ground-mount"), bi("سقف خودرو", "Solar carports")],
     faqs: [{ q: bi("ف volumes عمده می‌فروشید؟", "Do you sell in bulk?"), a: bi("بله — مقادیر کامل کانتینر با قیمت کارخانه‌ای و گزارش bankability تیر-۱.", "Yes — full-container quantities with factory-direct pricing and tier-1 bankability reports.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
   },
   {
     slug: "online-ups-3kva",
@@ -540,7 +540,7 @@ export const products: Product[] = [
     ],
     applications: [bi("سرور و IT", "Server & IT"), bi("تجهیزات پزشکی", "Medical equipment"), bi("اداری حساس", "Sensitive office")],
     faqs: [{ q: bi("UPS آنلاین و Line-interactive چه فرقی دارند؟", "Online vs Line-interactive UPS?"), a: bi("آنلاین همیشه از اینورتر تغذیه می‌کند (انتقال صفر)؛ Line-interactive در حالت عادی از شبکه و فقط هنگام قطعی از باتری استفاده می‌کند.", "Online always feeds from the inverter (zero transfer); Line-interactive uses grid normally and battery only during outage.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
   },
   {
     slug: "diesel-generator-20kva",
@@ -564,7 +564,7 @@ export const products: Product[] = [
     ],
     applications: [bi("اداری", "Office"), bi("مغازه", "Shop"), bi("صنعتی سبک", "Light industrial")],
     faqs: [{ q: bi("با خورشیدی هماهنگ می‌شود؟", "Can it sync with solar?"), a: bi("بله — با کنترلر هماهنگ‌کننده، دیزل فقط هنگام نیاز و کم‌بار روشن می‌شود تا سوخت و سایش کاهش یابد.", "Yes — with a sync controller, the diesel starts only when needed and at minimum load, reducing fuel and wear.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
   },
   {
     slug: "mppt-controller-60a",
@@ -588,7 +588,7 @@ export const products: Product[] = [
     ],
     applications: [bi("کلبه آفگرید", "Off-grid cabins"), bi("تلکام", "Telecom"), bi("RV / دریایی", "RV / marine")],
     faqs: [{ q: bi("MPPT یا PWM؟", "MPPT vs PWM?"), a: bi("MPPT ۲۰ تا ۳۰٪ انرژی بیشتری استخراج می‌کند، به‌ویژه در هوای سرد یا ابری.", "MPPT extracts 20–30% more energy than PWM, especially in cold or cloudy conditions.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
   },
   {
     slug: "solar-dc-cable-6mm",
@@ -612,7 +612,7 @@ export const products: Product[] = [
     ],
     applications: [bi("سیم‌کشی استرینگ", "String wiring"), bi("جعبه ترکیب به اینورتر", "Combiner to inverter"), bi("باس DC", "DC bus")],
     faqs: [{ q: bi("چرا کابل مخصوص خورشیدی؟", "Why solar-specific DC cable?"), a: bi("کابل DC خورشیدی برای ۲۵ سال در فضای باز مقاوم در برابر UV، اوزون و دما است؛ کابل معمولی تخریب و خطر آتش دارد.", "Solar DC cable is UV, ozone, and temperature rated for 25 years outdoors — standard cable degrades and becomes a fire risk.") }],
-    priceFrom: bi("از ۹۹۹ تومان", "From 999 Toman"),
+    priceFrom: bi("استعلام قیمت", "Call for Price"),
   },
 ];
 
@@ -936,7 +936,7 @@ export const articles: Article[] = [
       bi("اینورترها پر خرابی‌ترین جزء نیروگاه PV هستند — شامل نیمه‌هادی‌های قدرت، خازن الکترولیت و فن هستند که همگی تحت تنش حرارتی و الکتریکی کار می‌کنند.", "Solar inverters are the most failure-prone component of a PV plant — they contain power semiconductors, electrolytic capacitors and fans all operating under thermal and electrical stress."),
       bi("«خرابی ایزولاسیون / اتصال زمین»: نشتی سمت DC به زمین، معمولاً از کابل آسیب‌دیده، کانکتور یا جعبه تقسیم خیس. استرینگ‌ها را ایزوله و با Megger استرینگ معیوب را پیدا کنید.", "'Isolation / Ground Fault': DC-side leakage to earth, usually from damaged cable, connector, or wet junction box. Isolate strings and use a Megger to find the faulty string."),
       bi("«خطای شبکه / خارج از محدوده»: ولتاژ یا فرکانس شبکه خارج از محدوده قطع اینورتر است. اغلب مشکل شبکه است، اما خطای پایدار می‌تواند نشانگر رله AC یا برد اندازه‌گیری در حال خرابی باشد.", "'Grid Fault / Out of range': The grid voltage or frequency is outside the inverter's trip envelope. Often a utility issue, but persistent faults may indicate a failing AC relay or measurement board."),
-      bi("«داغی بیش از حد»: فن مسدود یا خراب، یا تخریب MOSFET/IGBT مدار قدرت. فن‌ها را تمیز کنید، خمیر حرارتی بررسی کنید و اگر تکرار شد، به پیری مدار قدرت شک کنید — آزمایشگاه تعمیر سطح قطعه ما آن را بازسازی می‌کند.", "'Over-temperature': Fans blocked or failed, or power-stage MOSFET/IGBT degradation. Clean fans, verify thermal paste, and if recurring, suspect power-stage aging — our component-level repair lab can rebuild it."),
+      bi("«داغی بیش از حد»: فن مسدود یا خراب، یا تخریب MOSFET/IGBT مدار قدرت. فن‌ها را تمیز کنید، خمیر حرارتی بررسی کنید و اگر تکرار شد، به پیری مدار قدرت شک کنید — در این شرایط، بازسازی توسط آزمایشگاه‌های مجهز به تجهیزات تست سطح قطعه توصیه می‌شود.", "'Over-temperature': Fans blocked or failed, or power-stage MOSFET/IGBT degradation. Clean fans, verify thermal paste, and if recurring, suspect power-stage aging — our component-level repair lab can rebuild it."),
     ],
     faqs: [
       { q: bi("چه زمانی تعمیر و چه زمانی تعویض؟", "When to repair vs replace?"), a: bi("اگر دستگاه زیر ۸ سال است و خرابی در سطح قطعه است، تعمیر معمولاً ۴۰ تا ۷۰٪ ارزان‌تر است. بالای ۱۰ سال یا با چند خرابی بزرگ، تعویض ممکن است اقتصادی‌تر باشد.", "If the unit is under 8 years old and the fault is component-level, repair is usually 40–70% cheaper. Beyond ~10 years or with multiple major failures, replacement may be more economic.") },

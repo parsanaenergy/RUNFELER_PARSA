@@ -120,7 +120,7 @@ export function ServerContentLayer() {
               <h4 className="mb-1 text-base font-bold text-foreground">{product.name.fa}</h4>
               <p className="mb-1 text-sm text-muted-foreground">{product.description.fa}</p>
               <p className="mb-2 text-sm text-muted-foreground">
-                <strong>برند:</strong> {product.brand} · <strong>دسته:</strong> {product.category.fa} · <strong>قیمت از:</strong> {product.priceFrom.fa}
+                <strong>برند:</strong> {product.brand} · <strong>دسته:</strong> {product.category.fa} · <strong>{product.priceFrom.fa.includes("استعلام") ? "قیمت" : "قیمت از"}:</strong> {product.priceFrom.fa}
               </p>
               <ul className="text-sm text-muted-foreground">
                 {product.specs.map((s) => (
