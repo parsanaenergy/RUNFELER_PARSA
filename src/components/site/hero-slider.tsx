@@ -34,9 +34,9 @@ const SLIDES: HeroSlide[] = [
   {
     id: 2,
     slug: "hvac-equipment",
-    title: { fa: "تاسیسات تهویه مطبوع", en: "HVAC Equipment" },
+    title: { fa: "تجهیزات گرمایشی و سرمایشی", en: "Heating & Cooling Equipment" },
     cta: { fa: "مشاهده جزئیات", en: "View details" },
-    bgImage: "/images/solar-installation.png",
+    bgImage: "/images/hvac-banner.jpg",
     gradient: "from-sky-600/80 to-cyan-500/60",
   },
   {
