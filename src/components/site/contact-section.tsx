@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { SectionHeader } from "./section-header";
 import { useLang } from "@/components/lang-provider";
+import { setUserGoftino } from "@/lib/goftino";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -47,6 +48,16 @@ export function ContactSection() {
       });
       if (!res.ok) throw new Error("Request failed");
       toast.success(t("formSuccess"));
+
+      // Sync user profile to Goftino chat for professional user-tracking
+      setUserGoftino({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        about: `Form Purpose: ${data.purpose}`,
+        forceUpdate: true
+      });
+
       reset({ name: "", email: "", phone: "", message: "", purpose: t("purposeConsultation") });
     } catch {
       toast.error(t("formError"));

@@ -3,7 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Phone, Sun } from "lucide-react";
+import { Menu, Phone, Sun, MessageSquare } from "lucide-react";
+import { openGoftinoChat } from "@/lib/goftino";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
 import { ThemeToggle } from "./theme-toggle";
@@ -84,6 +85,14 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
             <ThemeToggle />
           </div>
           <Button
+            onClick={openGoftinoChat}
+            variant="outline"
+            className="hidden md:inline-flex border-primary/20 hover:bg-primary/5"
+          >
+            <MessageSquare className="h-4 w-4 text-primary" />
+            <span className="mx-1.5">گفتگوی آنلاین</span>
+          </Button>
+          <Button
             onClick={onNavigateContact}
             className="hidden sm:inline-flex shadow-solar"
           >
@@ -127,15 +136,27 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
                   ),
                 )}
               </nav>
-              <SheetClose asChild>
-                <Button
-                  onClick={() => { onNavigateContact?.(); setMobileOpen(false); }}
-                  className="mt-6 w-full shadow-solar"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span className="mx-1.5">{t("freeConsultation")}</span>
-                </Button>
-              </SheetClose>
+              <div className="mt-6 flex flex-col gap-2">
+                <SheetClose asChild>
+                  <Button
+                    onClick={() => { onNavigateContact?.(); setMobileOpen(false); }}
+                    className="w-full shadow-solar"
+                  >
+                    <Phone className="h-4 w-4" />
+                    <span className="mx-1.5">{t("freeConsultation")}</span>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    onClick={() => { openGoftinoChat(); setMobileOpen(false); }}
+                    variant="outline"
+                    className="w-full border-primary/20"
+                  >
+                    <MessageSquare className="h-4 w-4 text-primary" />
+                    <span className="mx-1.5">گفتگوی آنلاین</span>
+                  </Button>
+                </SheetClose>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
