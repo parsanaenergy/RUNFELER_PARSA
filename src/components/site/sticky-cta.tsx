@@ -17,13 +17,6 @@ export function StickyCTA() {
         <Phone className="h-4 w-4" />
         <span>تماس</span>
       </a>
-      <button
-        onClick={openGoftinoChat}
-        className="flex h-12 flex-1 items-center justify-center gap-2 rounded-lg bg-secondary border border-border font-bold text-foreground"
-      >
-        <MessageSquare className="h-4 w-4" />
-        <span>گفتگو</span>
-      </button>
       <a
         href="https://wa.me/989158222199"
         target="_blank"
