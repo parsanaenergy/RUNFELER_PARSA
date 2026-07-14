@@ -8,6 +8,10 @@
  * and related topics in the Mashhad / Iran context.
  */
 
+import { articles } from "./content";
+import { kbArticles } from "./kb-articles";
+import { jalaliStringToGregorian } from "./date-converter";
+
 const SITE_URL = "https://parsenergyco.ir";
 const LOGO_URL = `${SITE_URL}/parsa-energy-logo.png`;
 
@@ -246,37 +250,60 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
  * by making entity relationships explicit and machine-readable.
  */
 export function buildArticleSchemas(): object[] {
-  const articles = [
-    { slug: "what-is-solar-microgrid", title: "میکروگرید خورشیدی چیست؟ راهنمای کامل", desc: "میکروگرید خورشیدی سیستمی است که برق خورشیدی را تولید، ذخیره و توزیع می‌کند و می‌تواند مستقل یا متصل به شبکه کار کند.", section: "میکروگرید", date: "2024-09-12", modified: "2024-09-12" },
-    { slug: "mppt-vs-pwm", title: "MPPT یا PWM؟ کدام کنترلر شارژ؟", desc: "MPPT ۲۰ تا ۳۰ درصد انرژی بیشتری از PWM استخراج می‌کند.", section: "پایه‌های خورشیدی", date: "2024-08-28", modified: "2024-08-28" },
-    { slug: "how-to-size-battery", title: "سایزینگ بانک باتری خورشیدی (Ah و kWh)", desc: "سایزینگ باتری به سه عدد خلاصه می‌شود: بار روزانه، خودکفایی و عمق تخلیه.", section: "تکنولوژی باتری", date: "2024-10-02", modified: "2024-10-02" },
-    { slug: "cable-sizing-voltage-drop", title: "سایزینگ کابل و افت ولتاژ خورشیدی", desc: "کابل DC کوچک انرژی هدر می‌دهد و خطر آتش می‌سازد؛ افت ولتاژ باید زیر ۳٪ باشد.", section: "کابل و حفاظت", date: "2024-07-19", modified: "2024-07-19" },
-    { slug: "solar-panel-tilt", title: "زاویه و جهت پنل خورشیدی", desc: "زاویه بهینه برابر عرض جغرافیایی است.", section: "پایه‌های خورشیدی", date: "2024-06-30", modified: "2024-06-30" },
-    { slug: "inverter-faults", title: "خرابی‌های رایج اینورتر خورشیدی و تشخیص", desc: "رایج‌ترین خطاهای اینورتر، علل ریشه‌ای و زمان تماس با تعمیرکار.", section: "اینورتر", date: "2024-05-14", modified: "2024-05-14" },
-    { slug: "how-to-calculate-system-size", title: "محاسبه اندازه نیروگاه خورشیدی (kWp)", desc: "اندازه سیستم = مصرف روزانه ÷ ساعت تابش اوج ÷ ضریب عملکرد.", section: "محاسبات مهندسی", date: "2024-09-25", modified: "2024-09-25" },
-    { slug: "preventive-maintenance-checklist", title: "چک‌لیست نگهداری پیشگیرانه نیروگاه خورشیدی", desc: "چک‌لیست فصلی شامل پنل، اینورتر، باتری و BOS.", section: "نگهداری", date: "2024-04-08", modified: "2024-04-08" },
-  ];
+  const schemas: object[] = [];
 
-  return articles.map((a) => ({
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: a.title,
-    description: a.desc,
-    articleSection: a.section,
-    inLanguage: ["fa", "en"],
-    datePublished: a.date,
-    dateModified: a.modified,
-    author: {
-      "@type": "Organization",
-      name: "تیم مهندسی پارسا انرژی | Parsa Energy Engineering Team",
-      url: `${SITE_URL}/#organization`,
-    },
-    publisher: { "@id": `${SITE_URL}/#organization` },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/#knowledge`,
-    },
-    url: `${SITE_URL}/#knowledge`,
-  }));
+  // Add articles from content.ts
+  for (const a of articles) {
+    const gregDate = jalaliStringToGregorian(a.date);
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: a.title.fa,
+      description: a.excerpt.fa,
+      articleSection: a.category.fa,
+      inLanguage: ["fa", "en"],
+      datePublished: gregDate,
+      dateModified: gregDate,
+      author: {
+        "@type": "Organization",
+        name: "تیم مهندسی پارسا انرژی | Parsa Energy Engineering Team",
+        url: `${SITE_URL}/#organization`,
+      },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/#knowledge`,
+      },
+      url: `${SITE_URL}/#knowledge`,
+    });
+  }
+
+  // Add articles from kb-articles.ts
+  for (const a of kbArticles) {
+    const gregDate = jalaliStringToGregorian(a.date);
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: a.title.fa,
+      description: a.excerpt.fa,
+      articleSection: a.categoryLabel.fa,
+      inLanguage: ["fa", "en"],
+      datePublished: gregDate,
+      dateModified: gregDate,
+      author: {
+        "@type": "Organization",
+        name: "تیم مهندسی پارسا انرژی | Parsa Energy Engineering Team",
+        url: `${SITE_URL}/#organization`,
+      },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/#knowledge`,
+      },
+      url: `${SITE_URL}/#knowledge`,
+    });
+  }
+
+  return schemas;
 }
 
