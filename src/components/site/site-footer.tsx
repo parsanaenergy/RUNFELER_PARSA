@@ -6,7 +6,7 @@ import { Sun, MapPin, Phone, Mail, Clock, Linkedin, Youtube, Send } from "lucide
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/components/lang-provider";
-import { faNum } from "@/lib/utils";
+import { cn, faNum } from "@/lib/utils";
 
 export function SiteFooter() {
   const { t, lang } = useLang();
