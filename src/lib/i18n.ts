@@ -23,7 +23,7 @@ export const ui = {
     navProjects: "پروژه‌ها",
     navKnowledge: "مقالات و اخبار",
     navTools: "ابزار مهندسی",
-    navTraining: "آموزشگاه تاسیسات",
+    navTraining: "آموزشگاه فنی و حرفه ای",
     navAbout: "درباره ما",
     navContact: "تماس",
     navFaq: "سوالات متداول",
