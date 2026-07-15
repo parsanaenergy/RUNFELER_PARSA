@@ -12,7 +12,7 @@ export const ui = {
     // Brand
     brandName: "پارسا انرژی",
     brandSuffix: "انرژی",
-    brandTagline: "مهندسی، تاسیسات و انرژی خورشیدی",
+    brandTagline: "چی بنویسم اینجا ؟؟؟",
     brandLegal: "شرکت مهندسی پیمانکاری",
 
     // Nav
