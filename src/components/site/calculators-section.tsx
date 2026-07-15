@@ -351,7 +351,9 @@ export function CalculatorsSection() {
           description={t("toolsDesc")}
         />
         <AnswerCapsule>
-          ابزار محاسباتی رایگان پارسا انرژی شامل ۹ ماشین‌حساب مهندسی است: اندازه سیستم خورشیدی، ظرفیت باتری، سایز کابل، افت ولتاژ، زاویه پنل، مصرف انرژی، زمان پشتیبانی، بازگشت سرمایه و هزینه میکروگرید. محاسبات بر اساس فرمول‌های استاندارد IEC و پارامترهای اقلیمی مشهد (۵.۰ ساعت تابش اوج) انجام می‌شوند. نتایج آنی هستند و نیازی به ثبت‌نام ندارند.
+          {lang === "fa"
+            ? "ابزار محاسباتی رایگان پارسا انرژی شامل ۹ ماشین‌حساب مهندسی است: اندازه سیستم خورشیدی، ظرفیت باتری، سایز کابل، افت ولتاژ، زاویه پنل، مصرف انرژی، زمان پشتیبانی، بازگشت سرمایه و هزینه میکروگرید. محاسبات بر اساس فرمول‌های استاندارد IEC و پارامترهای اقلیمی مشهد (۵.۰ ساعت تابش اوج) انجام می‌شوند. نتایج آنی هستند و نیازی به ثبت‌نام ندارند."
+            : "Parsa Energy's free calculation tools include 9 engineering calculators: solar system size, battery capacity, cable size, voltage drop, panel tilt angle, energy consumption, backup time, ROI, and microgrid cost. Calculations are based on standard IEC formulas and climatic parameters of Mashhad (5.0 Peak Sun Hours). Results are instant and no registration is required."}
         </AnswerCapsule>
         <div className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground">
           <Calculator className="h-4 w-4 text-primary" />

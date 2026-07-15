@@ -25,7 +25,8 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export function ContactSection() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const isFa = lang === "fa";
   const [submitting, setSubmitting] = React.useState(false);
   const {
     register, handleSubmit, reset, setValue, watch, formState: { errors },
@@ -71,9 +72,9 @@ export function ContactSection() {
       icon: Phone,
       label: t("contactPhone"),
       values: [
-        { label: "۰۹۱۵۸۲۲۲۱۹۹", href: "tel:+989158222199" },
-        { label: "۰۹۱۵۸۲۲۲۱۹۸", href: "tel:+989158222198" },
-        { label: "۰۹۱۵۸۲۲۲۱۹۷", href: "tel:+989158222197" },
+        { label: isFa ? "۰۹۱۵۸۲۲۲۱۹۹" : "+98 915 822 2199", href: "tel:+989158222199" },
+        { label: isFa ? "۰۹۱۵۸۲۲۲۱۹۸" : "+98 915 822 2198", href: "tel:+989158222198" },
+        { label: isFa ? "۰۹۱۵۸۲۲۲۱۹۷" : "+98 915 822 2197", href: "tel:+989158222197" },
       ],
       value: undefined,
       href: undefined,
@@ -82,7 +83,9 @@ export function ContactSection() {
     {
       icon: MapPin,
       label: t("contactOffice"),
-      value: "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor",
+      value: isFa
+        ? "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول"
+        : "Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor",
       href: undefined,
       values: undefined,
     },
@@ -154,15 +157,15 @@ export function ContactSection() {
                       <c.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="text-end text-xs uppercase tracking-wide text-muted-foreground">{c.label}</div>
+                      <div className={cn("text-xs uppercase tracking-wide text-muted-foreground", isFa ? "text-end" : "text-start")}>{c.label}</div>
                       {c.values ? (
-                        <div className="flex flex-col gap-1">
+                        <div className={cn("flex flex-col gap-1", isFa ? "items-end" : "items-start")}>
                           {c.values.map((v) => (
                             <a
                               key={v.label}
                               href={v.href}
-                              dir="rtl"
-                              className="block text-end text-sm font-semibold text-foreground hover:text-primary"
+                              dir={isFa ? "rtl" : "ltr"}
+                              className="block text-sm font-semibold text-foreground hover:text-primary animate-in fade-in-50"
                               style={{ unicodeBidi: "plaintext" }}
                             >
                               {v.label}
@@ -170,9 +173,22 @@ export function ContactSection() {
                           ))}
                         </div>
                       ) : c.href ? (
-                        <a href={c.href} dir="rtl" className="block text-end text-sm font-semibold text-foreground hover:text-primary" style={{ unicodeBidi: "plaintext" }}>{c.value}</a>
+                        <a
+                          href={c.href}
+                          dir={isFa ? "rtl" : "ltr"}
+                          className={cn("block text-sm font-semibold text-foreground hover:text-primary", isFa ? "text-end" : "text-start")}
+                          style={{ unicodeBidi: "plaintext" }}
+                        >
+                          {c.value}
+                        </a>
                       ) : (
-                        <div dir="rtl" className="text-end text-sm font-semibold text-foreground" style={{ unicodeBidi: "plaintext" }}>{c.value}</div>
+                        <div
+                          dir={isFa ? "rtl" : "ltr"}
+                          className={cn("text-sm font-semibold text-foreground", isFa ? "text-end" : "text-start")}
+                          style={{ unicodeBidi: "plaintext" }}
+                        >
+                          {c.value}
+                        </div>
                       )}
                     </div>
                   </li>

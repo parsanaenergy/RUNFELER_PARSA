@@ -122,7 +122,7 @@ export function HeroSlider({ onSelectDivision }: HeroSliderProps) {
                   className="mt-5 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition-transform hover:scale-105"
                 >
                   {pick(slide.cta)}
-                  <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+                  <ArrowLeft className={cn("h-4 w-4 transition-transform", isFa ? "" : "rotate-180")} />
                 </motion.button>
               </div>
             </div>

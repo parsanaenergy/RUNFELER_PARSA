@@ -77,7 +77,7 @@ export function QuickContact() {
           <div className="mt-6 flex flex-col items-center justify-center gap-4 text-sm text-slate-300 sm:flex-row">
             <a href="tel:+989158222199" className="inline-flex items-center gap-2 hover:text-white">
               <Phone className="h-4 w-4 text-primary" />
-              <span style={{ unicodeBidi: "plaintext" }}>۰۹۱۵۸۲۲۲۱۹۹</span>
+              <span style={{ unicodeBidi: "plaintext" }}>{isFa ? "۰۹۱۵۸۲۲۲۱۹۹" : "+98 915 822 2199"}</span>
             </a>
             <span className="hidden sm:inline text-slate-500">•</span>
             <span>{isFa ? "ساعت کاری شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰" : "Sat–Wed, 8:00–14:00 and 17:00–20:00"}</span>

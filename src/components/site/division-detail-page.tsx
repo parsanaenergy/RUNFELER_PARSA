@@ -199,8 +199,7 @@ export function DivisionDetailPage({ division, onBack }: DivisionDetailPageProps
       {/* Body */}
       <main className="flex-1">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-          {/* Answer capsule (BLUF) */}
-          <p className="mb-8 rounded-xl border-r-4 border-primary bg-primary/5 px-5 py-4 text-base leading-7 text-foreground">
+          <p className={cn("mb-8 rounded-xl border-primary bg-primary/5 px-5 py-4 text-base leading-7 text-foreground", isFa ? "border-r-4" : "border-l-4")}>
             {pick(content.longDesc)}
           </p>
 
@@ -276,7 +275,11 @@ export function DivisionDetailPage({ division, onBack }: DivisionDetailPageProps
                 <span className="mx-2">{isFa ? "درخواست مشاوره رایگان" : "Request free consultation"}</span>
               </a>
             </Button>
-            <p className="mt-3 text-xs text-muted-foreground" dir="ltr">۰۹۱۵۸۲۲۲۱۹۹ | ۰۹۱۵۸۲۲۲۱۹۸ | ۰۹۱۵۸۲۲۲۱۹۷</p>
+            <p className="mt-3 text-xs text-muted-foreground" dir="ltr">
+              {isFa
+                ? "۰۹۱۵۸۲۲۲۱۹۹ | ۰۹۱۵۸۲۲۲۱۹۸ | ۰۹۱۵۸۲۲۲۱۹۷"
+                : "+98 915 822 2199 | +98 915 822 2198 | +98 915 822 2197"}
+            </p>
           </section>
         </div>
       </main>

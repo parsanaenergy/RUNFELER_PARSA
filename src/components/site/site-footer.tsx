@@ -95,19 +95,23 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-2.5 text-sm">
               <li className="flex items-start gap-2.5 text-muted-foreground">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {t("contactOffice")}: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor
+                <span>
+                  {t("contactOffice")}: {lang === "fa"
+                    ? "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول"
+                    : "Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor"}
+                </span>
               </li>
-              <li dir="rtl" className="flex items-start gap-2.5 text-muted-foreground">
+              <li className="flex items-start gap-2.5 text-muted-foreground">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <div className="flex flex-col gap-1 text-end" style={{ unicodeBidi: "plaintext" }}>
-                  <a href="tel:+989158222199" className="hover:text-primary">۰۹۱۵۸۲۲۲۱۹۹</a>
-                  <a href="tel:+989158222198" className="hover:text-primary">۰۹۱۵۸۲۲۲۱۹۸</a>
-                  <a href="tel:+989158222197" className="hover:text-primary">۰۹۱۵۸۲۲۲۱۹۷</a>
+                <div className={cn("flex flex-col gap-1", lang === "fa" ? "text-end" : "text-start")} style={{ unicodeBidi: "plaintext" }}>
+                  <a href="tel:+989158222199" className="hover:text-primary">{lang === "fa" ? "۰۹۱۵۸۲۲۲۱۹۹" : "+98 915 822 2199"}</a>
+                  <a href="tel:+989158222198" className="hover:text-primary">{lang === "fa" ? "۰۹۱۵۸۲۲۲۱۹۸" : "+98 915 822 2198"}</a>
+                  <a href="tel:+989158222197" className="hover:text-primary">{lang === "fa" ? "۰۹۱۵۸۲۲۲۱۹۷" : "+98 915 822 2197"}</a>
                 </div>
               </li>
-              <li dir="rtl" className="flex items-center gap-2.5 text-muted-foreground">
+              <li className="flex items-center gap-2.5 text-muted-foreground">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span className="text-end" style={{ unicodeBidi: "plaintext" }}>info@parsenergyco.ir</span>
+                <a href="mailto:info@parsenergyco.ir" className="hover:text-primary" style={{ unicodeBidi: "plaintext" }}>info@parsenergyco.ir</a>
               </li>
               <li className="flex items-center gap-2.5 text-muted-foreground">
                 <Clock className="h-4 w-4 shrink-0 text-primary" />

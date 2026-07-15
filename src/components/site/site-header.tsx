@@ -174,10 +174,14 @@ export function SiteHeader({
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="#top" className="flex items-center gap-2 sm:gap-2.5" aria-label="Parsa Energy home">
-          <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={48} height={48} className="h-11 w-auto shrink-0" priority />
+          <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={56} height={56} className="h-14 w-auto shrink-0" priority />
           <span className="flex flex-col leading-none">
             <span className="font-display text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold tracking-tight text-foreground">
-              شرکت پارسا <span className="text-primary">انرژی</span> رویش سبز امید
+              {lang === "fa" ? (
+                <>شرکت پارسا <span className="text-primary">انرژی</span> رویش سبز امید</>
+              ) : (
+                <>Parsa <span className="text-primary">Energy</span> Company</>
+              )}
             </span>
           </span>
         </Link>
@@ -236,7 +240,7 @@ export function SiteHeader({
             className="hidden md:inline-flex border-primary/20 hover:bg-primary/5"
           >
             <MessageSquare className="h-4 w-4 text-primary" />
-            <span className="mx-1.5">گفتگوی آنلاین</span>
+            <span className="mx-1.5">{lang === "fa" ? "گفتگوی آنلاین" : "Online Chat"}</span>
           </Button>
           <Button
             onClick={onNavigateContact}
@@ -331,7 +335,7 @@ export function SiteHeader({
                     className="w-full border-primary/20"
                   >
                     <MessageSquare className="h-4 w-4 text-primary" />
-                    <span className="mx-1.5">گفتگوی آنلاین</span>
+                    <span className="mx-1.5">{lang === "fa" ? "گفتگوی آنلاین" : "Online Chat"}</span>
                   </Button>
                 </SheetClose>
               </div>
