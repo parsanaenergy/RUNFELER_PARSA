@@ -172,11 +172,11 @@ export function SiteHeader({
         scrolled ? "glass border-b border-border/70 shadow-sm" : "bg-transparent border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 md:h-20 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 md:h-24 max-w-7xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
         <Link href="#top" className="flex items-center gap-1.5 sm:gap-2 shrink-0" aria-label="Parsa Energy home">
-          <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={56} height={56} className="h-10 md:h-14 w-auto shrink-0" priority />
+          <Image src="/parsa-energy-logo.png" alt="پارسا انرژی" width={80} height={80} className="h-12 md:h-20 w-auto shrink-0" priority />
           <span className="flex flex-col leading-none">
-            <span className="font-display text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base font-bold tracking-tight text-foreground whitespace-nowrap">
+            <span className="font-display text-xs sm:text-sm md:text-sm lg:text-sm xl:text-base font-bold tracking-tight text-foreground whitespace-nowrap">
               {lang === "fa" ? (
                 <>شرکت پارسا <span className="text-primary">انرژی</span> رویش سبز امید</>
               ) : (
