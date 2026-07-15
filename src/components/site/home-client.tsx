@@ -5,6 +5,10 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { HeroSlider } from "@/components/site/hero-slider";
 import { AudienceSelector } from "@/components/site/audience-selector";
+import { ServicesSection } from "@/components/site/services-section";
+import { ProductsSection } from "@/components/site/products-section";
+import { TrainingSection } from "@/components/site/training-section";
+import { AboutSection } from "@/components/site/about-section";
 import { TrustSignals } from "@/components/site/trust-signals";
 import { QuickContact } from "@/components/site/quick-contact";
 import { StickyCTA } from "@/components/site/sticky-cta";
@@ -40,8 +44,8 @@ export function HomeClient() {
     if (d) setView({ type: "division", division: d });
   }, []);
 
-  // Navigate to home and scroll to a section (contact, services) — works from ANY view
-  const navigateToSection = React.useCallback((section: "contact" | "services") => {
+  // Navigate to home and scroll to a section (contact, services, products, training, about) — works from ANY view
+  const navigateToSection = React.useCallback((section: "contact" | "services" | "products" | "training" | "about") => {
     setView({ type: "home" });
     // Wait for home to render, then scroll
     setTimeout(() => {
@@ -51,6 +55,10 @@ export function HomeClient() {
 
   const onNavigateContact = React.useCallback(() => navigateToSection("contact"), [navigateToSection]);
   const onNavigateServices = React.useCallback(() => navigateToSection("services"), [navigateToSection]);
+  const onNavigateProducts = React.useCallback(() => navigateToSection("products"), [navigateToSection]);
+  const onNavigateTraining = React.useCallback(() => navigateToSection("training"), [navigateToSection]);
+  const onNavigateAbout = React.useCallback(() => navigateToSection("about"), [navigateToSection]);
+  const onNavigateKnowledge = React.useCallback(() => setView({ type: "knowledge" }), []);
 
   React.useEffect(() => {
     if (view.type !== "home") {
@@ -70,7 +78,14 @@ export function HomeClient() {
   if (view.type === "division") {
     return (
       <div className="flex min-h-screen flex-col pb-14 md:pb-0">
-        <SiteHeader onNavigateContact={onNavigateContact} onNavigateServices={onNavigateServices} />
+        <SiteHeader
+          onNavigateContact={onNavigateContact}
+          onNavigateServices={onNavigateServices}
+          onNavigateProducts={onNavigateProducts}
+          onNavigateTraining={onNavigateTraining}
+          onNavigateAbout={onNavigateAbout}
+          onNavigateKnowledge={onNavigateKnowledge}
+        />
         <main className="flex-1">
           <DivisionDetailPage division={view.division} onBack={goHome} />
         </main>
@@ -84,7 +99,14 @@ export function HomeClient() {
   if (view.type === "knowledge") {
     return (
       <div className="flex min-h-screen flex-col pb-14 md:pb-0">
-        <SiteHeader onNavigateContact={onNavigateContact} onNavigateServices={onNavigateServices} />
+        <SiteHeader
+          onNavigateContact={onNavigateContact}
+          onNavigateServices={onNavigateServices}
+          onNavigateProducts={onNavigateProducts}
+          onNavigateTraining={onNavigateTraining}
+          onNavigateAbout={onNavigateAbout}
+          onNavigateKnowledge={onNavigateKnowledge}
+        />
         <main className="flex-1">
           <KnowledgeCenterView
             onBack={goHome}
@@ -101,7 +123,14 @@ export function HomeClient() {
   if (view.type === "article") {
     return (
       <div className="flex min-h-screen flex-col pb-14 md:pb-0">
-        <SiteHeader onNavigateContact={onNavigateContact} onNavigateServices={onNavigateServices} />
+        <SiteHeader
+          onNavigateContact={onNavigateContact}
+          onNavigateServices={onNavigateServices}
+          onNavigateProducts={onNavigateProducts}
+          onNavigateTraining={onNavigateTraining}
+          onNavigateAbout={onNavigateAbout}
+          onNavigateKnowledge={onNavigateKnowledge}
+        />
         <main className="flex-1">
           <ArticleReader article={view.article} onBack={() => setView({ type: "knowledge" })} />
         </main>
@@ -121,13 +150,20 @@ export function HomeClient() {
         Skip to content
       </a>
       <SiteHeader
-        onNavigateKnowledge={() => setView({ type: "knowledge" })}
+        onNavigateKnowledge={onNavigateKnowledge}
         onNavigateContact={onNavigateContact}
         onNavigateServices={onNavigateServices}
+        onNavigateProducts={onNavigateProducts}
+        onNavigateTraining={onNavigateTraining}
+        onNavigateAbout={onNavigateAbout}
       />
       <main id="main" className="flex-1">
         <HeroSlider onSelectDivision={selectBySlug} />
         <AudienceSelector onSelect={selectBySlug} />
+        <ServicesSection />
+        <ProductsSection />
+        <TrainingSection />
+        <AboutSection />
         <TrustSignals />
         <QuickContact />
         <ServerContentLayer />

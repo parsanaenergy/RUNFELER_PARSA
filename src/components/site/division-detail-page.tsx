@@ -79,7 +79,7 @@ const divisionContent: Record<string, {
       { q: { fa: "بازگشت سرمایه چقدر است؟", en: "What is the ROI?" }, a: { fa: "برای مشهد با ۵.۰ ساعت تابش اوج، معمولاً ۴ تا ۵ سال با IRR ۱۵ تا ۲۰٪.", en: "For Mashhad with 5.0 PSH, typically 4-5 years with IRR 15-20%." } },
       { q: { fa: "آیا مجوز ساتبا دارید؟", en: "Do you have SATBA license?" }, a: { fa: "برای پروژه‌های متصل به شبکه، فرآیند اخذ مجوز ساتبا را همراه شما انجام می‌دهیم.", en: "For grid-tied projects, we handle the SATBA licensing process with you." } },
     ],
-    relatedServices: ["solar-plant-design", "solar-installation", "emergency-power-ups", "maintenance", "solar-inverter-repair"],
+    relatedServices: ["solar-plant-design-construction", "emergency-power-design-install", "electronic-board-repair-spec"],
     relatedProducts: ["inverters", "batteries", "panels", "ups", "controllers"],
   },
   "hvac-repair": {
@@ -104,7 +104,7 @@ const divisionContent: Record<string, {
       { q: { fa: "سرویس دوره‌ای کولر چه فوایدی دارد؟", en: "What are the benefits of periodic AC service?" }, a: { fa: "کاهش مصرف برق تا ۲۰٪، افزایش طول عمر دستگاه، جلوگیری از خرابی ناگهانی و بهبود کیفیت سرما.", en: "Reduces electricity consumption up to 20%, extends equipment life, prevents sudden failures and improves cooling quality." } },
       { q: { fa: "تعمیر در محل انجام می‌شود؟", en: "Is repair done on-site?" }, a: { fa: "بله، اکثر تعمیرات در محل شما انجام می‌شود. برای خرابی‌های پیچیده، تجهیز به کارگاه منتقل می‌شود.", en: "Yes, most repairs are done at your location. For complex faults, equipment is taken to the workshop." } },
     ],
-    relatedServices: ["electronic-board-repair"],
+    relatedServices: ["electronic-board-repair-spec"],
     relatedProducts: [],
   },
   "hvac-parts": {

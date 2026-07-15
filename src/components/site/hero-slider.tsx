@@ -26,7 +26,7 @@ const SLIDES: HeroSlide[] = [
   {
     id: 1,
     slug: "solar-emergency-power",
-    title: { fa: "انرژی خورشیدی و برق اضطراری", en: "Solar Energy & Emergency Power" },
+    title: { fa: "نیروگاه خورشیدی و برق اضطراری", en: "Solar Power Plant & Emergency Power" },
     cta: { fa: "مشاهده جزئیات", en: "View details" },
     bgImage: "/images/hero-solar-plant.png",
     gradient: "from-orange-600/80 to-amber-500/60",

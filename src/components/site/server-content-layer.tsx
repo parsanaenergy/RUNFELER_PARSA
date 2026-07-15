@@ -76,7 +76,7 @@ export function ServerContentLayer() {
 
         {/* --- Services (full details, server-rendered) --- */}
         <div className="mb-12">
-          <h3 className="mb-6 text-xl font-bold text-foreground">خدمات نیروگاه خورشیدی و برق اضطراری</h3>
+          <h3 className="mb-6 text-xl font-bold text-foreground">خدمات تخصصی پارسا انرژی</h3>
           {services.map((service) => (
             <article key={service.slug} className="mb-8 border-b border-border pb-6 last:border-0">
               <h4 className="mb-1 text-lg font-bold text-foreground">{service.name.fa}</h4>

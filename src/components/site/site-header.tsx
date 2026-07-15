@@ -16,9 +16,19 @@ interface SiteHeaderProps {
   onNavigateKnowledge?: () => void;
   onNavigateContact?: () => void;
   onNavigateServices?: () => void;
+  onNavigateProducts?: () => void;
+  onNavigateTraining?: () => void;
+  onNavigateAbout?: () => void;
 }
 
-export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateServices }: SiteHeaderProps = {}) {
+export function SiteHeader({
+  onNavigateKnowledge,
+  onNavigateContact,
+  onNavigateServices,
+  onNavigateProducts,
+  onNavigateTraining,
+  onNavigateAbout,
+}: SiteHeaderProps = {}) {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { t } = useLang();
@@ -32,9 +42,11 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
 
   // Nav items: use callbacks so they work in ALL views (home, knowledge, article, division)
   const navItems = [
+    { label: t("navProducts"), href: "#products", onClick: onNavigateProducts },
     { label: t("navDivisions"), href: "#services", onClick: onNavigateServices },
+    { label: t("navTraining"), href: "#training", onClick: onNavigateTraining },
     { label: t("navKnowledge"), href: undefined, onClick: onNavigateKnowledge },
-    { label: t("navContact"), href: "#contact", onClick: onNavigateContact },
+    { label: t("navAbout"), href: "#about", onClick: onNavigateAbout },
   ];
 
   return (
@@ -50,9 +62,6 @@ export function SiteHeader({ onNavigateKnowledge, onNavigateContact, onNavigateS
           <span className="flex flex-col leading-none">
             <span className="font-display text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold tracking-tight text-foreground">
               شرکت پارسا <span className="text-primary">انرژی</span> رویش سبز امید
-            </span>
-            <span className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-              {t("brandTagline")}
             </span>
           </span>
         </Link>
