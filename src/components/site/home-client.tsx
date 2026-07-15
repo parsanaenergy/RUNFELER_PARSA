@@ -44,6 +44,9 @@ export function HomeClient() {
     if (d) setView({ type: "division", division: d });
   }, []);
 
+  const [activeProductCategory, setActiveProductCategory] = React.useState<string>("all");
+  const [activeServiceSlug, setActiveServiceSlug] = React.useState<string | undefined>(undefined);
+
   // Navigate to home and scroll to a section (contact, services, products, training, about) — works from ANY view
   const navigateToSection = React.useCallback((section: "contact" | "services" | "products" | "training" | "about") => {
     setView({ type: "home" });
@@ -54,8 +57,14 @@ export function HomeClient() {
   }, []);
 
   const onNavigateContact = React.useCallback(() => navigateToSection("contact"), [navigateToSection]);
-  const onNavigateServices = React.useCallback(() => navigateToSection("services"), [navigateToSection]);
-  const onNavigateProducts = React.useCallback(() => navigateToSection("products"), [navigateToSection]);
+  const onNavigateServices = React.useCallback((serviceSlug?: string) => {
+    setActiveServiceSlug(serviceSlug);
+    navigateToSection("services");
+  }, [navigateToSection]);
+  const onNavigateProducts = React.useCallback((categoryKey?: string) => {
+    setActiveProductCategory(categoryKey || "all");
+    navigateToSection("products");
+  }, [navigateToSection]);
   const onNavigateTraining = React.useCallback(() => navigateToSection("training"), [navigateToSection]);
   const onNavigateAbout = React.useCallback(() => navigateToSection("about"), [navigateToSection]);
   const onNavigateKnowledge = React.useCallback(() => setView({ type: "knowledge" }), []);
@@ -160,8 +169,8 @@ export function HomeClient() {
       <main id="main" className="flex-1">
         <HeroSlider onSelectDivision={selectBySlug} />
         <AudienceSelector onSelect={selectBySlug} />
-        <ServicesSection />
-        <ProductsSection />
+        <ServicesSection activeServiceSlug={activeServiceSlug} onCloseActiveService={() => setActiveServiceSlug(undefined)} />
+        <ProductsSection activeCategory={activeProductCategory} onCategoryChange={setActiveProductCategory} />
         <TrainingSection />
         <AboutSection />
         <TrustSignals />

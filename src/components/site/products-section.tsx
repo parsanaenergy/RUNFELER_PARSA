@@ -85,9 +85,19 @@ function ProductDialog({ product }: { product: Product }) {
   );
 }
 
-export function ProductsSection() {
+export function ProductsSection({
+  activeCategory,
+  onCategoryChange,
+}: {
+  activeCategory?: string;
+  onCategoryChange?: (cat: string) => void;
+}) {
   const { t, pick } = useLang();
-  const [category, setCategory] = React.useState("all");
+  const [localCategory, setLocalCategory] = React.useState("all");
+
+  const category = activeCategory !== undefined ? activeCategory : localCategory;
+  const setCategory = onCategoryChange !== undefined ? onCategoryChange : setLocalCategory;
+
   const filtered = React.useMemo(
     () => (category === "all" ? products : products.filter((p) => p.categoryKey === category)),
     [category],

@@ -63,14 +63,14 @@ export const organizationSchema = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+98-915-822-2199",
+      telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
       contactType: "sales",
       areaServed: "IR",
       availableLanguage: ["Persian", "English"],
     },
     {
       "@type": "ContactPoint",
-      telephone: "+98-915-822-2199",
+      telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
       contactType: "technical support",
       availableLanguage: ["Persian", "English"],
     },
@@ -82,7 +82,7 @@ export const organizationSchema = {
     addressLocality: "مشهد",
     streetAddress: "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول",
   },
-  telephone: "+98-915-822-2199",
+  telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
   sameAs: [
     "https://www.linkedin.com/company/parsa-energy",
     "https://www.youtube.com/@parsaenergy",
@@ -181,7 +181,7 @@ export const faqSchema = {
       name: "آدرس و شماره تماس پارسا انرژی چیست؟ / What is Parsa Energy's address and phone?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "آدرس: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول. تلفن همراه: ۰۹۱۵۸۲۲۲۱۹۹. وب‌سایت: parsenergyco.ir. ساعات کاری: شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰. Address: Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor. Mobile: +98 915 822 2199. Website: parsenergyco.ir. Hours: Sat–Wed, 8:00–14:00 and 17:00–20:00.",
+        text: "آدرس: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول. تلفن‌های همراه: ۰۹۱۵۸۲۲۲۱۹۹ - ۰۹۱۵۸۲۲۲۱۹۸ - ۰۹۱۵۸۲۲۲۱۹۷. وب‌سایت: parsenergyco.ir. ساعات کاری: شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰. Address: Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor. Mobiles: +98 915 822 2199 / +98 915 822 2198 / +98 915 822 2197. Website: parsenergyco.ir. Hours: Sat–Wed, 8:00–14:00 and 17:00–20:00.",
       },
     },
   ],

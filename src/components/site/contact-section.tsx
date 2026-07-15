@@ -67,10 +67,26 @@ export function ContactSection() {
   };
 
   const contactInfo = [
-    { icon: Phone, label: t("contactPhone"), value: "۰۹۱۵۸۲۲۲۱۹۹", href: "tel:+989158222199", ltr: true },
-    { icon: Mail, label: t("contactEmail"), value: "info@parsenergyco.ir", href: "mailto:info@parsenergyco.ir", ltr: true },
-    { icon: MapPin, label: t("contactOffice"), value: "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor" },
-    { icon: Clock, label: t("contactHours"), value: t("hoursValue") },
+    {
+      icon: Phone,
+      label: t("contactPhone"),
+      values: [
+        { label: "۰۹۱۵۸۲۲۲۱۹۹", href: "tel:+989158222199" },
+        { label: "۰۹۱۵۸۲۲۲۱۹۸", href: "tel:+989158222198" },
+        { label: "۰۹۱۵۸۲۲۲۱۹۷", href: "tel:+989158222197" },
+      ],
+      value: undefined,
+      href: undefined,
+    },
+    { icon: Mail, label: t("contactEmail"), value: "info@parsenergyco.ir", href: "mailto:info@parsenergyco.ir", values: undefined },
+    {
+      icon: MapPin,
+      label: t("contactOffice"),
+      value: "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor",
+      href: undefined,
+      values: undefined,
+    },
+    { icon: Clock, label: t("contactHours"), value: t("hoursValue"), href: undefined, values: undefined },
   ];
 
   return (
@@ -139,7 +155,21 @@ export function ContactSection() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="text-end text-xs uppercase tracking-wide text-muted-foreground">{c.label}</div>
-                      {c.href ? (
+                      {c.values ? (
+                        <div className="flex flex-col gap-1">
+                          {c.values.map((v) => (
+                            <a
+                              key={v.label}
+                              href={v.href}
+                              dir="rtl"
+                              className="block text-end text-sm font-semibold text-foreground hover:text-primary"
+                              style={{ unicodeBidi: "plaintext" }}
+                            >
+                              {v.label}
+                            </a>
+                          ))}
+                        </div>
+                      ) : c.href ? (
                         <a href={c.href} dir="rtl" className="block text-end text-sm font-semibold text-foreground hover:text-primary" style={{ unicodeBidi: "plaintext" }}>{c.value}</a>
                       ) : (
                         <div dir="rtl" className="text-end text-sm font-semibold text-foreground" style={{ unicodeBidi: "plaintext" }}>{c.value}</div>

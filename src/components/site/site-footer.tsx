@@ -97,9 +97,13 @@ export function SiteFooter() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 {t("contactOffice")}: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول | Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor
               </li>
-              <li dir="rtl" className="flex items-center gap-2.5 text-muted-foreground">
-                <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <span className="text-end" style={{ unicodeBidi: "plaintext" }}>۰۹۱۵۸۲۲۲۱۹۹</span>
+              <li dir="rtl" className="flex items-start gap-2.5 text-muted-foreground">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <div className="flex flex-col gap-1 text-end" style={{ unicodeBidi: "plaintext" }}>
+                  <a href="tel:+989158222199" className="hover:text-primary">۰۹۱۵۸۲۲۲۱۹۹</a>
+                  <a href="tel:+989158222198" className="hover:text-primary">۰۹۱۵۸۲۲۲۱۹۸</a>
+                  <a href="tel:+989158222197" className="hover:text-primary">۰۹۱۵۸۲۲۲۱۹۷</a>
+                </div>
               </li>
               <li dir="rtl" className="flex items-center gap-2.5 text-muted-foreground">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />

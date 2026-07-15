@@ -86,8 +86,26 @@ function ServiceDialog({ service }: { service: Service }) {
   );
 }
 
-export function ServicesSection() {
+export function ServicesSection({
+  activeServiceSlug,
+  onCloseActiveService,
+}: {
+  activeServiceSlug?: string;
+  onCloseActiveService?: () => void;
+}) {
   const { t, pick } = useLang();
+  const [localOpenSlug, setLocalOpenSlug] = React.useState<string | null>(null);
+
+  const openSlug = activeServiceSlug !== undefined ? activeServiceSlug : localOpenSlug;
+  const setOpenSlug = (slug: string | null) => {
+    if (slug === null) {
+      if (onCloseActiveService) onCloseActiveService();
+      setLocalOpenSlug(null);
+    } else {
+      setLocalOpenSlug(slug);
+    }
+  };
+
   return (
     <section id="services" className="scroll-mt-20 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -102,8 +120,9 @@ export function ServicesSection() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const a = accentClasses[service.accent];
+            const isOpen = openSlug === service.slug;
             return (
-              <Dialog key={service.slug}>
+              <Dialog key={service.slug} open={isOpen} onOpenChange={(open) => setOpenSlug(open ? service.slug : null)}>
                 <DialogTrigger asChild>
                   <button className={cn("group flex h-full w-full flex-col rounded-2xl border border-border bg-card p-6 text-start shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg", a.ring)}>
                     <div className={cn("flex h-12 w-12 items-center justify-center rounded-xl", a.bg)}>

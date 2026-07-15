@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Phone, Sun, MessageSquare } from "lucide-react";
+import { Menu, Phone, Sun, MessageSquare, ChevronDown } from "lucide-react";
 import { openGoftinoChat } from "@/lib/goftino";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
@@ -15,10 +15,121 @@ import { cn } from "@/lib/utils";
 interface SiteHeaderProps {
   onNavigateKnowledge?: () => void;
   onNavigateContact?: () => void;
-  onNavigateServices?: () => void;
-  onNavigateProducts?: () => void;
+  onNavigateServices?: (serviceSlug?: string) => void;
+  onNavigateProducts?: (categoryKey?: string) => void;
   onNavigateTraining?: () => void;
   onNavigateAbout?: () => void;
+}
+
+function NavDropdown({
+  label,
+  items,
+  onClick,
+  lang,
+}: {
+  label: string;
+  items: { label: string; onClick: () => void }[];
+  onClick?: () => void;
+  lang: string;
+}) {
+  const [open, setOpen] = React.useState(false);
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpen(false);
+    }, 100);
+  };
+
+  React.useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        onClick={onClick}
+        className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+      >
+        <span>{label}</span>
+        <ChevronDown className={cn("h-4 w-4 transition-transform duration-200 text-muted-foreground/70", open && "rotate-180")} />
+      </button>
+
+      {open && (
+        <div className={cn(
+          "absolute top-full z-50 mt-1 w-64 origin-top rounded-xl border border-border bg-card p-2 shadow-xl transition-all animate-in fade-in-0 slide-in-from-top-2",
+          lang === "fa" ? "right-0" : "left-0"
+        )}>
+          <div className="flex flex-col gap-0.5">
+            {items.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => {
+                  item.onClick();
+                  setOpen(false);
+                }}
+                className="w-full rounded-lg px-3 py-2 text-start text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground leading-relaxed"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MobileNavDropdown({
+  label,
+  items,
+  lang,
+}: {
+  label: string;
+  items: { label: string; onClick: () => void }[];
+  lang: string;
+}) {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <div className="flex flex-col">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center justify-between rounded-md px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-accent"
+      >
+        <span>{label}</span>
+        <ChevronDown className={cn("h-5 w-5 transition-transform duration-200 text-muted-foreground", open && "rotate-180")} />
+      </button>
+
+      {open && (
+        <div className={cn(
+          "flex flex-col gap-1.5 border-border/65 mt-1",
+          lang === "fa" ? "border-r mr-4 pr-2.5" : "border-l ml-4 pl-2.5"
+        )}>
+          {items.map((item) => (
+            <button
+              key={item.label}
+              onClick={item.onClick}
+              className="w-full rounded-md px-3 py-2 text-start text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground leading-relaxed"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function SiteHeader({
@@ -31,7 +142,7 @@ export function SiteHeader({
 }: SiteHeaderProps = {}) {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -40,13 +151,18 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Nav items: use callbacks so they work in ALL views (home, knowledge, article, division)
-  const navItems = [
-    { label: t("navProducts"), href: "#products", onClick: onNavigateProducts },
-    { label: t("navDivisions"), href: "#services", onClick: onNavigateServices },
-    { label: t("navTraining"), href: "#training", onClick: onNavigateTraining },
-    { label: t("navKnowledge"), href: undefined, onClick: onNavigateKnowledge },
-    { label: t("navAbout"), href: "#about", onClick: onNavigateAbout },
+  const productSubmenu = [
+    { label: lang === "fa" ? "تجهیزات نیروگاه خورشیدی" : "Solar Power Plant Equipment", key: "solar-equipment" },
+    { label: lang === "fa" ? "تجهیزات تامین برق اضطراری" : "Emergency Power Equipment", key: "emergency-power" },
+    { label: lang === "fa" ? "تجهیزات گرمایشی، سرمایشی و تهویه مطبوع (نو)" : "HVAC Equipment (New)", key: "hvac-new" },
+    { label: lang === "fa" ? "(استوک)تجهیزات گرمایشی، سرمایشی و تهویه مطبوع" : "HVAC Equipment (Used)", key: "hvac-used" },
+  ];
+
+  const serviceSubmenu = [
+    { label: lang === "fa" ? "طراحی و احداث نیروگاه خورشیدی" : "Solar Plant Design & Construction", slug: "solar-plant-design-construction" },
+    { label: lang === "fa" ? "طراحی و نصب سیستم تامین برق اضطراری" : "Emergency Power Design & Install", slug: "emergency-power-design-install" },
+    { label: lang === "fa" ? "تعمیرات پکیج شوفاژ دیواری و کولرگازی" : "Wall Radiator & AC Repair", slug: "hvac-repair-service" },
+    { label: lang === "fa" ? "تعمیرات تخصصی بردهای الکترونیکی" : "Specialized Board Repair", slug: "electronic-board-repair-spec" },
   ];
 
   return (
@@ -67,25 +183,46 @@ export function SiteHeader({
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
-          {navItems.map((item) =>
-            item.onClick ? (
-              <button
-                key={item.label}
-                onClick={item.onClick}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                {item.label}
-              </button>
-            ) : (
-              <Link
-                key={item.label}
-                href={item.href || "#"}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                {item.label}
-              </Link>
-            ),
-          )}
+          {/* Products Dropdown */}
+          <NavDropdown
+            label={t("navProducts")}
+            items={productSubmenu.map((sub) => ({
+              label: sub.label,
+              onClick: () => onNavigateProducts?.(sub.key),
+            }))}
+            onClick={() => onNavigateProducts?.()}
+            lang={lang}
+          />
+
+          {/* Services Dropdown */}
+          <NavDropdown
+            label={lang === "fa" ? "خدمات" : "Services"}
+            items={serviceSubmenu.map((sub) => ({
+              label: sub.label,
+              onClick: () => onNavigateServices?.(sub.slug),
+            }))}
+            onClick={() => onNavigateServices?.()}
+            lang={lang}
+          />
+
+          <button
+            onClick={onNavigateTraining}
+            className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            {t("navTraining")}
+          </button>
+          <button
+            onClick={onNavigateKnowledge}
+            className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            {t("navKnowledge")}
+          </button>
+          <button
+            onClick={onNavigateAbout}
+            className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            {t("navAbout")}
+          </button>
         </nav>
 
         <div className="flex items-center gap-1.5">
@@ -126,24 +263,56 @@ export function SiteHeader({
                 </div>
               </div>
               <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
-                {navItems.map((item) =>
-                  item.onClick ? (
-                    <SheetClose asChild key={item.label}>
-                      <button
-                        onClick={() => { item.onClick?.(); setMobileOpen(false); }}
-                        className="rounded-md px-3 py-2.5 text-start text-base font-medium text-foreground transition-colors hover:bg-accent"
-                      >
-                        {item.label}
-                      </button>
-                    </SheetClose>
-                  ) : (
-                    <SheetClose asChild key={item.label}>
-                      <Link href={item.href || "#"} className="rounded-md px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-accent">
-                        {item.label}
-                      </Link>
-                    </SheetClose>
-                  ),
-                )}
+                {/* Mobile Products Dropdown */}
+                <MobileNavDropdown
+                  label={t("navProducts")}
+                  items={productSubmenu.map((sub) => ({
+                    label: sub.label,
+                    onClick: () => {
+                      onNavigateProducts?.(sub.key);
+                      setMobileOpen(false);
+                    },
+                  }))}
+                  lang={lang}
+                />
+
+                {/* Mobile Services Dropdown */}
+                <MobileNavDropdown
+                  label={lang === "fa" ? "خدمات" : "Services"}
+                  items={serviceSubmenu.map((sub) => ({
+                    label: sub.label,
+                    onClick: () => {
+                      onNavigateServices?.(sub.slug);
+                      setMobileOpen(false);
+                    },
+                  }))}
+                  lang={lang}
+                />
+
+                <SheetClose asChild>
+                  <button
+                    onClick={() => { onNavigateTraining?.(); setMobileOpen(false); }}
+                    className="rounded-md px-3 py-2.5 text-start text-base font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    {t("navTraining")}
+                  </button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <button
+                    onClick={() => { onNavigateKnowledge?.(); setMobileOpen(false); }}
+                    className="rounded-md px-3 py-2.5 text-start text-base font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    {t("navKnowledge")}
+                  </button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <button
+                    onClick={() => { onNavigateAbout?.(); setMobileOpen(false); }}
+                    className="rounded-md px-3 py-2.5 text-start text-base font-medium text-foreground transition-colors hover:bg-accent"
+                  >
+                    {t("navAbout")}
+                  </button>
+                </SheetClose>
               </nav>
               <div className="mt-6 flex flex-col gap-2">
                 <SheetClose asChild>

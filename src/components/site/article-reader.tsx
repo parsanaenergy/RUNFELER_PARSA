@@ -116,7 +116,7 @@ export function ArticleReader({ article, onBack }: ArticleReaderProps) {
                 <span className="mx-2">{isFa ? "مشاوره رایگان" : "Free consultation"}</span>
               </a>
             </Button>
-            <p className="mt-3 text-xs text-muted-foreground" dir="ltr">+98 915 822 2199</p>
+            <p className="mt-3 text-xs text-muted-foreground" dir="ltr">+98 915 822 2199 / 2198 / 2197</p>
           </div>
         </article>
       </main>

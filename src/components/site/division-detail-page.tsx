@@ -276,7 +276,7 @@ export function DivisionDetailPage({ division, onBack }: DivisionDetailPageProps
                 <span className="mx-2">{isFa ? "درخواست مشاوره رایگان" : "Request free consultation"}</span>
               </a>
             </Button>
-            <p className="mt-3 text-xs text-muted-foreground" dir="ltr">۰۹۱۵۸۲۲۲۱۹۹ | +98 915 822 2199</p>
+            <p className="mt-3 text-xs text-muted-foreground" dir="ltr">۰۹۱۵۸۲۲۲۱۹۹ | ۰۹۱۵۸۲۲۲۱۹۸ | ۰۹۱۵۸۲۲۲۱۹۷</p>
           </section>
         </div>
       </main>
