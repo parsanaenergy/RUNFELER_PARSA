@@ -28,7 +28,10 @@ export function ServerContentLayer() {
       style={{ display: "none" }}
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-2 text-2xl font-bold text-foreground">آرشیو کامل محتوای پارسا انرژی</h2>
+        <h1 className="mb-2 text-2xl font-bold text-foreground">
+          پارسا انرژی | نیروگاه خورشیدی، برق اضطراری و تاسیسات مکانیکی در مشهد
+        </h1>
+        <h2 className="mb-4 text-xl font-semibold text-muted-foreground">آرشیو کامل محتوای پارسا انرژی</h2>
         <p className="mb-8 text-sm text-muted-foreground">
           تمام مقالات، سوالات متداول، خدمات و مشخصات محصولات در ادامه به‌صورت متن کامل و قابل
           استناد برای موتورهای جستجو و دستیاران هوش مصنوعی ارائه می‌شود.

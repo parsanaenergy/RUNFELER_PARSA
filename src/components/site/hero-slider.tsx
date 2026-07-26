@@ -105,14 +105,14 @@ export function HeroSlider({ onSelectDivision }: HeroSliderProps) {
           <div className="relative flex h-full items-center">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="max-w-xl ltr:ml-auto">
-                <motion.h2
+                <motion.h1
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                   className="font-display text-3xl font-bold leading-relaxed text-white sm:text-4xl lg:text-5xl"
                 >
                   {pick(slide.title)}
-                </motion.h2>
+                </motion.h1>
 
                 <motion.button
                   initial={{ opacity: 0, y: 15 }}
