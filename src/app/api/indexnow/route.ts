@@ -19,7 +19,7 @@ import { NextResponse } from "next/server";
  */
 
 const INDEXNOW_KEY = "bbc2330128da3f31c5a292a97f4bbd4c";
-const SITE_HOST = "http://parsaenergyco.ir";
+const SITE_HOST = "https://parsaenergyco.ir";
 
 export async function POST(request: Request) {
   let body: { urls?: string[] };

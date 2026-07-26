@@ -12,7 +12,7 @@ import { articles } from "./content";
 import { kbArticles } from "./kb-articles";
 import { jalaliStringToGregorian } from "./date-converter";
 
-const SITE_URL = "http://parsaenergyco.ir";
+const SITE_URL = "https://parsaenergyco.ir";
 const LOGO_URL = `${SITE_URL}/parsa-energy-logo.png`;
 
 /** Organization + ProfessionalService. Knowledge-Graph ready. */

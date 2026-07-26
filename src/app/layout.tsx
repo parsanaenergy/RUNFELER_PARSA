@@ -9,7 +9,7 @@ import { StructuredData } from "@/components/structured-data";
 // تا مشکل عدم دسترسی سرور build ایران به Google Fonts برطرف شود.
 // متغیرهای CSS در globals.css تعریف شده‌اند.
 
-const SITE_URL = "http://parsaenergyco.ir";
+const SITE_URL = "https://parsaenergyco.ir";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
