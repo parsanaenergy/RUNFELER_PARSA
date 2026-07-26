@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "طراحی، فروش و اجرای نیروگاه خورشیدی، برق اضطراری، تاسیسات مکانیکی، تعمیرات و آموزش. مشهد - الهیه. مشاوره رایگان و ابزار مهندسی.",
     url: SITE_URL,
     siteName: "پارسا انرژی | Parsa Energy",
-    images: [{ url: "/images/hero-solar-plant.png", width: 1344, height: 768, alt: "نیروگاه خورشیدی پارسا انرژی" }],
+    images: [{ url: "/images/hero-solar-plant.png", width: 1200, height: 630, alt: "نیروگاه خورشیدی پارسا انرژی" }],
     type: "website",
     locale: "fa_IR",
     alternateLocale: ["en_US"],

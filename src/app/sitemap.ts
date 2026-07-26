@@ -1,9 +1,25 @@
 import type { MetadataRoute } from "next";
+import { services } from "@/lib/content";
+import { kbArticles } from "@/lib/kb-articles";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://parsaenergyco.ir";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
+
+  const serviceRoutes = services.map((s) => ({
+    url: `${SITE_URL}/services/${s.slug}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
+
+  const articleRoutes = kbArticles.map((a) => ({
+    url: `${SITE_URL}/knowledge/${a.slug}`,
+    lastModified: new Date(a.date) || lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -18,23 +34,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.95,
     },
+    ...serviceRoutes,
+    ...articleRoutes,
     {
       url: `${SITE_URL}/#services`,
       lastModified,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${SITE_URL}/#divisions`,
       lastModified,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${SITE_URL}/#products`,
       lastModified,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${SITE_URL}/#tools`,
