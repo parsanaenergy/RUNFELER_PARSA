@@ -38,6 +38,7 @@ export function SiteFooter() {
     {
       title: t("footerKnowledge"),
       links: [
+        { label: "مرجع سیستم‌های برق | Electrical Hub", href: "/bargh" },
         { label: "پایه‌های خورشیدی | Solar Basics", href: "#knowledge" },
         { label: "میکروگرید | Microgrids", href: "#knowledge" },
         { label: "باتری | Batteries", href: "#knowledge" },

@@ -209,6 +209,13 @@ export function SiteHeader({
             lang={lang}
           />
 
+          <Link
+            href="/bargh"
+            className="rounded-md px-2 py-1.5 text-xs font-medium text-amber-500 hover:text-amber-600 transition-colors hover:bg-accent whitespace-nowrap font-bold flex items-center gap-1"
+          >
+            <Sun className="h-3.5 w-3.5" />
+            {lang === "fa" ? "سیستم‌های برق" : "Electrical Systems"}
+          </Link>
           <button
             onClick={onNavigateTraining}
             className="rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground whitespace-nowrap"

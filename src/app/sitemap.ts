@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${SITE_URL}/bargh`,
+      lastModified,
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    {
       url: `${SITE_URL}/#services`,
       lastModified,
       changeFrequency: "weekly",
