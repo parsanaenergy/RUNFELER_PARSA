@@ -79,7 +79,7 @@ export function ContactSection() {
       value: undefined,
       href: undefined,
     },
-    { icon: Mail, label: t("contactEmail"), value: "info@parsenergyco.ir", href: "mailto:info@parsenergyco.ir", values: undefined },
+    { icon: Mail, label: t("contactEmail"), value: "info@parsaenergyco.ir", href: "mailto:info@parsaenergyco.ir", values: undefined },
     {
       icon: MapPin,
       label: t("contactOffice"),

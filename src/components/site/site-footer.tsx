@@ -111,7 +111,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-center gap-2.5 text-muted-foreground">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <a href="mailto:info@parsenergyco.ir" className="hover:text-primary" style={{ unicodeBidi: "plaintext" }}>info@parsenergyco.ir</a>
+                <a href="mailto:info@parsaenergyco.ir" className="hover:text-primary" style={{ unicodeBidi: "plaintext" }}>info@parsaenergyco.ir</a>
               </li>
               <li className="flex items-center gap-2.5 text-muted-foreground">
                 <Clock className="h-4 w-4 shrink-0 text-primary" />

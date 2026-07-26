@@ -45,4 +45,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://parsenergyco.ir/sitemap.xml
+Sitemap: http://parsaenergyco.ir/sitemap.xml

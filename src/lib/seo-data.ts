@@ -12,7 +12,7 @@ import { articles } from "./content";
 import { kbArticles } from "./kb-articles";
 import { jalaliStringToGregorian } from "./date-converter";
 
-const SITE_URL = "https://parsenergyco.ir";
+const SITE_URL = "http://parsaenergyco.ir";
 const LOGO_URL = `${SITE_URL}/parsa-energy-logo.png`;
 
 /** Organization + ProfessionalService. Knowledge-Graph ready. */
@@ -181,7 +181,7 @@ export const faqSchema = {
       name: "آدرس و شماره تماس پارسا انرژی چیست؟ / What is Parsa Energy's address and phone?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "آدرس: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول. تلفن‌های همراه: ۰۹۱۵۸۲۲۲۱۹۹ - ۰۹۱۵۸۲۲۲۱۹۸ - ۰۹۱۵۸۲۲۲۱۹۷. وب‌سایت: parsenergyco.ir. ساعات کاری: شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰. Address: Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor. Mobiles: +98 915 822 2199 / +98 915 822 2198 / +98 915 822 2197. Website: parsenergyco.ir. Hours: Sat–Wed, 8:00–14:00 and 17:00–20:00.",
+        text: "آدرس: مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول. تلفن‌های همراه: ۰۹۱۵۸۲۲۲۱۹۹ - ۰۹۱۵۸۲۲۲۱۹۸ - ۰۹۱۵۸۲۲۲۱۹۷. وب‌سایت: parsaenergyco.ir. ساعات کاری: شنبه تا چهارشنبه ۸-۱۴ و ۱۷-۲۰. Address: Mashhad, Hashemi Rafsanjani Highway, corner of Aqdasiyeh Blvd, 1st Floor. Mobiles: +98 915 822 2199 / +98 915 822 2198 / +98 915 822 2197. Website: parsaenergyco.ir. Hours: Sat–Wed, 8:00–14:00 and 17:00–20:00.",
       },
     },
   ],

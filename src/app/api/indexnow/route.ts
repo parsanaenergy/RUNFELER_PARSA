@@ -12,14 +12,14 @@ import { NextResponse } from "next/server";
  *
  * Usage:
  *   POST /api/indexnow
- *   body: { urls: ["https://parsenergyco.ir/", "https://parsenergyco.ir/#knowledge"] }
+ *   body: { urls: ["http://parsaenergyco.ir/", "http://parsaenergyco.ir/#knowledge"] }
  *
  * In production, wire this to a CMS publish/edit webhook so every new or
  * updated page is submitted within seconds.
  */
 
 const INDEXNOW_KEY = "bbc2330128da3f31c5a292a97f4bbd4c";
-const SITE_HOST = "https://parsenergyco.ir";
+const SITE_HOST = "http://parsaenergyco.ir";
 
 export async function POST(request: Request) {
   let body: { urls?: string[] };
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   // Submit to IndexNow
   try {
     const payload = {
-      host: "parsenergyco.ir",
+      host: "parsaenergyco.ir",
       key: INDEXNOW_KEY,
       keyLocation: `${SITE_HOST}/${INDEXNOW_KEY}.txt`,
       urlList: urls,
