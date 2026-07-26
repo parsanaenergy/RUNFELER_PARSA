@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SectionHeader } from "@/components/site/section-header";
 import { AnswerCapsule } from "@/components/site/answer-capsule";
-import { CalculatorsSection } from "@/components/site/calculators-section";
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -301,19 +301,7 @@ export default function BarghPillarPage() {
           </div>
         </section>
 
-        {/* Engineering Calculators Section */}
-        <section id="calculators" className="py-12 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <SectionHeader
-              badge="محاسبه‌گرهای آنلاین برق"
-              title="ابزارهای هوشمند محاسبات مهندسی برق"
-              description="محاسبه دقیق سایز کابل، افت ولتاژ، ظرفیت باتری و توان خورشیدی مورد نیاز در چند ثانیه"
-            />
-            <div className="mt-8">
-              <CalculatorsSection />
-            </div>
-          </div>
-        </section>
+
 
         {/* FAQ Section with JSON-LD backing */}
         <section className="container mx-auto px-4 py-16">
