@@ -7,6 +7,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://parsaenergyco.ir";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
+  // صفحات خدمات: /services/[slug] — هر خدمت یک URL مستقل دارد
   const serviceRoutes = services.map((s) => ({
     url: `${SITE_URL}/services/${s.slug}`,
     lastModified,
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // صفحات مقالات: /knowledge/[slug] — هر مقاله یک URL مستقل دارد
   const articleRoutes = kbArticles.map((a) => ({
     url: `${SITE_URL}/knowledge/${a.slug}`,
     lastModified: new Date(a.date) || lastModified,
@@ -22,67 +24,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
+    // صفحه اصلی — بالاترین اولویت
     {
       url: SITE_URL,
       lastModified,
       changeFrequency: "daily",
       priority: 1.0,
     },
+    // صفحه سیستم‌های برق اضطراری
     {
       url: `${SITE_URL}/bargh`,
       lastModified,
-      changeFrequency: "daily",
+      changeFrequency: "weekly",
       priority: 0.95,
     },
+    // صفحات خدمات مجزا (/services/[slug])
     ...serviceRoutes,
+    // صفحات مقالات دانشنامه (/knowledge/[slug])
     ...articleRoutes,
-    {
-      url: `${SITE_URL}/#services`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/#divisions`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/#products`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${SITE_URL}/#tools`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/#knowledge`,
-      lastModified,
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/#training`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${SITE_URL}/#about`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/#contact`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // توجه: anchor URLs (#services, #products, ...) حذف شدند —
+    // گوگل و بینگ anchor URLها را به عنوان صفحه مستقل index نمی‌کنند.
   ];
 }

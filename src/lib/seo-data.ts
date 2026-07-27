@@ -90,7 +90,11 @@ export const organizationSchema = {
   ],
 };
 
-/** WebSite with SearchAction — enables sitelinks search box + AI sitelinks. */
+/**
+ * WebSite schema — شناسایی سایت توسط موتورهای جستجو.
+ * SearchAction حذف شد چون صفحه /search وجود ندارد.
+ * اگر صفحه جستجو ساخته شد، potentialAction را اضافه کنید.
+ */
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -99,14 +103,6 @@ export const websiteSchema = {
   name: "پارسا انرژی | Parsa Energy",
   inLanguage: ["fa", "en"],
   publisher: { "@id": `${SITE_URL}/#organization` },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
 };
 
 /**
@@ -278,9 +274,10 @@ export function buildArticleSchemas(): object[] {
     });
   }
 
-  // Add articles from kb-articles.ts
+  // Add articles from kb-articles.ts — هر مقاله URL منحصربه‌فرد خودش را دارد
   for (const a of kbArticles) {
     const gregDate = jalaliStringToGregorian(a.date);
+    const articleUrl = `${SITE_URL}/knowledge/${a.slug}`;
     schemas.push({
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -298,9 +295,9 @@ export function buildArticleSchemas(): object[] {
       publisher: { "@id": `${SITE_URL}/#organization` },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/#knowledge`,
+        "@id": articleUrl,
       },
-      url: `${SITE_URL}/#knowledge`,
+      url: articleUrl,
     });
   }
 

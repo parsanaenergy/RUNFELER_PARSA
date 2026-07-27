@@ -13,7 +13,6 @@ import { TrustSignals } from "@/components/site/trust-signals";
 import { QuickContact } from "@/components/site/quick-contact";
 import { StickyCTA } from "@/components/site/sticky-cta";
 import { DivisionDetailPage } from "@/components/site/division-detail-page";
-import { ServerContentLayer } from "@/components/site/server-content-layer";
 import { KnowledgeCenterView } from "@/components/site/knowledge-center-view";
 import { ArticleReader } from "@/components/site/article-reader";
 import { divisions, type Division } from "@/lib/content";
@@ -175,7 +174,6 @@ export function HomeClient() {
         <AboutSection />
         <TrustSignals />
         <QuickContact />
-        <ServerContentLayer />
       </main>
       <SiteFooter />
       <StickyCTA />
