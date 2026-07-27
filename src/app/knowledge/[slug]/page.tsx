@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   const pageUrl = `${SITE_URL}/knowledge/${article.slug}`;
-  const title = `${article.title.fa} | دانشنامه پارسا انرژی`;
+  const title = article.title.fa;
   const description = `${article.excerpt.fa} مرجع تخصصی انرژی خورشیدی و تاسیسات مکانیکی در مشهد.`;
 
   return {

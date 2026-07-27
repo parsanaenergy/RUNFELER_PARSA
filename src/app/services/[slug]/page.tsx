@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
 
   const pageUrl = `${SITE_URL}/services/${service.slug}`;
-  const title = `${service.name.fa} در مشهد | خدمات پارسا انرژی`;
+  const title = `${service.name.fa} در مشهد`;
   const description = `${service.description.fa} مشاوره تخصصی، ضمانت معتبر و اجرای کامل در مشهد - الهیه.`;
 
   return {
