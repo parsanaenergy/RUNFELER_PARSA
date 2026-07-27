@@ -38,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+    // صفحه لیست دانشنامه
+    {
+      url: `${SITE_URL}/knowledge`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
     // صفحات خدمات مجزا (/services/[slug])
     ...serviceRoutes,
     // صفحات مقالات دانشنامه (/knowledge/[slug])

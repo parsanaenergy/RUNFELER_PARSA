@@ -95,7 +95,7 @@ export default async function KnowledgeArticlePage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "صفحه اصلی", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "دانشنامه", item: `${SITE_URL}/#knowledge` },
+      { "@type": "ListItem", position: 2, name: "دانشنامه پارسا انرژی", item: `${SITE_URL}/knowledge` },
       { "@type": "ListItem", position: 3, name: article.title.fa, item: pageUrl },
     ],
   };
@@ -125,7 +125,7 @@ export default async function KnowledgeArticlePage({ params }: Props) {
           <nav className="flex items-center gap-2 text-sm text-muted-foreground">
             <Link href="/" className="hover:text-primary transition-colors">صفحه اصلی</Link>
             <span>/</span>
-            <Link href="/#knowledge" className="hover:text-primary transition-colors">دانشنامه</Link>
+            <Link href="/knowledge" className="hover:text-primary transition-colors">دانشنامه</Link>
             <span>/</span>
             <span className="text-foreground font-medium truncate max-w-xs">{article.title.fa}</span>
           </nav>
