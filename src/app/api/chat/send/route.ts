@@ -27,15 +27,18 @@ export async function POST(req: Request) {
     addMessage(sessionId, newMessage);
 
     const adminChatId = process.env.ADMIN_BALE_CHAT_ID;
+    let baleStatus = null;
+
     if (adminChatId) {
       const pageInfo = pageUrl ? `📍 صفحه: ${pageUrl}\n` : "";
-      const baleText = `🟢 پیام جدید سایت\n${pageInfo}\n#${sessionId}\n\n💬 ${text}`;
-      await sendBaleMessage(adminChatId, baleText);
+      const baleText = `🟢 پیام جدید سایت\n${pageInfo}#${sessionId}\n\n💬 ${text}`;
+      baleStatus = await sendBaleMessage(adminChatId, baleText);
+      console.log("Bale Message Delivery Result:", baleStatus);
     } else {
-      console.warn("ADMIN_BALE_CHAT_ID environment variable is missing");
+      console.error("[Bale Error] ADMIN_BALE_CHAT_ID environment variable is missing.");
     }
 
-    return NextResponse.json({ ok: true, data: newMessage });
+    return NextResponse.json({ ok: true, data: newMessage, bale: baleStatus });
   } catch (error) {
     console.error("Error in /api/chat/send:", error);
     return NextResponse.json(
