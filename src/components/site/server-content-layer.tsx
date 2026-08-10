@@ -23,9 +23,7 @@ export function ServerContentLayer() {
     <section
       id="content-archive"
       aria-label="آرشیو محتوای کامل | Full content archive"
-      aria-hidden="true"
-      hidden
-      style={{ display: "none" }}
+      className="py-6"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h1 className="mb-2 text-2xl font-bold text-foreground">

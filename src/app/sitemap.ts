@@ -45,6 +45,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
+    // صفحه آرشیو کامل محتوای متنی سایت
+    {
+      url: `${SITE_URL}/content-archive`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     // صفحات خدمات مجزا (/services/[slug])
     ...serviceRoutes,
     // صفحات مقالات دانشنامه (/knowledge/[slug])
