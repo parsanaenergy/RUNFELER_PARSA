@@ -106,8 +106,9 @@ export default function LiveChat() {
         }),
       });
 
-      if (!res.ok) {
-        console.error("Failed to send message to /api/chat/send");
+      const data = await res.json();
+      if (!res.ok || !data.ok || (data.bale && data.bale.ok === false)) {
+        console.error("Response warning/error on /api/chat/send:", data);
       }
     } catch (err) {
       console.error("Error sending chat message:", err);

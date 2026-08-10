@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { addMessage, Message } from "@/lib/chatStore";
 import { sendBaleMessage } from "@/lib/bale";
 
+const DEFAULT_ADMIN_CHAT_ID = "5110958501";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -26,7 +28,7 @@ export async function POST(req: Request) {
 
     addMessage(sessionId, newMessage);
 
-    const adminChatId = process.env.ADMIN_BALE_CHAT_ID;
+    const adminChatId = process.env.ADMIN_BALE_CHAT_ID || DEFAULT_ADMIN_CHAT_ID;
     let baleStatus = null;
 
     if (adminChatId) {
@@ -35,14 +37,14 @@ export async function POST(req: Request) {
       baleStatus = await sendBaleMessage(adminChatId, baleText);
       console.log("Bale Message Delivery Result:", baleStatus);
     } else {
-      console.error("[Bale Error] ADMIN_BALE_CHAT_ID environment variable is missing.");
+      console.error("[Bale Error] ADMIN_BALE_CHAT_ID is missing.");
     }
 
     return NextResponse.json({ ok: true, data: newMessage, bale: baleStatus });
-  } catch (error) {
-    console.error("Error in /api/chat/send:", error);
+  } catch (error: any) {
+    console.error("Error in /api/chat/send:", error?.message || error);
     return NextResponse.json(
-      { ok: false, error: "Internal server error" },
+      { ok: false, error: error?.message || "Internal server error" },
       { status: 500 }
     );
   }
