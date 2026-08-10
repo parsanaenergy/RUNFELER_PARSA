@@ -70,8 +70,12 @@ export default function LiveChat() {
       }
     };
 
-    eventSource.onerror = (err) => {
-      console.error("SSE connection error:", err);
+    eventSource.onerror = () => {
+      // EventSource automatically reconnects on disconnects/network blips.
+      // Silently close if explicitly closed or let native browser auto-reconnect handle it.
+      if (eventSource.readyState === EventSource.CLOSED) {
+        eventSource.close();
+      }
     };
 
     return () => {
