@@ -106,9 +106,14 @@ export default function LiveChat() {
         }),
       });
 
-      const data = await res.json();
-      if (!res.ok || !data.ok || (data.bale && data.bale.ok === false)) {
-        console.error("Response warning/error on /api/chat/send:", data);
+      const contentType = res.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        const data = await res.json();
+        if (!res.ok || !data.ok || (data.bale && data.bale.ok === false)) {
+          console.error("Response warning/error on /api/chat/send:", data);
+        }
+      } else {
+        console.error(`Server returned non-JSON response (${res.status} ${res.statusText}) on /api/chat/send`);
       }
     } catch (err) {
       console.error("Error sending chat message:", err);
