@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const pageUrl = `${SITE_URL}/services/${service.slug}`;
   const title = `${service.name.fa} در مشهد`;
-  const description = `${service.description.fa} مشاوره تخصصی، ضمانت معتبر و اجرای کامل در مشهد - الهیه.`;
+  const description = service.description.fa;
 
   return {
     metadataBase: new URL(SITE_URL),

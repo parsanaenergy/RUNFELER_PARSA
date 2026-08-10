@@ -179,7 +179,7 @@ export const services: Service[] = [
     name: bi("طراحی و احداث نیروگاه خورشیدی", "Solar Power Plant Design & Construction"),
     tagline: bi("مهندسی کامل، تامین تجهیزات و اجرای کلیددردست نیروگاه‌های خورشیدی.", "Full engineering, equipment supply and turnkey installation of solar power plants."),
     description: bi(
-      "طراحی، تامین تجهیزات Tier-1 و اجرای کلیددردست نیروگاه‌های خورشیدی متصل به شبکه (آنگرید)، منفصل از شبکه (آفگرید) و هایبرید برای منازل، اصناف، صنایع، باغ و ویلا.",
+      "طراحی و احداث نیروگاه خورشیدی در مشهد؛ متصل به شبکه، هایبرید و آفگرید با استاندارد IEC 62446 و گارانتی ۲۵ ساله پنل Tier-1. دریافت پیش‌فاکتور رایگان.",
       "Design, supply of Tier-1 equipment and turnkey installation of grid-tied, off-grid and hybrid solar power plants for homes, businesses, industries, and villas."
     ),
     features: [
@@ -211,7 +211,7 @@ export const services: Service[] = [
     name: bi("طراحی و نصب سیستم تامین برق اضطراری", "Emergency Power Design & Installation"),
     tagline: bi("تامین برق بدون قطعی با سیستم‌های UPS، باتری و ژنراتور.", "Seamless backup power with UPS, battery and generator systems."),
     description: bi(
-      "طراحی، سایزینگ و نصب سیستم‌های برق اضطراری و پشتیبان هوشمند شامل دستگاه‌های UPS آنلاین، بانک‌های باتری لیتیمی و دیزل ژنراتورها مجهز به سوئیچ خودکار ATS برای صنایع، سازمان‌ها و منازل مسکونی.",
+      "طراحی و نصب سیستم برق اضطراری در مشهد؛ تامین توان بدون قطعی با UPS آنلاین، باتری LiFePO4 و دیزل ژنراتور مجهز به کلید خودکار ATS. استعلام قیمت روز.",
       "Design, sizing and installation of smart emergency backup systems including online UPS, lithium battery banks and diesel generators equipped with automatic ATS switches for industries, offices and homes."
     ),
     features: [
@@ -243,7 +243,7 @@ export const services: Service[] = [
     name: bi("تعمیرات پکیج شوفاژ دیواری و کولرگازی", "Wall Radiator & AC Repair"),
     tagline: bi("سرویس دوره‌ای، عیب‌یابی سریع و رفع خرابی تاسیسات در محل.", "Periodic service, fast diagnostics and on-site HVAC troubleshooting."),
     description: bi(
-      "خدمات تخصصی سرویس و تعمیر پکیج‌های دیواری (تمام برندها)، کولرهای گازی اسپلیت، شارژ گاز مبرد، سرویس دوره‌ای سالانه، نشت‌یابی و ارتقای کارایی سیستم‌های گرمایشی و سرمایشی در مشهد.",
+      "تعمیر پکیج و کولر گازی در مشهد؛ عیب‌یابی سریع در محل، رسوب‌زدایی، نشت‌یابی مبرد و سرویس دوره‌ای با قطعات اصلی و ضمانت کتبی. درخواست اعزام تکنسین.",
       "Specialized servicing and repair of wall packages (all brands), split air conditioners, refrigerant recharge, annual service, leak detection and HVAC efficiency improvements in Mashhad."
     ),
     features: [
@@ -275,7 +275,7 @@ export const services: Service[] = [
     name: bi("تعمیرات تخصصی بردهای الکترونیکی", "Specialized Electronic Board Repair"),
     tagline: bi("تعمیر در سطح قطعه انواع بردهای صنعتی، اینورترها و تجهیزات تهویه.", "Component-level repair of industrial boards, inverters and HVAC controls."),
     description: bi(
-      "تعمیرات فوق‌تخصصی سخت‌افزاری بردهای الکترونیکی در سطح قطعه (SMD) شامل بردهای اینورترهای خورشیدی، بردهای پکیج‌های دیواری و کولرهای گازی، درایورها و کارت‌های صنعتی با تجهیزات تست پیشرفته.",
+      "تعمیر برد الکترونیکی در مشهد؛ عیب‌یابی با اسیلوسکوپ در سطح قطعه SMD، اینورتر خورشیدی و پکیج، ۴۰ تا ۷۰٪ ارزان‌تر از تعویض با گارانتی. مشاوره تخصصی.",
       "Specialized component-level hardware repair (SMD) of electronic boards including solar inverters, wall packages, air conditioners, drivers and industrial cards with advanced testing equipment."
     ),
     features: [

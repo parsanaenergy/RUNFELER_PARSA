@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const pageUrl = `${SITE_URL}/knowledge/${article.slug}`;
   const title = article.title.fa;
-  const description = `${article.excerpt.fa} مرجع تخصصی انرژی خورشیدی و تاسیسات مکانیکی در مشهد.`;
+  const description = article.excerpt.fa;
 
   return {
     metadataBase: new URL(SITE_URL),

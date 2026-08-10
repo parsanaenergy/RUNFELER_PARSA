@@ -39,7 +39,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "انتخاب سیستم گرمایشی و سرمایشی مناسب به سه عامل بستگی دارد: اقلیم منطقه، مساحت فضا و بودجه. برای مناطق سردسیر، پکیج دیواری + رادیاتور بهترین گزینه گرمایشی است. برای سرمایش، کولر گازی برای فضاهای کوچک و داکت اسپیلت برای فضاهای بزرگ یا چند منظوره پیشنهاد می‌شود.",
+      fa: "راهنمای انتخاب سیستم گرمایشی و سرمایشی؛ مقایسه پکیج، رادیاتور، کولر گازی و داکت اسپلیت همراه با راهکار ۳۰٪ کاهش مصرف برق اینورتر. مشاوره تخصصی خرید.",
       en: "Choosing the right heating/cooling system depends on three factors: climate, space size, and budget. For cold regions, wall package + radiator is the best heating option. For cooling, split AC suits small spaces and ducted split suits large or multi-zone spaces.",
     },
     readTime: { fa: "۷ دقیقه", en: "7 min" },
@@ -68,7 +68,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "رادیاتور شوفاژ گرمایی یکنواخت و مطبوع ارائه می‌دهد و با پکیج دیواری ترکیب می‌شود. مزیت اصلی آن دوام بالا (۲۰+ سال) و عدم خشکی هوا است. عیب اصلی آن نیاز به لوله‌کشی، فضای اشغال‌شده روی دیوار و گرم‌شدن کندتر نسبت به زنت است.",
+      fa: "بررسی کامل مزایا و معایب رادیاتور شوفاژ؛ دوام ۲۰ تا ۳۰ ساله و گرمای یکنواخت در کنار زمان گرم‌شدن ۱۵ تا ۳۰ دقیقه‌ای و لوله‌کشی اولیه. مشاوره خرید.",
       en: "Heating radiators provide even, comfortable heat and pair with wall packages. Main pros: long life (20+ years) and no air drying. Main cons: need piping, wall space, and slower warm-up than fan heaters.",
     },
     readTime: { fa: "۵ دقیقه", en: "5 min" },
@@ -95,7 +95,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "کولر گازی (اسپلیت) سرمایش سریع، نصب آسان و قیمت مناسب دارد. مزیت اصلی اینورتر دار بودن (کاهش ۳۰٪ مصرف برق) و بی‌صدایی است. عیب اصلی آن مصرف برق بالا در مدل‌های غیراینورتر، نیاز به شارژ گاز دوره‌ای و عدم تهویه هوای تازه است.",
+      fa: "تحلیل مزایا و معایب کولر گازی اسپلیت؛ سرمایش ۵ دقیقه‌ای، کاهش ۳۰٪ مصرف برق با تکنولوژی اینورتر و شارژ گاز هر ۲ تا ۳ سال. دریافت مشاوره انتخاب ظرفیت.",
       en: "Split AC offers fast cooling, easy installation and good price. Main pros: inverter (30% less power) and quiet operation. Main cons: high power use in non-inverter models, periodic gas recharge, and no fresh air ventilation.",
     },
     readTime: { fa: "۶ دقیقه", en: "6 min" },
@@ -124,7 +124,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "زنت (پنکه گرمکن) گرمایش سریع و نقطه‌ای با قیمت پایین ارائه می‌دهد. مزیت اصلی آن گرم‌شدن فوری (۱ تا ۲ دقیقه) و عدم نیاز به لوله‌کشی است. عیب اصلی آن خشکی هوا، مصرف برق بالا و عدم گرمایش یکنواخت کل فضا است.",
+      fa: "بررسی مزایا و معایب سیستم زنت؛ گرمایش نقطه‌ای در ۱ تا ۲ دقیقه بدون لوله‌کشی در مقابل مصرف برق ۲ کیلوواتی و ایجاد خشکی هوا. مشاوره خرید تاسیسات منزل.",
       en: "Zent (fan heater) provides fast, spot heating at low cost. Main pros: instant heat (1-2 min) and no piping needed. Main cons: air drying, high power use, and no even whole-space heating.",
     },
     readTime: { fa: "۴ دقیقه", en: "4 min" },
@@ -151,7 +151,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "زنت (پنکه گرمکن) دستگاه گرمایشی برقی است که با عبور هوا از روی المان گرم‌کننده، گرمای فوری تولید می‌کند. زنت برای گرمایش موقت و نقطه‌ای مناسب است و در مدل‌های دیواری، پایه‌دار و قابل‌حمل موجود است.",
+      fa: "شناخت کامل سیستم زنت و نحوه کارکرد آن؛ تولید گرمای فوری در ۱ تا ۲ دقیقه با المان ۱۵۰۰ تا ۳۰۰۰ وات برقی و مقایسه با شوفاژ خانگی. استعلام قیمت تجهیزات.",
       en: "A Zent (fan heater) is an electric heating device that produces instant heat by passing air over a heating element. Zent suits temporary, spot heating and comes in wall-mounted, floor-standing, and portable models.",
     },
     readTime: { fa: "۳ دقیقه", en: "3 min" },
@@ -176,7 +176,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "داکت اسپیلت سیستم سرمایش و گرمایش مرکزی است که با یک یونیت بیرونی و یک یونیت داخلی (مخفی در سقف کاذب)، هوای مطبوع را از طریق کانال‌ها به چندین اتاق می‌رساند. داکت اسپیلت برای ویلاها، آپارتمان‌های بزرگ و فضاهای تجاری مناسب است.",
+      fa: "بررسی کامل سیستم داکت اسپلیت؛ سرمایش و گرمایش مرکزی مخفی در سقف کاذب برای متراژهای بالای ۱۵۰ متر با ۲ تا ۳ برابر هزینه کولر گازی. مشاوره مهندسی طرح.",
       en: "A ducted split is a central heating/cooling system with one outdoor unit and one indoor unit (hidden in false ceiling) that delivers conditioned air through ducts to multiple rooms. Suits villas, large apartments, and commercial spaces.",
     },
     readTime: { fa: "۵ دقیقه", en: "5 min" },
@@ -207,7 +207,7 @@ export const kbArticles: KB_article[] = [
     category: "solar",
     categoryLabel: { fa: "خورشیدی", en: "Solar" },
     excerpt: {
-      fa: "برای مقابله با قطعی برق شبکه سراسری، سه راهکار اصلی وجود دارد: ۱. UPS برای بارهای حساس کوتاه‌مدت (کامپیوتر، یخچال)، ۲. دیزل ژنراتور برای برق‌رسانی طولانی‌مدت، ۳. نیروگاه خورشیدی هایبرید با باتری برای راه‌حل دائمی و اقتصادی. ترکیب این سه بهترین تاب‌آوری را تضمین می‌کند.",
+      fa: "ارزیابی راهکارهای مقابله با قطعی برق شبکه؛ مقایسه UPS آنلاین، دیزل ژنراتور و نیروگاه خورشیدی هایبرید با بازگشت سرمایه ۴ تا ۶ سال. استعلام قیمت روز.",
       en: "For national grid outages, three main solutions: 1. UPS for short-duration critical loads (computer, fridge), 2. Diesel generator for long-duration power, 3. Hybrid solar plant with battery for a permanent, economical solution. Combining all three ensures best resilience.",
     },
     readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -238,7 +238,7 @@ export const kbArticles: KB_article[] = [
     category: "news",
     categoryLabel: { fa: "اخبار و قوانین", en: "News & Laws" },
     excerpt: {
-      fa: "احداث نیروگاه خورشیدی در سال ۱۴۰۵ با تعرفه‌های خرید تضمینی ساتبا، کاهش قیمت پنل و تابش بالای ایران، توجیه اقتصادی بالایی دارد. برای یک نیروگاه ۱۰ کیلوواتی متصل به شبکه، بازگشت سرمایه ۴ تا ۵ سال و IRR حدود ۱۸ تا ۲۲ درصد پیش‌بینی می‌شود. با خرید تضمینی برق، درآمد ماهانه پایدار ایجاد می‌شود.",
+      fa: "بررسی توجیه اقتصادی نیروگاه خورشیدی ۱۰ کیلوواتی در سال ۱۴۰۵؛ نرخ IRR سالانه ۱۸ تا ۲۲ درصد با بازگشت سرمایه ۴ تا ۵ سال و عمر ۲۵ ساله پنل. مشاوره خرید.",
       en: "Solar plants in 1405 have strong economic justification thanks to SATBA guaranteed purchase tariffs, falling panel prices, and Iran's high solar irradiation. A 10 kW grid-tied plant has 4-5 year payback and ~18-22% IRR. Guaranteed purchase creates stable monthly income.",
     },
     readTime: { fa: "۱۰ دقیقه", en: "10 min" },
@@ -269,7 +269,7 @@ export const kbArticles: KB_article[] = [
     category: "news",
     categoryLabel: { fa: "اخبار و قوانین", en: "News & Laws" },
     excerpt: {
-      fa: "تعرفه خرید تضمینی برق خورشیدی توسط ساتبا (سازمان انرژی‌های تجدیدپذیر و بهره‌وری انرژی ایران) تعیین می‌شود. این تعرفه برای نیروگاه‌های کشوری و خانگی متفاوت است و هر سال توسط هیئت وزیران تصویب می‌شود. برای اطلاع از تعرفه دقیق روز، باید با ساتبا استعلام کنید.",
+      fa: "راهنمای تعرفه خرید تضمینی برق خورشیدی ۱۴۰۵ ساتبا؛ شرایط قرارداد ۲۰ ساله خرید تضمینی برای نیروگاه‌های زیر ۱ مگاوات و نحوه اتصال به شبکه. استعلام روز.",
       en: "Guaranteed solar purchase tariffs are set by SATBA (Renewable Energy and Energy Efficiency Organization of Iran). Tariffs differ for utility-scale and residential plants and are approved annually by the cabinet. Contact SATBA for current rates.",
     },
     readTime: { fa: "۶ دقیقه", en: "6 min" },
@@ -296,7 +296,7 @@ export const kbArticles: KB_article[] = [
     category: "news",
     categoryLabel: { fa: "اخبار و قوانین", en: "News & Laws" },
     excerpt: {
-      fa: "از سال ۱۳۹۹، فروش برق نیروگاه‌های تجدیدپذیر در بورس انرژی ایران مجاز شده است. نیروگاه‌های بالای ۱ مگاوات می‌توانند برق خود را به‌جای تعرفه تضمینی، در بورس با قیمت بازار بفروشند. این کار ریسک قیمت دارد ولی در زمان پیک، درآمد بالاتری ایجاد می‌کند.",
+      fa: "قوانین فروش برق خورشیدی در بورس انرژی؛ شرایط ورود نیروگاه‌های بالای ۱ مگاوات با قیمت ۲ تا ۳ برابر تعرفه تضمینی در پیک تابستان. دریافت پکیج مشاوره.",
       en: "Since 1399 (2020), selling renewable electricity on the Iran Energy Exchange is allowed. Plants above 1 MW can sell at market price instead of guaranteed tariff. This has price risk but higher revenue during peak.",
     },
     readTime: { fa: "۷ دقیقه", en: "7 min" },
@@ -323,7 +323,7 @@ export const kbArticles: KB_article[] = [
     category: "solar",
     categoryLabel: { fa: "خورشیدی", en: "Solar" },
     excerpt: {
-      fa: "سه راه اصلی درآمد از انرژی خورشیدی: ۱. فروش برق به شبکه (تعرفه تضمینی یا بورس). ۲. صرفه‌جویی در قبض برق با مصرف خود. ۳. اجاره بام به سرمایه‌گذار. برای منزل، ترکیب مصرف خود + فروش مازاد بهترین راه است. برای زمین کشاورزی، نیروگاه ۱۰۰+ کیلوواتی درآمد قابل‌توجه ایجاد می‌کند.",
+      fa: "روش‌های درآمدزایی از نیروگاه خورشیدی؛ کاهش تا ۸۰ درصدی قبض برق با سیستم ۵ کیلوواتی و فروش برق با قرارداد ۲۰ ساله ساتبا یا اجاره بام. مشاوره رایگان.",
       en: "Three main solar income paths: 1. Sell power to grid (guaranteed tariff or exchange). 2. Save on bills via self-consumption. 3. Rent roof to investor. For homes, combine self-use + sell surplus. For farmland, 100+ kW plants generate significant income.",
     },
     readTime: { fa: "۹ دقیقه", en: "9 min" },
@@ -357,7 +357,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "پمپ حرارتی با یک دستگاه هم گرمایش می‌دهد هم سرمایش؛ ۶۰ تا ۷۰ درصد مصرف گاز و برق را کاهش می‌دهد و در شرایط تورم انرژی ایران بهترین جایگزین برای پکیج و کولر گازی است.",
+      fa: "پمپ حرارتی با COP بین ۳ تا ۴، گرمایش و سرمایش در یک دستگاه؛ کاهش ۶۰ تا ۷۰ درصدی قبض گاز و برق با بازگشت سرمایه ۲ تا ۳ سال در مشهد. دریافت مشاوره فنی.",
       en: "A heat pump provides both heating and cooling in one unit, cuts gas and electricity bills by 60–70%, and is the best replacement for package heaters and split ACs in Iran's high-energy-cost era."
     },
     readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -456,7 +456,7 @@ export const kbArticles: KB_article[] = [
     category: "solar",
     categoryLabel: { fa: "خورشیدی", en: "Solar" },
     excerpt: {
-      fa: "ذخیره‌ساز انرژی خانگی یک بانک باتری هوشمند است که در ساعات پیک یا قطعی، برق خانه را تأمین می‌کند. در شرایط قطعی‌های برنامه‌ریزی‌شده ۱۴۰۵، این سیستم به یک ضرورت برای هر خانه‌ای تبدیل شده است.",
+      fa: "ذخیره‌ساز انرژی خانگی LiFePO4 با ۴۰۰۰ تا ۶۰۰۰ سیکل و عمر ۱۰ تا ۱۵ سال؛ تأمین برق ۴ تا ۸ ساعت در قطعی‌های برنامه‌ریزی‌شده شبکه. دریافت پیش‌فاکتور خرید.",
       en: "Home energy storage is a smart battery bank that powers your home during peak hours or outages. With Iran's 2025 rolling blackouts, it has become a necessity for every household."
     },
     readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -555,7 +555,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "چیلر جذبی به جای برق، با گاز یا حرارت کار می‌کند و در پیک تابستانه که شبکه برق دچار ناترازی است، بهترین راهکار سرمایش برای ویلاها، مجتمع‌ها و فروشگاه‌های بزرگ است.",
+      fa: "مزایای چیلر جذبی گازی؛ ۹۰ تا ۹۵٪ کاهش مصرف برق نسبت به چیلر تراکمی با عمر ۲۰ تا ۲۵ سال و بازگشت سرمایه ۱۸ تا ۳۰ ماهه در پروژه‌ها. مشاوره طراحی تخصصی.",
       en: "An absorption chiller runs on gas or heat instead of electricity — the best cooling solution for villas, complexes, and large stores during summer peak when the grid is overloaded."
     },
     readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -654,7 +654,7 @@ export const kbArticles: KB_article[] = [
     category: "hvac",
     categoryLabel: { fa: "تاسیسات", en: "HVAC" },
     excerpt: {
-      fa: "بیش از ۴۰ درصد هدررفت انرژی در ساختمان‌های ایران از عایق‌نبودن نما، سقف و پنجره‌ها ناشی می‌شود. عایق‌بندی حرارتی با هزینه‌ای معقول، بازگشت سرمایه زیر ۲ سال و کاهش چشمگیر قبض، ضروری‌ترین سرمایه‌گذاری انرژی هر خانه‌ای است.",
+      fa: "عایق‌بندی حرارتی ساختمان با کاهش ۴۰ درصدی قبض گاز و برق؛ عایق‌بندی سقف، نما و پنجره دوجداره با بازگشت سرمایه زیر ۲ سال. درخواست ممیزی انرژی رایگان.",
       en: "Over 40% of energy loss in Iranian buildings comes from uninsulated facades, roofs, and windows. Thermal insulation offers sub-2-year payback and dramatic bill reduction — the most essential energy investment for any home."
     },
     readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -753,7 +753,7 @@ export const kbArticles: KB_article[] = [
     category: "news",
     categoryLabel: { fa: "اخبار و قوانین", en: "News" },
     excerpt: {
-      fa: "در شرایط تورم ۴۰ درصدی، سرمایه‌گذاری در نیروگاه خورشیدی با خرید تضمینی برق ساتبا، بازگشت سرمایه ۱۸ تا ۲۲ درصد در سال دارد； بالاتر از طلا، دلار، مسکن و بورس. این مقاله همه گزینه‌ها را مقایسه می‌کند.",
+      fa: "مقایسه سرمایه‌گذاری در نیروگاه خورشیدی با طلا و دلار؛ IRR سالانه ۱۸ تا ۲۲ درصد با بازگشت سرمایه ۴ تا ۵ سال و قرارداد ۲۰ ساله ساتبا. مشاوره سرمایه‌گذاری.",
       en: "At 40% inflation, solar plant investment with SATBA guaranteed purchase delivers 18–22% annual returns — higher than gold, USD, real estate, and the stock market. This article compares all options."
     },
     readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -855,7 +855,7 @@ export const kbArticles: KB_article[] = [
   category: "solar",
   categoryLabel: { fa: "خورشیدی", en: "Solar" },
   excerpt: {
-    fa: "ترکیب ماینینگ با نیروگاه خورشیدی متصل به شبکه، مشکل مصرف برق و قطعی ماینرها را حل می‌کند و یک منبع درآمد دلاری قانونی با بازگشت سرمایه ۱۸ تا ۲۴ ماه ایجاد می‌کند.",
+    fa: "استخراج ارز دیجیتال با نیروگاه خورشیدی متصل به شبکه؛ بازگشت سرمایه ۱۸ تا ۲۴ ماه، درآمد دلاری قانونی و حل مشکل قطعی برق ماینر. استعلام پیش‌فاکتور.",
     en: "Combining crypto mining with a grid-tied solar plant solves miners' power and outage problems, creating a legal USD-denominated income stream with 18–24 month payback."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -958,7 +958,7 @@ export const kbArticles: KB_article[] = [
   category: "solar",
   categoryLabel: { fa: "خورشیدی", en: "Solar" },
   excerpt: {
-    fa: "سایبان خورشیدی پارکینگ با نصب پنل روی ساختار سایبان، هم خودروها را از آفتاب و باران محافظت می‌کند، هم برق تولید می‌کند، هم درآمد ایجاد می‌کند. یک سرمایه‌گذاری سه‌گانه برای مجتمع‌های تجاری و اداری.",
+    fa: "احداث سایبان خورشیدی پارکینگ با ۳ مزیت همزمان: سایه خودرو، تولید برق و درآمد فروش؛ بازگشت سرمایه ۳ تا ۶ سال برای مجتمع‌ها. درخواست پیش‌فاکتور طرح.",
     en: "A solar carport installs panels on shade structures, protecting vehicles from sun and rain while generating power and income. A triple-benefit investment for commercial and office complexes."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1061,7 +1061,7 @@ export const kbArticles: KB_article[] = [
   category: "hvac",
   categoryLabel: { fa: "تاسیسات", en: "HVAC" },
   excerpt: {
-    fa: "نصب اینورتر صنعتی (VFD) روی پمپ‌ها، فن‌ها و کمپرسورها می‌تواند ۳۰ تا ۵۰ درصد مصرف برق صنایع را کاهش دهد. با بازگشت سرمایه زیر یک سال، VFD بزرگترین فرصت صرفه‌جویی انرژی در صنایع ایران است.",
+    fa: "نصب اینورتر صنعتی VFD روی پمپ، فن و کمپرسور کارخانجات؛ کاهش ۳۰ تا ۵۰ درصدی قبض برق صنعتی با بازگشت سرمایه زیر یک سال. دریافت مشاوره انتخاب درایو.",
     en: "Installing industrial VFDs on pumps, fans, and compressors can cut factory electricity use by 30–50%. With sub-one-year payback, VFDs are the biggest energy-saving opportunity in Iranian industry."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1164,7 +1164,7 @@ export const kbArticles: KB_article[] = [
   category: "hvac",
   categoryLabel: { fa: "تاسیسات", en: "HVAC" },
   excerpt: {
-    fa: "سیستم VRF با یک یونیت بیرونی، ده‌ها یونیت داخلی مستقل را کنترل می‌کند. برای ساختمان‌های بزرگ که کنترل مستقل هر فضا مهم است، VRF جایگزین مدرن داکت اسپلیت و چیلر-فن‌کویل است.",
+    fa: "طراحی سیستم VRF برای برج‌ها، هتل‌ها و بیمارستان‌ها؛ کنترل مستقل دما با COP تا ۵.۵ و صرفه‌جویی ۲۵ تا ۳۵ درصدی نسبت به چیلر. دریافت مشاوره مهندسی پروژه.",
     en: "A VRF system controls dozens of independent indoor units with one outdoor unit. For large buildings needing independent space control, VRF is the modern replacement for ducted splits and chiller-fan coil systems."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1267,7 +1267,7 @@ export const kbArticles: KB_article[] = [
   category: "solar",
   categoryLabel: { fa: "خورشیدی", en: "Solar" },
   excerpt: {
-    fa: "آب شیرین‌کن خورشیدی (RO + PV) با ترکیب اسمز معکوس و پنل خورشیدی، آب شور چاه یا دریا را به آب شرب تبدیل می‌کند. برای بندرعباس، چابهار و کویر، یک راهکار پایدار و اقتصادی است.",
+    fa: "طراحی آب‌شیرین‌کن خورشیدی برای زمین‌های کشاورزی و ویلاها؛ تولید ۵ تا ۵۰ مترمکعب آب شیرین در روز با کاهش ۸۰٪ هزینه‌ها. دریافت استعلام پیش‌فاکتور مهندسی.",
     en: "Solar water desalination (RO + PV) combines reverse osmosis with solar panels to convert brackish well or seawater into drinking water. A sustainable, economic solution for Bandar Abbas, Chabahar, and desert regions."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1369,7 +1369,7 @@ export const kbArticles: KB_article[] = [
   category: "solar",
   categoryLabel: { fa: "خورشیدی", en: "Solar" },
   excerpt: {
-    fa: "سالانه ۳۰ درصد محصولات کشاورزی ایران در خشک‌کردن سنتی هدر می‌رود. خشک‌کن خورشیدی با کنترل دما و رطوبت، هم کیفیت محصول را بالا می‌برد هم اشتغال‌زایی روستایی ایجاد می‌کند.",
+    fa: "طراحی خشک‌کن خورشیدی محصولات کشاورزی و زعفران؛ خشک‌سازی ۳ تا ۵ برابر سریع‌تر با صفر درصد هزینه سوخت و حفظ کیفیت صادراتی. استعلام قیمت روز تجهیزات.",
     en: "Each year 30% of Iran's agricultural products are lost in traditional drying. Solar dryers with controlled temperature and humidity boost product quality and create rural employment."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1472,7 +1472,7 @@ export const kbArticles: KB_article[] = [
   category: "news",
   categoryLabel: { fa: "اخبار و قوانین", en: "News" },
   excerpt: {
-    fa: "بانک صنعت و معدن، بانک مهر و صندوق نوآوری و شکوفایی تسهیلات کم‌بهره ۲۰ تا ۵۰ میلیارد تومانی برای نیروگاه خورشیدی ارائه می‌دهند. این راهنما تمام مراحل دریافت را گام‌به‌گام توضیح می‌دهد.",
+    fa: "راهنمای دریافت وام ۲۰ تا ۵۰ میلیارد تومانی نیروگاه خورشیدی از بانک صنعت و معدن و صندوق نوآوری با سود ۵ تا ۱۲٪ و تنفس ۲ ساله. دریافت مشاوره بانکی.",
     en: "Bank of Industry and Mine, Mehr Bank, and the Innovation and Prosperity Fund offer low-interest 20–50 billion toman facilities for solar plants. This guide explains every step."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1575,7 +1575,7 @@ export const kbArticles: KB_article[] = [
   category: "news",
   categoryLabel: { fa: "اخبار و قوانین", en: "News" },
   excerpt: {
-    fa: "نیروگاه خورشیدی یک سرمایه ۳۰۰ میلیون تا چند میلیارد تومانی است که در فضای باز قرار دارد. بیمه تخصصی خورشیدی، ریسک‌های حریق، سرقت، خرابی، اختلال تولید و مسئولیت را پوشش می‌دهد.",
+    fa: "راهنمای بیمه نیروگاه خورشیدی با هزینه ۰.۳ تا ۰.۸٪ ارزش تجهیزات در سال؛ پوشش کامل حریق، سرقت، طوفان و خسارت افت تولید. دریافت مشاوره انتخاب بیمه‌نامه.",
     en: "A solar plant is a 300 million to multi-billion toman asset exposed outdoors. Specialized solar insurance covers fire, theft, damage, business interruption, and liability risks."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1678,7 +1678,7 @@ export const kbArticles: KB_article[] = [
   category: "news",
   categoryLabel: { fa: "اخبار و قوانین", en: "News" },
   excerpt: {
-    fa: "صنایع صادراتی ایران برای ورود به بازارهای اروپایی و بین‌المللی به گواهینامه ISO 50001 نیاز دارند. ممیزی انرژی اولین گام است و می‌تواند ۱۰ تا ۲۰ درصد مصرف انرژی را کاهش دهد.",
+    fa: "خدمات ممیزی انرژی و اخذ گواهی ISO 50001 کارخانه‌ها؛ کاهش ۱۰ تا ۲۰ درصدی مصرف انرژی صنایع با بازگشت سرمایه زیر ۲ سال. دریافت پکیج کامل مشاوره رایگان.",
     en: "Iranian export industries need ISO 50001 certification to enter European and international markets. Energy auditing is the first step and can cut energy use 10–20%."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
@@ -1781,7 +1781,7 @@ export const kbArticles: KB_article[] = [
   category: "news",
   categoryLabel: { fa: "اخبار و قوانین", en: "News" },
   excerpt: {
-    fa: "سیستم مدیریت انرژی هوشمند با IoT و هوش مصنوعی، مصرف برق، گاز و آب را به طور لحظه‌ای پایش می‌کند و با تشخیص الگوها، ۱۰ تا ۲۵ درصد صرفه‌جویی ایجاد می‌کند. یک داشبورد در موبایل، کل سازمان را کنترل می‌کند.",
+    fa: "سیستم مدیریت انرژی هوشمند با IoT؛ مانیتورینگ لحظه‌ای پارامترها با صرفه‌جویی ۱۵ تا ۲۵ درصدی در مصرف و بازگشت سرمایه ۶ تا ۱۲ ماهه. مشاوره اجرای پروژه.",
     en: "A smart Energy Management System with IoT and AI monitors electricity, gas, and water use in real-time and identifies patterns for 10–25% savings. A mobile dashboard controls the entire organization."
   },
   readTime: { fa: "۸ دقیقه", en: "8 min" },
