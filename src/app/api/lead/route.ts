@@ -1,24 +1,16 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { sendBaleMessage } from "@/lib/bale";
 
-/**
- * Lead capture endpoint.
- * Validates and accepts lead submissions from the contact form and all
- * lead-gen CTAs across the site. In production this would forward to a CRM
- * (HubSpot/Salesforce) or persist to the database — here we validate and
- * acknowledge so the UX is fully functional.
- */
+const DEFAULT_ADMIN_CHAT_ID = "5110958501";
 
 const schema = z.object({
   name: z.string().min(2).max(120),
-  email: z.string().email().max(160),
+  email: z.string().email().max(160).optional().or(z.literal("")),
   phone: z.string().min(6).max(40),
-  purpose: z.string().min(1).max(60),
-  message: z.string().min(10).max(4000),
+  purpose: z.string().min(1).max(100).optional(),
+  message: z.string().min(1).max(4000).optional(),
 });
-
-// In-memory store for demo purposes (would be DB/CRM in production)
-const leads: Array<z.infer<typeof schema> & { receivedAt: string }> = [];
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -36,13 +28,18 @@ export async function POST(request: Request) {
     );
   }
 
-  const lead = { ...parsed.data, receivedAt: new Date().toISOString() };
-  leads.push(lead);
-  console.log("[lead] new submission:", lead.purpose, lead.email);
+  const data = parsed.data;
+  console.log("[lead] new submission:", data.name, data.phone);
+
+  const adminChatId = process.env.ADMIN_BALE_CHAT_ID || DEFAULT_ADMIN_CHAT_ID;
+  if (adminChatId) {
+    const text = `📥 **درخواست جدید مشاوره در سایت**\n\n👤 **نام:** ${data.name}\n📞 **شماره تماس:** ${data.phone}${data.purpose ? `\n📋 **موضوع:** ${data.purpose}` : ""}${data.message ? `\n💬 **پیام:** ${data.message}` : ""}`;
+    await sendBaleMessage(adminChatId, text);
+  }
 
   return NextResponse.json({ ok: true, message: "Lead received" }, { status: 201 });
 }
 
 export async function GET() {
-  return NextResponse.json({ ok: true, count: leads.length });
+  return NextResponse.json({ ok: true, status: "Lead endpoint active" });
 }
