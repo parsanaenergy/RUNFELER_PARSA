@@ -29,6 +29,13 @@ export default function LiveChat() {
     }
   }, [isOpen]);
 
+  // Global listener for open_live_chat event
+  useEffect(() => {
+    const handleOpenChat = () => setIsOpen(true);
+    window.addEventListener("open_live_chat", handleOpenChat);
+    return () => window.removeEventListener("open_live_chat", handleOpenChat);
+  }, []);
+
   // Persistent browser session ID
   useEffect(() => {
     let savedId = localStorage.getItem("parsa_chat_session_id");

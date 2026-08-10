@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, Phone, Sun, MessageSquare, ChevronDown } from "lucide-react";
-import { openGoftinoChat } from "@/lib/goftino";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from "@/components/ui/sheet";
 import { ThemeToggle } from "./theme-toggle";
@@ -242,7 +241,11 @@ export function SiteHeader({
             <ThemeToggle />
           </div>
           <Button
-            onClick={openGoftinoChat}
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new Event("open_live_chat"));
+              }
+            }}
             variant="outline"
             className="hidden md:inline-flex border-primary/20 hover:bg-primary/5"
           >
@@ -337,7 +340,12 @@ export function SiteHeader({
                 </SheetClose>
                 <SheetClose asChild>
                   <Button
-                    onClick={() => { openGoftinoChat(); setMobileOpen(false); }}
+                    onClick={() => {
+                      if (typeof window !== "undefined") {
+                        window.dispatchEvent(new Event("open_live_chat"));
+                      }
+                      setMobileOpen(false);
+                    }}
                     variant="outline"
                     className="w-full border-primary/20"
                   >
