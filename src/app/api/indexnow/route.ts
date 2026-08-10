@@ -15,7 +15,7 @@ import { NextResponse } from "next/server";
  *   POST /api/indexnow body: { urls: ["https://parsaenergyco.ir/bargh"] }
  */
 
-const INDEXNOW_KEY = "bbc2330128da3f31c5a292a97f4bbd4c";
+const INDEXNOW_KEY = "a3cd899b637b46808712900f2ae15062";
 const SITE_HOST = "https://parsaenergyco.ir";
 const HOSTNAME = "parsaenergyco.ir";
 
@@ -51,6 +51,7 @@ export async function GET(request: Request) {
     : [
         `${SITE_HOST}/`,
         `${SITE_HOST}/bargh`,
+        `${SITE_HOST}/content-archive`,
         `${SITE_HOST}/services/solar-plant-design-construction`,
         `${SITE_HOST}/services/emergency-power-design-install`,
         `${SITE_HOST}/services/hvac-repair-service`,
