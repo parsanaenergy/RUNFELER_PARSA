@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LangProvider } from "@/components/lang-provider";
 import { StructuredData } from "@/components/structured-data";
+import LiveChat from "@/components/LiveChat";
 
 // NOTE: فونت‌ها از CDN در زمان اجرا لود می‌شوند (نه در زمان build)
 // تا مشکل عدم دسترسی سرور build ایران به Google Fonts برطرف شود.
@@ -102,6 +103,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LangProvider>
             {children}
+            <LiveChat />
             <Toaster />
           </LangProvider>
         </ThemeProvider>
