@@ -7,6 +7,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const sessionId = body.sessionId;
     const text = (body.text || body.message || "").trim();
+    const pageUrl = body.pageUrl || body.pathname || "";
 
     if (!sessionId || !text) {
       return NextResponse.json(
@@ -27,7 +28,8 @@ export async function POST(req: Request) {
 
     const adminChatId = process.env.ADMIN_BALE_CHAT_ID;
     if (adminChatId) {
-      const baleText = `🟢 پیام جدید سایت\n\n#${sessionId}\n\n💬 ${text}`;
+      const pageInfo = pageUrl ? `📍 صفحه: ${pageUrl}\n` : "";
+      const baleText = `🟢 پیام جدید سایت\n${pageInfo}\n#${sessionId}\n\n💬 ${text}`;
       await sendBaleMessage(adminChatId, baleText);
     } else {
       console.warn("ADMIN_BALE_CHAT_ID environment variable is missing");

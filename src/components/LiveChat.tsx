@@ -99,7 +99,11 @@ export default function LiveChat() {
       const res = await fetch("/api/chat/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sessionId, text }),
+        body: JSON.stringify({
+          sessionId,
+          text,
+          pageUrl: typeof window !== "undefined" ? window.location.pathname : "",
+        }),
       });
 
       if (!res.ok) {

@@ -5,14 +5,14 @@ export async function POST(req: Request) {
   try {
     const update = await req.json();
 
-    const message = update?.message;
+    const message = update?.message || update?.edited_message;
     if (message && message.reply_to_message && message.text) {
       const originalText =
         message.reply_to_message.text ||
         message.reply_to_message.caption ||
         "";
 
-      // Extract session ID from original Bale message text using #ID pattern
+      // Extract session ID from original Bale message text using #ID pattern (#sess_...)
       const match = originalText.match(/#([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
         const sessionId = match[1];
@@ -40,5 +40,5 @@ export async function POST(req: Request) {
 }
 
 export async function GET() {
-  return NextResponse.json({ ok: true, status: "Bale webhook endpoint ready" });
+  return NextResponse.json({ ok: true, status: "Bale group webhook endpoint ready" });
 }
