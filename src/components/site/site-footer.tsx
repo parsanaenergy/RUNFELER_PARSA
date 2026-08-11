@@ -131,6 +131,29 @@ export function SiteFooter() {
                 </Link>
               ))}
             </div>
+
+            {/* Sanat.ir Backlink Banner */}
+            <div className="mt-6 flex flex-col gap-2 rounded-xl border border-border/70 bg-card/50 p-3.5 backdrop-blur-sm">
+              <div className="flex items-center justify-between text-xs font-semibold text-foreground">
+                <span>{lang === "fa" ? "پارسا انرژی در صنعت ایران" : "Parsa Energy on Sanat.ir"}</span>
+                <span className="text-[10px] text-muted-foreground">{lang === "fa" ? "موتور جستجوی صنعت" : "Industry Search Engine"}</span>
+              </div>
+              <a
+                href="https://www.sanat.ir/62724"
+                target="_blank"
+                rel="noopener noreferrer"
+                title={lang === "fa" ? "مشاهده پروفایل پارسا انرژی در موتور جستجوی صنعت ایران" : "View Parsa Energy Profile on Sanat.ir"}
+                className="group relative mt-1 block overflow-hidden rounded-lg border border-border/80 bg-background transition-all duration-200 hover:border-primary hover:shadow-md"
+              >
+                <Image
+                  src="/banners/sanat-banner.png"
+                  alt="پارسا انرژی رویش سبز امید - صنعت ایران"
+                  width={280}
+                  height={140}
+                  className="h-auto w-full max-w-[220px] rounded-lg object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+                />
+              </a>
+            </div>
           </div>
 
           {columns.map((col) => (
@@ -149,10 +172,22 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
           <p>© {year} {t("brandName")} — {t("footerRights")}</p>
-          <p className="flex items-center gap-1.5">
-            <Sun className="h-3.5 w-3.5 text-amber" />
-            {t("footerSlogan")}
-          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="https://www.sanat.ir/62724"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-primary underline-offset-4 hover:underline"
+              title={lang === "fa" ? "پارسا انرژی رویش سبز امید در موتور جستجوی صنعت ایران" : "Parsa Energy on Sanat.ir"}
+            >
+              {lang === "fa" ? "پروفایل صنعت ایران" : "Sanat.ir Profile"}
+            </a>
+            <span className="text-border">•</span>
+            <p className="flex items-center gap-1.5">
+              <Sun className="h-3.5 w-3.5 text-amber" />
+              {t("footerSlogan")}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
