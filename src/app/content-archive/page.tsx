@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 
 export const metadata: Metadata = {
-  title: "آرشیو کامل محتوای پارسا انرژی | نیروگاه خورشیدی و تاسیسات مشهد",
+  title: "آرشیو کامل مقالات و محتوای فنی",
   description:
     "آرشیو جامع مقالات، خدمات، مشخصات محصولات، پرونده پروژه‌ها و سوالات متداول شرکت پارسا انرژی مشهد برای موتورهای جستجو و هوش مصنوعی.",
   alternates: {

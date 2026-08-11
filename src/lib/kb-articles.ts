@@ -351,7 +351,7 @@ export const kbArticles: KB_article[] = [
   {
     slug: "pump-harari-heat-pump-chist",
     title: {
-      fa: "پمپ حرارتی (Heat Pump) چیست؟ راهنمای کامل برای خانه و کسب‌وکار",
+      fa: "پمپ حرارتی چیست؟ کارکرد و مزایای Heat Pump",
       en: "What is a Heat Pump? Complete Guide for Homes and Businesses"
     },
     category: "hvac",
@@ -450,7 +450,7 @@ export const kbArticles: KB_article[] = [
   {
     slug: "home-energy-storage-zaker-energy-khanegi",
     title: {
-      fa: "ذخیره‌ساز انرژی خانگی (Home Energy Storage) چیست و چرا در ۱۴۰۵ ضروری است؟",
+      fa: "ذخیره‌ساز انرژی خانگی و باتری سیستم خورشیدی",
       en: "Home Energy Storage: What It Is and Why It's Essential in 2025"
     },
     category: "solar",
@@ -549,7 +549,7 @@ export const kbArticles: KB_article[] = [
   {
     slug: "chiller-jazbi-khanegi-tejari",
     title: {
-      fa: "چیلر جذبی چیست؟ راهکار طلایی سرمایش در پیک تابستانه بدون فشار بر شبکه برق",
+      fa: "چیلر جذبی چیست؟ راهکار سرمایش بدون مصرف برق",
       en: "What Is an Absorption Chiller? Summer Peak Cooling Without Straining the Grid"
     },
     category: "hvac",
@@ -648,7 +648,7 @@ export const kbArticles: KB_article[] = [
   {
     slug: "ayac-bandi-harari-sakhteman",
     title: {
-      fa: "عایق‌بندی حرارتی ساختمان: راه کاهش ۴۰ درصدی قبض گاز و برق",
+      fa: "عایق‌بندی حرارتی ساختمان و کاهش مصرف انرژی",
       en: "Building Thermal Insulation: Cut Gas and Electricity Bills by 40%"
     },
     category: "hvac",
@@ -747,7 +747,7 @@ export const kbArticles: KB_article[] = [
   {
     slug: "sarmāyeh-gozari-khorshidi-tala-arz",
     title: {
-      fa: "سرمایه‌گذاری در نیروگاه خورشیدی به جای طلا و ارز: مقایسه بازگشت سرمایه در شرایط تورم ایران",
+      fa: "سرمایه‌گذاری در نیروگاه خورشیدی یا طلا و ارز",
       en: "Investing in Solar Plants vs. Gold and Currency: ROI Comparison in Iran's Inflation"
     },
     category: "news",
@@ -849,7 +849,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "mining-arz-dijital-khorshidi",
   title: {
-    fa: "استخراج ارز دیجیتال با نیروگاه خورشیدی: راهکار قانونی و اقتصادی برای ماینرهای ایرانی",
+    fa: "استخراج ارز دیجیتال با نیروگاه خورشیدی",
     en: "Crypto Mining with Solar Power: Legal and Economic Solution for Iranian Miners"
   },
   category: "solar",
@@ -952,7 +952,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "solar-carport-sayban-parkink",
   title: {
-    fa: "سایبان خورشیدی پارکینگ (Solar Carport): هم سایه، هم برق، هم درآمد",
+    fa: "سایبان خورشیدی پارکینگ؛ مزایا و درآمدزایی",
     en: "Solar Carport: Shade, Power, and Income in One Structure"
   },
   category: "solar",
@@ -1055,7 +1055,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "inverter-sanaati-vfd",
   title: {
-    fa: "اینورتر صنعتی VFD: راه کاهش ۳۰ تا ۵۰ درصدی قبض برق کارخانه‌ها",
+    fa: "اینورتر صنعتی VFD و کاهش مصرف برق کارخانه‌ها",
     en: "Industrial VFD: Cut Factory Electricity Bills by 30–50%"
   },
   category: "hvac",
@@ -1158,7 +1158,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "vrf-system-sakhteman-bozorg",
   title: {
-    fa: "سیستم VRF چیست؟ بهترین گرمایش و سرمایش برای برج‌ها، هتل‌ها و بیمارستان‌ها",
+    fa: "سیستم VRF چیست؟ تهویه مطبوع برج‌ها و هتل‌ها",
     en: "What Is VRF? The Best HVAC System for Towers, Hotels, and Hospitals"
   },
   category: "hvac",
@@ -1261,7 +1261,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "ab-shirin-kon-khorshidi",
   title: {
-    fa: "آب شیرین‌کن خورشیدی: راهکار بحران آب شرب در مناطق ساحلی و کویری ایران",
+    fa: "آب شیرین‌کن خورشیدی؛ تصفیه آب مناطق کویری",
     en: "Solar Water Desalination: Solution to Drinking Water Crisis in Iran's Coastal and Desert Regions"
   },
   category: "solar",
@@ -1363,7 +1363,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "khoshk-kon-khorshidi-keshavarzi",
   title: {
-    fa: "خشک‌کن خورشیدی محصولات کشاورزی: کاهش هدررفت و افزایش کیفیت خرما، کشمش و زعفران",
+    fa: "خشک‌کن خورشیدی محصولات کشاورزی و کارکرد آن",
     en: "Solar Agricultural Dryers: Reduce Waste and Boost Quality of Dates, Raisins, and Saffron"
   },
   category: "solar",
@@ -1466,7 +1466,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "vam-tashilat-banki-khorshidi",
   title: {
-    fa: "وام و تسهیلات بانکی برای نیروگاه خورشیدی: راهنمای کامل دریافت ۲۰ تا ۵۰ میلیارد تومان",
+    fa: "راهنمای دریافت وام و تسهیلات نیروگاه خورشیدی",
     en: "Bank Loans and Facilities for Solar Plants: Complete Guide to 20–50 Billion Toman"
   },
   category: "news",
@@ -1569,7 +1569,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "bimeh-niroogah-khorshidi",
   title: {
-    fa: "بیمه نیروگاه خورشیدی: راهنمای کامل پوشش‌ها، هزینه‌ها و شرکت‌های بیمه",
+    fa: "بیمه نیروگاه خورشیدی؛ پوشش‌ها و شرایط آن",
     en: "Solar Plant Insurance: Complete Guide to Coverage, Costs, and Insurance Companies"
   },
   category: "news",
@@ -1672,7 +1672,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "momiazi-energy-iso-50001",
   title: {
-    fa: "ممیزی انرژی و گواهینامه ISO 50001: راهنمای کامل برای صنایع صادراتی ایران",
+    fa: "ممیزی انرژی و اخذ استانداردهای ISO 50001",
     en: "Energy Audit and ISO 50001 Certification: Complete Guide for Iranian Export Industries"
   },
   category: "news",
@@ -1775,7 +1775,7 @@ export const kbArticles: KB_article[] = [
 {
   slug: "energy-management-system-iot",
   title: {
-    fa: "سیستم مدیریت انرژی هوشمند (EMS) با IoT: کنترل مصرف از موبایل با هوش مصنوعی",
+    fa: "سیستم مدیریت انرژی هوشمند (EMS) با IoT",
     en: "Smart Energy Management System (EMS) with IoT: Mobile-Controlled AI-Powered Consumption"
   },
   category: "news",
