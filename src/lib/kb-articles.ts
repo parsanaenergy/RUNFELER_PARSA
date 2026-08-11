@@ -745,7 +745,7 @@ export const kbArticles: KB_article[] = [
     ]
   },
   {
-    slug: "sarmāyeh-gozari-khorshidi-tala-arz",
+    slug: "sarmayeh-gozari-khorshidi-tala-arz",
     title: {
       fa: "سرمایه‌گذاری در نیروگاه خورشیدی یا طلا و ارز",
       en: "Investing in Solar Plants vs. Gold and Currency: ROI Comparison in Iran's Inflation"

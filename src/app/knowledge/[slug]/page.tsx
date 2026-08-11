@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { kbArticles } from "@/lib/kb-articles";
 import { SiteHeader } from "@/components/site/site-header";
@@ -22,7 +22,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = kbArticles.find((a) => a.slug === slug);
+  const decodedSlug = decodeURIComponent(slug);
+  const article = kbArticles.find(
+    (a) =>
+      a.slug === slug ||
+      a.slug === decodedSlug ||
+      (a.slug === "sarmayeh-gozari-khorshidi-tala-arz" &&
+        (decodedSlug.includes("sarmāyeh") || slug.includes("%C4%81yeh")))
+  );
   if (!article) return {};
 
   const pageUrl = `${SITE_URL}/knowledge/${article.slug}`;
@@ -62,7 +69,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function KnowledgeArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = kbArticles.find((a) => a.slug === slug);
+  const decodedSlug = decodeURIComponent(slug);
+
+  if (decodedSlug.includes("sarmāyeh") || slug.includes("%C4%81yeh")) {
+    redirect("/knowledge/sarmayeh-gozari-khorshidi-tala-arz");
+  }
+
+  const article = kbArticles.find((a) => a.slug === slug || a.slug === decodedSlug);
   if (!article) notFound();
 
   const pageUrl = `${SITE_URL}/knowledge/${article.slug}`;
