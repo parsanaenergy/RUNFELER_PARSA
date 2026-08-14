@@ -9,6 +9,7 @@ import { AnswerCapsule } from "@/components/site/answer-capsule";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, Calendar, Clock, PhoneCall, HelpCircle } from "lucide-react";
+import { PillarBackLink } from "@/components/site/cluster-hub";
 
 const SITE_URL = "https://parsaenergyco.ir";
 
@@ -192,6 +193,12 @@ export default async function KnowledgeArticlePage({ params }: Props) {
               </div>
             </div>
           ) : null}
+
+          <PillarBackLink
+            pillarUrl="/bargh"
+            pillarTitle="مرجع اصلی: سیستم‌های برق، نیروگاه خورشیدی و برق اضطراری"
+            description="برای بررسی جامع سیستم‌های برق، جداول محاسبات فنی، دانلود راهنماها و مقایسه راهکارهای نیروگاهی به صفحه مادر مراجعه کنید."
+          />
 
           <div className="mt-12 bg-muted/40 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 border">
             <div>

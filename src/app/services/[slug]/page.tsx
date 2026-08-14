@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CheckCircle2, ShieldCheck, PhoneCall, ArrowLeft, HelpCircle } from "lucide-react";
+import { PillarBackLink } from "@/components/site/cluster-hub";
 
 const SITE_URL = "https://parsaenergyco.ir";
 
@@ -206,6 +207,14 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
           </section>
         ) : null}
+
+        <div className="container mx-auto px-4">
+          <PillarBackLink
+            pillarUrl="/bargh"
+            pillarTitle="مرجع اصلی: سیستم‌های برق، نیروگاه خورشیدی و برق اضطراری"
+            description="برای مشاهده نقشه راه جامع، استانداردهای فنی، مقایسه راهکارهای نیروگاهی و ابزارهای آنلاین به صفحه مادر مراجعه کنید."
+          />
+        </div>
       </main>
 
       <SiteFooter />

@@ -304,3 +304,64 @@ export function buildArticleSchemas(): object[] {
   return schemas;
 }
 
+/**
+ * Topic Cluster Schema — ساختار ItemList برای اتصال صفحه مادر به صفحات اقماری (خوشه‌ای)
+ */
+export const topicClusterItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${SITE_URL}/bargh/#cluster-hub`,
+  name: "خوشه موضوعی تامین برق و انرژی خورشیدی پارسا انرژی",
+  description: "نقشه راه جامع و زیرمجموعه‌های تخصصی خدمات نیروگاه خورشیدی، برق اضطراری، تعمیرات اینورتر و دوره‌های فنی و حرفه‌ای",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "طراحی و احداث نیروگاه خورشیدی",
+      url: `${SITE_URL}/services/solar-plant-design-construction`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "سیستم‌های برق اضطراری، UPS و ژنراتور",
+      url: `${SITE_URL}/services/emergency-power-design-install`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "عیب‌یابی و تعمیرات تخصصی اینورتر و برد الکترونیکی",
+      url: `${SITE_URL}/services/electronic-board-repair-spec`,
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "دانشنامه تخصصی و آموزش نیروگاه خورشیدی",
+      url: `${SITE_URL}/knowledge`,
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "ابزارهای محاسباتی آنلاین و محاسبه‌گر ROI خورشیدی",
+      url: `${SITE_URL}/#calculators`,
+    },
+  ],
+  mainEntity: {
+    "@type": "TechArticle",
+    headline: "راهنمای جامع نیروگاه خورشیدی و تامین برق اضطراری در ایران",
+    author: {
+      "@type": "Organization",
+      name: "پارسا انرژی",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "پارسا انرژی",
+      logo: {
+        "@type": "ImageObject",
+        url: LOGO_URL,
+      },
+    },
+  },
+};
+
+
