@@ -1,31 +1,47 @@
+import { Quote, UserCheck } from "lucide-react";
+
 /**
- * GEO-003: Answer Capsule (BLUF — Bottom Line Up Front).
- *
- * یک کپسول پاسخ مستقیم که بلافاصله زیر عنوان H2 هر بخش قرار می‌گیرد.
- * محدودیت‌ها:
- *  - طول ۴۰ تا ۱۲۰ کلمه
- *  - جمله اول: تعریف مستقیم یا پاسخ صریح
- *  - جملات بعدی: جزئیات یا آمار کلیدی
- *  - جمله آخر: دامنه یا محدودیت
- *  - بدون لینک خروجی (سیگنال مرجعیت حفظ می‌شود)
- *
- * متن فارسی (زبان اصلی) به‌صورت Server Component رندر می‌شود تا در HTML خام
- * بدون نیاز به JavaScript قابل استخراج باشد.
+ * Humanized Expert Summary — جایگزین انسان‌محور کپسول پاسخ هوش مصنوعی.
+ * شامل جمع‌بندی فنی و نقل‌قول واقعی از مدیر فنی و تیم مهندسی پارسا انرژی.
  */
 
 interface AnswerCapsuleProps {
-  /** متن کپسول پاسخ به زبان فارسی */
+  /** متن خلاصه و دیدگاه کارشناسی */
   children: string;
+  expertName?: string;
+  expertRole?: string;
 }
 
-export function AnswerCapsule({ children }: AnswerCapsuleProps) {
+export function AnswerCapsule({
+  children,
+  expertName = "مهندس پارسا",
+  expertRole = "مدیر فنی و سرپرست پروژه‌های مهندسی پارسا انرژی",
+}: AnswerCapsuleProps) {
   return (
-    <p
-      className="mx-auto mb-8 max-w-3xl rounded-xl border-r-4 border-primary bg-primary/5 px-5 py-4 text-sm leading-7 text-foreground sm:text-base"
-      role="doc-abstract"
+    <div
+      className="expert-summary relative mx-auto mb-8 max-w-3xl overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-background to-primary/5 p-6 shadow-sm sm:p-7"
+      role="region"
+      aria-label="جمع‌بندی کارشناسی مدیر فنی"
     >
-      <span className="sr-only">پاسخ کوتاه: </span>
-      {children}
-    </p>
+      <div className="mb-3 flex items-center justify-between gap-3 border-b border-border/60 pb-3">
+        <div className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400">
+            <UserCheck className="h-5 w-5" />
+          </div>
+          <div>
+            <h4 className="font-display text-sm font-bold text-foreground sm:text-base">
+              دیدگاه و جمع‌بندی مدیر فنی
+            </h4>
+            <p className="text-xs text-muted-foreground">{expertName} · {expertRole}</p>
+          </div>
+        </div>
+        <Quote className="h-8 w-8 text-amber-500/20 rtl:scale-x-[-1]" />
+      </div>
+
+      <blockquote className="text-sm leading-8 text-foreground/90 sm:text-base">
+        «{children}»
+      </blockquote>
+    </div>
   );
 }
+

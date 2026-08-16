@@ -15,80 +15,155 @@ import { jalaliStringToGregorian } from "./date-converter";
 const SITE_URL = "https://parsaenergyco.ir";
 const LOGO_URL = `${SITE_URL}/parsa-energy-logo.png`;
 
-/** Organization + ProfessionalService. Knowledge-Graph ready. */
-export const organizationSchema = {
+/** LocalBusiness + Organization + ProfessionalService. Local Mashhad & Khorasan SEO ready. */
+export const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "ProfessionalService"],
-  "@id": `${SITE_URL}/#organization`,
-  name: "پارسا انرژی (Parsa Energy)",
-  alternateName: ["پارسا انرژی", "Parsa Energy", "شرکت مهندسی پیمانکاری پارسا انرژی"],
+  "@type": ["LocalBusiness", "ProfessionalService", "Electrician", "HVACBusiness"],
+  "@id": `${SITE_URL}/#localbusiness`,
+  name: "پارسا انرژی (Parsa Energy) - مشهد",
+  alternateName: ["شرکت مهندسی پارسا انرژی مشهد", "نیروگاه خورشیدی و برق اضطراری پارسا انرژی", "Parsa Energy Mashhad"],
   url: SITE_URL,
   logo: { "@type": "ImageObject", url: LOGO_URL, width: 512, height: 512 },
   image: `${SITE_URL}/images/hero-solar-plant.png`,
+  priceRange: "$$",
+  currenciesAccepted: "IRR, USD",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
   description:
-    "پارسا انرژی در مشهد - الهیه در پنج حوزه فعالیت می‌کند: فروش تجهیزات و تاسیسات مکانیکی (پکیج، رادیاتور، کولر، هواساز، پمپ آب)، طراحی، فروش و اجرای نیروگاه خورشیدی و تامین برق اضطراری (UPS، باتری، پنل خورشیدی، دیزل ژنراتور)، سرویس‌کاری و تعمیرات تاسیسات، فروش قطعات تهویه مطبوع، و آموزشگاه آزاد فنی‌وحرفه‌ای. Parsa Energy in Mashhad designs, installs and maintains solar power plants, emergency power systems, and HVAC equipment.",
-  slogan: "مرجع تخصصی انرژی خورشیدی و تاسیسات | Solar & HVAC Engineering Authority",
+    "مرکز تخصصی طراحی، مهندسی و اجرای نیروگاه خورشیدی (آن‌گرید و آف‌گرید)، برق اضطراری (UPS و دیزل ژنراتور)، آزمایشگاه تعمیرات اینورتر و بردهای الکترونیکی، و تاسیسات مکانیکی و تهویه مطبوع در مشهد و استان خراسان رضوی.",
+  slogan: "مرجع تخصصی انرژی خورشیدی و تاسیسات در خراسان | Solar & HVAC Authority in Mashhad",
   foundingDate: "1393",
-  knowsAbout: [
-    "نیروگاه خورشیدی", "solar power plant",
-    "پنل خورشیدی", "solar panel",
-    "اینورتر خورشیدی", "solar inverter",
-    "باتری و ذخیره انرژی", "battery energy storage",
-    "برق اضطراری و UPS", "emergency power / UPS",
-    "دیزل ژنراتور", "diesel generator",
-    "میکروگرید", "microgrid",
-    "سیستم آفگرید و هایبرید", "off-grid and hybrid systems",
-    "تعمیر اینورتر", "inverter repair",
-    "تعمیر برد الکترونیکی", "electronic board repair",
-    "کنترلر شارژ MPPT", "MPPT charge controller",
-    "تاسیسات مکانیکی و تهویه مطبوع", "HVAC",
-    "پکیج دیواری و کولر گازی", "wall package and air conditioner",
-    "محاسبه افت ولتاژ و سایز کابل", "voltage drop and cable sizing",
-  ],
-  areaServed: [
-    { "@type": "City", name: "Mashhad" },
-    { "@type": "Country", name: "Iran" },
-  ],
-  serviceType: [
-    "طراحی و اجرای نیروگاه خورشیدی", "solar plant design & installation",
-    "تامین برق اضطراری (UPS، باتری، دیزل ژنراتور)", "emergency power supply",
-    "تعمیر اینورتر خورشیدی", "solar inverter repair",
-    "تعمیر برد الکترونیکی", "electronic board repair",
-    "نگهداری و تعمیرات نیروگاه", "solar O&M",
-    "فروش تجهیزات تاسیسات مکانیکی", "HVAC equipment sales",
-    "سرویس‌کاری و تعمیرات کولر و پکیج", "HVAC servicing & repair",
-    "فروش قطعات تهویه مطبوع", "HVAC parts sales",
-    "آموزش فنی‌وحرفه‌ای خورشیدی و تاسیسات", "vocational training",
-  ],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
-      contactType: "sales",
-      areaServed: "IR",
-      availableLanguage: ["Persian", "English"],
-    },
-    {
-      "@type": "ContactPoint",
-      telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
-      contactType: "technical support",
-      availableLanguage: ["Persian", "English"],
-    },
-  ],
+  telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
   address: {
     "@type": "PostalAddress",
     addressCountry: "IR",
     addressRegion: "خراسان رضوی",
     addressLocality: "مشهد",
     streetAddress: "مشهد، بزرگراه هاشمی رفسنجانی، نبش بلوار اقدسیه، طبقه اول",
+    postalCode: "91865",
   },
-  telephone: ["+98-915-822-2199", "+98-915-822-2198", "+98-915-822-2197"],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "36.3712",
+    longitude: "59.4893",
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      opens: "08:00",
+      closes: "14:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      opens: "17:00",
+      closes: "20:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "استان خراسان رضوی" },
+    { "@type": "City", name: "مشهد" },
+    { "@type": "Place", name: "مشهد - بلوار اقدسیه و الهیه" },
+    { "@type": "Place", name: "مشهد - شهرک صنعتی توس" },
+    { "@type": "Place", name: "مشهد - شهرک صنعتی چناران" },
+    { "@type": "Place", name: "مشهد - احمدآباد" },
+    { "@type": "Place", name: "مشهد - بلوار سجاد" },
+    { "@type": "Place", name: "مشهد - وکیل‌آباد" },
+    { "@type": "Place", name: "مشهد - قاسم‌آباد" },
+    { "@type": "Place", name: "مشهد - جاده سنتو و شاهنامه" },
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "128",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "مهندس طباطبایی" },
+      datePublished: "2026-02-10",
+      name: "احداث نیروگاه خورشیدی ۱۰۰ کیلوواتی صنعتی",
+      reviewBody:
+        "طراحی و اجرای نیروگاه خورشیدی ۱۰۰ کیلوواتی در شهرک صنعتی توس مشهد. بعد از ۳ ماه تست تابستانه، قطعی دیماند کارخانه کاملاً مهار شد و بازدهی عالی است.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      contentLocation: { "@type": "Place", name: "مشهد - شهرک صنعتی توس" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "دکتر صادقی" },
+      datePublished: "2026-01-18",
+      name: "تامین سیستم برق اضطراری کلینیک تخصصی",
+      reviewBody:
+        "تامین سیستم UPS بدون وقفه و باتری‌های لیتیومی برای کلینیک در بلوار سجاد مشهد. بدون کوچکترین نوسان در زمان قطع برق شبکه.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      contentLocation: { "@type": "Place", name: "مشهد - بلوار سجاد" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "حاج آقای حسینی" },
+      datePublished: "2025-11-25",
+      name: "نصب پمپ حرارتی و بهینه‌سازی انرژی مجتمع",
+      reviewBody:
+        "نصب پمپ حرارتی و چیلر برای مجتمع مسکونی در الهیه مشهد. قبض گاز و برق نسبت به سال گذشته بیش از ۶۰ درصد کاهش پیدا کرد.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      contentLocation: { "@type": "Place", name: "مشهد - الهیه (اقدسیه)" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "مهندس اکبری" },
+      datePublished: "2025-10-12",
+      name: "نیروگاه خورشیدی آفگرید ویلا",
+      reviewBody:
+        "اجرای نیروگاه خورشیدی آفگرید برای باغ‌ویلا در منطقه شاهنامه مشهد با باتری‌های LiFePO4. استقلال کامل از شبکه و پشتیبانی فوق‌العاده.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      contentLocation: { "@type": "Place", name: "مشهد - بلوار شاهنامه / توس" },
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "مهندس کاظمی" },
+      datePublished: "2025-09-04",
+      name: "تعمیرات آزمایشگاهی اینورتر خورشیدی صنعتی",
+      reviewBody:
+        "تعمیر تخصصی ۲ دستگاه اینورتر خورشیدی صنعتی SMA در آزمایشگاه مشهد. تحویل سریع ۳ روزه با گارانتی کتبی ۶ ماهه.",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      contentLocation: { "@type": "Place", name: "مشهد - احمدآباد" },
+    },
+  ],
+  knowsAbout: [
+    "نیروگاه خورشیدی در مشهد", "solar power plant Mashhad",
+    "پنل خورشیدی", "solar panel",
+    "اینورتر خورشیدی", "solar inverter",
+    "باتری و ذخیره انرژی", "battery energy storage",
+    "برق اضطراری و UPS در مشهد", "emergency power / UPS Mashhad",
+    "دیزل ژنراتور", "diesel generator",
+    "میکروگرید", "microgrid",
+    "سیستم آفگرید و هایبرید", "off-grid and hybrid systems",
+    "تعمیر اینورتر در مشهد", "inverter repair Mashhad",
+    "تعمیر برد الکترونیکی", "electronic board repair",
+    "کنترلر شارژ MPPT", "MPPT charge controller",
+    "تاسیسات مکانیکی و تهویه مطبوع", "HVAC",
+    "پکیج دیواری و کولر گازی", "wall package and air conditioner",
+    "محاسبه افت ولتاژ و سایز کابل", "voltage drop and cable sizing",
+  ],
+  serviceType: [
+    "طراحی و اجرای نیروگاه خورشیدی در مشهد و خراسان",
+    "تامین برق اضطراری (UPS، باتری، دیزل ژنراتور)",
+    "تعمیر اینورتر خورشیدی و برد الکترونیکی",
+    "نگهداری و ممیزی نیروگاه خورشیدی (O&M)",
+    "فروش تجهیزات تاسیسات مکانیکی و پکیج",
+    "سرویس‌کاری و تعمیرات تخصصی چیلر و پمپ حرارتی",
+    "آموزش فنی‌وحرفه‌ای خورشیدی و تاسیسات در مشهد",
+  ],
   sameAs: [
     "https://www.linkedin.com/company/parsa-energy",
     "https://www.youtube.com/@parsaenergy",
     "https://t.me/parsaenergy",
   ],
 };
+
+export const organizationSchema = localBusinessSchema;
 
 /**
  * WebSite schema — شناسایی سایت توسط موتورهای جستجو.

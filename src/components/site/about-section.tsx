@@ -48,13 +48,42 @@ export function AboutSection() {
               title={<>{t("aboutTitle1")} <span className="text-gradient-solar">{t("aboutTitle2")}</span></>}
               description={t("aboutDesc")}
             />
-            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {values.map((v) => (
-                <div key={v.title} className="rounded-xl border border-border bg-muted/20 p-4">
-                  <h3 className="font-display text-sm font-semibold text-foreground">{v.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{v.desc}</p>
+            {/* Asymmetrical Values Grid */}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {/* Featured Large Box */}
+              <div className="sm:col-span-2 rounded-2xl border border-primary/30 bg-primary/5 p-5 shadow-sm">
+                <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider">
+                  <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+                  {t("aboutValue1T")}
                 </div>
-              ))}
+                <p className="mt-2 text-sm sm:text-base font-semibold text-foreground">{t("aboutValue1D")}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {lang === "fa"
+                    ? "تحلیل دقیق بار مصرفی و پایش ناترازی شبکه خراسان برای تضمین بازدهی حداکثری سرمایه."
+                    : "Comprehensive load analysis and regional grid optimization to maximize investment yields."}
+                </p>
+              </div>
+
+              {/* Medium Box 1 */}
+              <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
+                <h3 className="font-display text-sm font-bold text-foreground">{t("aboutValue2T")}</h3>
+                <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground leading-relaxed">{t("aboutValue2D")}</p>
+              </div>
+
+              {/* Medium Box 2 */}
+              <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
+                <h3 className="font-display text-sm font-bold text-foreground">{t("aboutValue3T")}</h3>
+                <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground leading-relaxed">{t("aboutValue3D")}</p>
+              </div>
+
+              {/* Punchline Short Box */}
+              <div className="sm:col-span-2 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3.5 text-center sm:text-start">
+                <p className="text-xs sm:text-sm font-bold text-amber-700 dark:text-amber-300">
+                  {lang === "fa"
+                    ? "⚡ اعزام تیم پشتیبانی و امداد فنی در کمتر از ۴ ساعت در سطح مشهد و شهرک‌های صنعتی."
+                    : "⚡ Emergency field support dispatched in under 4 hours across Mashhad and industrial estates."}
+                </p>
+              </div>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Button asChild className="shadow-solar">
