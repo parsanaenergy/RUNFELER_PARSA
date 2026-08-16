@@ -1,14 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Local Self-Hosted Vazirmatn Font */
+@font-face {
+  font-family: "Vazirmatn";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/vazirmatn/Vazirmatn-Variable.woff2") format("woff2");
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Vazirmatn", "Geist", Tahoma, "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-display: "Vazirmatn", "Space Grotesk", Tahoma, system-ui, sans-serif;
-  --font-mono: "Geist Mono", monospace;
+  --font-sans: "Vazirmatn", var(--font-geist), Tahoma, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "Vazirmatn", var(--font-space-grotesk), Tahoma, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
   --font-fa: "Vazirmatn", Tahoma, "Segoe UI", system-ui, -apple-system, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
