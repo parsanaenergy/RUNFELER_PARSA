@@ -4,59 +4,71 @@ import { kbArticles } from "@/lib/kb-articles";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://parsaenergyco.ir";
 
+/**
+ * Dynamic XML Sitemap Generator for Next.js App Router.
+ * Implements Topic Clusters hierarchy with granular Priority and Changefreq settings.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const currentDate = new Date();
 
-  // صفحات خدمات: /services/[slug] — هر خدمت یک URL مستقل دارد
-  const serviceRoutes = services.map((s) => ({
-    url: `${SITE_URL}/services/${s.slug}`,
-    lastModified,
-    changeFrequency: "weekly" as const,
+  // 1. مسیرهای خدمات تخصصی: /services/[slug] (Priority: 0.9, Changefreq: monthly)
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${SITE_URL}/services/${service.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "monthly",
     priority: 0.9,
   }));
 
-  // صفحات مقالات: /knowledge/[slug] — هر مقاله یک URL مستقل دارد
-  const articleRoutes = kbArticles.map((a) => ({
-    url: `${SITE_URL}/knowledge/${a.slug}`,
-    lastModified: new Date(a.date) || lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  // 2. مسیرهای مقالات دانشنامه: /knowledge/[slug] (Priority: 0.8, Changefreq: weekly/monthly)
+  const articleRoutes: MetadataRoute.Sitemap = kbArticles.map((article) => {
+    let articleDate = currentDate;
+    if (article.date) {
+      const parsed = new Date(article.date);
+      if (!isNaN(parsed.getTime())) {
+        articleDate = parsed;
+      }
+    }
+
+    return {
+      url: `${SITE_URL}/knowledge/${article.slug}`,
+      lastModified: articleDate,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    };
+  });
 
   return [
     // صفحه اصلی — بالاترین اولویت
     {
-      url: SITE_URL,
-      lastModified,
+      url: `${SITE_URL}/`,
+      lastModified: currentDate,
       changeFrequency: "daily",
       priority: 1.0,
     },
-    // صفحه سیستم‌های برق اضطراری
+    // صفحه مادر (Pillar Hub) — راهنمای جامع تامین برق و نیروگاه خورشیدی
     {
       url: `${SITE_URL}/bargh`,
-      lastModified,
+      lastModified: currentDate,
       changeFrequency: "weekly",
-      priority: 0.95,
+      priority: 1.0,
     },
-    // صفحه لیست دانشنامه
+    // هاب دانشنامه فنی و مقالات تخصصی
     {
       url: `${SITE_URL}/knowledge`,
-      lastModified,
+      lastModified: currentDate,
       changeFrequency: "weekly",
-      priority: 0.85,
+      priority: 0.8,
     },
-    // صفحه آرشیو کامل محتوای متنی سایت
+    // آرشیو کامل محتوای متنی
     {
       url: `${SITE_URL}/content-archive`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
-    // صفحات خدمات مجزا (/services/[slug])
+    // خوشه‌های خدمات تخصصی
     ...serviceRoutes,
-    // صفحات مقالات دانشنامه (/knowledge/[slug])
+    // مقالات و محتواهای تخصصی دانشنامه
     ...articleRoutes,
-    // توجه: anchor URLs (#services, #products, ...) حذف شدند —
-    // گوگل و بینگ anchor URLها را به عنوان صفحه مستقل index نمی‌کنند.
   ];
 }

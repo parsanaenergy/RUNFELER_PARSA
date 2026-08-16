@@ -1,48 +1,54 @@
-# robots.txt — Parsa Energy
-# GEO-001: Generative Engine Optimization Framework
-# خزنده‌های آموزشی مدل‌های زبانی مسدود؛ خزنده‌های بازیابی زنده و جستجوی آنی مجاز.
-# Training crawlers blocked; live-retrieval & search crawlers allowed.
+# robots.txt — Parsa Energy (https://parsaenergyco.ir)
+# Generated and maintained for Search Engines, Live AI Retrieval & Bot Protection
 
-# --- Blocked: Training crawlers (model training, not live retrieval) ---
+# --- Blocked: Malicious Scrapers & Heavy Crawlers ---
+User-agent: PetalBot
+User-agent: MJ12bot
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+User-agent: Scrapy
+User-agent: MegaIndex
+User-agent: BLEXBot
+User-agent: Bytespider
+User-agent: DataForSeoBot
+Disallow: /
+
+# --- Blocked: Non-attributing Training Scrapers ---
 User-agent: GPTBot
-Disallow: /
-
 User-agent: ClaudeBot
-Disallow: /
-
 User-agent: Google-Extended
+User-agent: CCBot
 Disallow: /
 
-# --- Allowed: Live-retrieval & search crawlers (RAG, answer engines) ---
+# --- Allowed: Live AI Answer Engines & Search Engines ---
+User-agent: Googlebot
+User-agent: Bingbot
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: Claude-SearchBot
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Perplexity-User
-Allow: /
-
 User-agent: Applebot
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /download/
+Disallow: /upload/
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-# --- Default ---
+# --- Default Rules for All Other Crawlers ---
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /download/
+Disallow: /upload/
 
+# --- Sitemap Location ---
 Sitemap: https://parsaenergyco.ir/sitemap.xml
+Host: https://parsaenergyco.ir
