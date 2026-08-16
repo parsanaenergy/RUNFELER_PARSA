@@ -87,7 +87,7 @@ export function TopicClusterHub({
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 text-xs font-bold mb-2">
             <Compass className="h-3.5 w-3.5" />
-            Anti-Gravity Topic Cluster Hub
+            مرکز خوشه‌های تخصصی پارسا انرژی
           </div>
           <h2 className="text-xl md:text-2xl font-black text-foreground">{title}</h2>
           <p className="text-sm text-muted-foreground mt-1.5">{subtitle}</p>

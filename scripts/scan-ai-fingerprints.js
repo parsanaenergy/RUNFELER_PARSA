@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * AI Fingerprint Scanner - Anti-Gravity SEO Tool
+ * AI Fingerprint Scanner - ParsaSEO Content Audit Tool
  * Scans content, markdown, and source files for generic AI-generated buzzwords and cliches.
  */
 
@@ -76,7 +76,7 @@ function traverseDirectory(dir) {
 const targetDir = process.argv[2] ? path.resolve(process.argv[2]) : path.resolve(__dirname, '..');
 
 console.log('='.repeat(70));
-console.log('🔍 Anti-Gravity AI Fingerprint Scanner');
+console.log('🔍 ParsaSEO AI Fingerprint Scanner');
 console.log(`📂 Scanning Target: ${targetDir}`);
 console.log('='.repeat(70));
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Anti-Gravity AI Fingerprint Scanner (PHP & WordPress CLI / Standalone)
+ * ParsaSEO AI Fingerprint Scanner (PHP & WordPress CLI / Standalone)
  *
  * Use Cases:
  * 1. CLI file scan: php scripts/scan-ai-fingerprints.php --path=/path/to/project
@@ -22,7 +22,7 @@ $forbidden_words = [
 $options = getopt("", ["path:", "wp-config:", "db-host:", "db-name:", "db-user:", "db-pass:"]);
 
 echo "\n" . str_repeat("=", 70) . "\n";
-echo "🔍 Anti-Gravity AI Fingerprint Scanner (PHP / WordPress DB / Files)\n";
+echo "🔍 ParsaSEO AI Fingerprint Scanner (PHP / WordPress DB / Files)\n";
 echo str_repeat("=", 70) . "\n";
 
 $total_matches = 0;
