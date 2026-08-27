@@ -74,10 +74,10 @@ export function ArticleReader({ article, onBack }: ArticleReaderProps) {
                 </div>
                 <div>
                   <h4 className="font-display text-sm font-bold text-foreground sm:text-base">
-                    {isFa ? "دیدگاه و جمع‌بندی مدیر فنی" : "Technical Director's Executive Summary"}
+                    {isFa ? "دیدگاه و جمع‌بندی کارشناسی" : "Engineering Team Executive Summary"}
                   </h4>
                   <p className="text-xs text-muted-foreground">
-                    {isFa ? "مهندس ناظر و سرپرست پروژه‌های مهندسی پارسا انرژی" : "Lead Engineering Supervisor, Parsa Energy"}
+                    {isFa ? "تیم فنی و مهندسی پارسا انرژی" : "Parsa Energy Technical Engineering Team"}
                   </p>
                 </div>
               </div>

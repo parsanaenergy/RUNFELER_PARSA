@@ -14,14 +14,14 @@ interface AnswerCapsuleProps {
 
 export function AnswerCapsule({
   children,
-  expertName = "مهندس پارسا",
-  expertRole = "مدیر فنی و سرپرست پروژه‌های مهندسی پارسا انرژی",
+  expertName = "تیم مهندسی پارسا انرژی",
+  expertRole = "مرجع تخصصی سیستم‌های برق و انرژی خورشیدی",
 }: AnswerCapsuleProps) {
   return (
     <div
       className="expert-summary relative mx-auto mb-8 max-w-3xl overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-background to-primary/5 p-6 shadow-sm sm:p-7"
       role="region"
-      aria-label="جمع‌بندی کارشناسی مدیر فنی"
+      aria-label="جمع‌بندی کارشناسی"
     >
       <div className="mb-3 flex items-center justify-between gap-3 border-b border-border/60 pb-3">
         <div className="flex items-center gap-2.5">
@@ -30,7 +30,7 @@ export function AnswerCapsule({
           </div>
           <div>
             <h4 className="font-display text-sm font-bold text-foreground sm:text-base">
-              دیدگاه و جمع‌بندی مدیر فنی
+              دیدگاه و جمع‌بندی کارشناسی
             </h4>
             <p className="text-xs text-muted-foreground">{expertName} · {expertRole}</p>
           </div>

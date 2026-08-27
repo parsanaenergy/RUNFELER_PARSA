@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1.0,
     },
-    // صفحه مادر (Pillar Hub) — راهنمای جامع تامین برق و نیروگاه خورشیدی
+    // مرجع تخصصی سیستم‌های برق (Pillar Hub) — راهنمای جامع تامین برق و نیروگاه خورشیدی
     {
       url: `${SITE_URL}/bargh`,
       lastModified: currentDate,

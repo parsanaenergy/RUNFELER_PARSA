@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { kbArticles } from "@/lib/kb-articles";
+import { services } from "@/lib/content";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SectionHeader } from "@/components/site/section-header";
 import { AnswerCapsule } from "@/components/site/answer-capsule";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BookOpen, Calendar, Clock, PhoneCall, HelpCircle } from "lucide-react";
+import { BookOpen, Calendar, Clock, PhoneCall, HelpCircle, ArrowLeft, ShieldCheck, Wrench } from "lucide-react";
 import { PillarBackLink } from "@/components/site/cluster-hub";
 import { renderMarkdownLinks } from "@/lib/render-links";
 
@@ -195,10 +196,47 @@ export default async function KnowledgeArticlePage({ params }: Props) {
             </div>
           ) : null}
 
+          {/* Related Services & Direct Solution Links */}
+          <div className="mt-16 border-t pt-12">
+            <SectionHeader
+              badge="راهکارهای اجرایی"
+              title="خدمات و راهکارهای مهندسی مرتبط"
+              description="تامین تجهیزات استاندارد، طراحی و اجرای تخصصی توسط تیم مهندسی پارسا انرژی"
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              {(article.category === "hvac"
+                ? services.filter((s) => s.slug === "hvac-repair-service" || s.slug === "electronic-board-repair-spec")
+                : services.filter((s) => s.slug === "solar-plant-design-construction" || s.slug === "emergency-power-design-install")
+              ).map((service) => (
+                <div
+                  key={service.slug}
+                  className="rounded-2xl border border-border bg-card p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between shadow-sm"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <service.icon className="h-5 w-5 text-amber-500" />
+                      <h4 className="font-bold text-foreground text-base">{service.name.fa}</h4>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{service.tagline.fa}</p>
+                  </div>
+                  <div className="pt-4 mt-2 border-t border-border/50 flex items-center justify-between">
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1"
+                    >
+                      مشاهده جزئیات و استعلام قیمت
+                      <ArrowLeft className="h-3.5 w-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <PillarBackLink
             pillarUrl="/bargh"
             pillarTitle="مرجع اصلی: سیستم‌های برق، نیروگاه خورشیدی و برق اضطراری"
-            description="برای بررسی جامع سیستم‌های برق، جداول محاسبات فنی، دانلود راهنماها و مقایسه راهکارهای نیروگاهی به صفحه مادر مراجعه کنید."
+            description="برای بررسی جامع سیستم‌های برق، جداول محاسبات فنی، دانلود راهنماها و مقایسه راهکارهای نیروگاهی به مرجع تخصصی سیستم‌های برق مراجعه کنید."
           />
 
           <div className="mt-12 bg-muted/40 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 border">

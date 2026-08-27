@@ -174,7 +174,7 @@ export function PillarBackLink({
       <div className="space-y-1.5">
         <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-amber-600 dark:text-amber-400">
           <Zap className="h-3.5 w-3.5" />
-          مرجع مادر (Topic Cluster Pillar)
+          مرجع تخصصی سیستم‌های برق و انرژی
         </span>
         <h4 className="text-base md:text-lg font-bold text-foreground">
           {pillarTitle}
@@ -189,7 +189,7 @@ export function PillarBackLink({
         title={pillarTitle}
         className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold text-sm shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5"
       >
-        <span>🔙 بازگشت به مرجع اصلی</span>
+        <span>مشاهده مرجع تخصصی برق</span>
         <ArrowLeft className="h-4 w-4" />
       </Link>
     </div>
