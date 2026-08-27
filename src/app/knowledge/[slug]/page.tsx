@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, Calendar, Clock, PhoneCall, HelpCircle } from "lucide-react";
 import { PillarBackLink } from "@/components/site/cluster-hub";
+import { renderMarkdownLinks } from "@/lib/render-links";
 
 const SITE_URL = "https://parsaenergyco.ir";
 
@@ -165,7 +166,7 @@ export default async function KnowledgeArticlePage({ params }: Props) {
                   <h2 className="text-xl md:text-2xl font-bold text-foreground border-r-4 border-amber-500 pr-3">
                     {section.h2}
                   </h2>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{section.p}</p>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">{renderMarkdownLinks(section.p)}</p>
                 </div>
               ))}
             </div>

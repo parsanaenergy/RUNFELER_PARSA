@@ -10,6 +10,7 @@ import {
 import { useLang } from "@/components/lang-provider";
 import { type KB_article } from "@/lib/kb-articles";
 import { faNum } from "@/lib/utils";
+import { renderMarkdownLinks } from "@/lib/render-links";
 
 interface ArticleReaderProps {
   article: KB_article;
@@ -98,7 +99,7 @@ export function ArticleReader({ article, onBack }: ArticleReaderProps) {
                 transition={{ delay: i * 0.05 }}
               >
                 <h2 className="font-display text-xl font-bold text-foreground sm:text-2xl">{section.h2}</h2>
-                <p className="mt-3 text-base leading-8 text-muted-foreground">{section.p}</p>
+                <p className="mt-3 text-base leading-8 text-muted-foreground">{renderMarkdownLinks(section.p)}</p>
               </motion.section>
             ))}
           </div>

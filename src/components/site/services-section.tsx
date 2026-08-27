@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, FileText, ShieldCheck, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -94,7 +95,7 @@ export function ServicesSection({
   activeServiceSlug?: string;
   onCloseActiveService?: () => void;
 }) {
-  const { t, pick } = useLang();
+  const { t, pick, lang } = useLang();
   const [localOpenSlug, setLocalOpenSlug] = React.useState<string | null>(null);
 
   const openSlug = activeServiceSlug !== undefined ? activeServiceSlug : localOpenSlug;
@@ -142,6 +143,29 @@ export function ServicesSection({
               </Dialog>
             );
           })}
+        </div>
+
+        {/* Golden Internal Link to Knowledge Hub */}
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/5 via-background to-tech/5 p-5 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <BookOpen className="h-5 w-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-foreground sm:text-base">
+                {lang === "fa" ? "دانشنامه تخصصی انرژی خورشیدی و سیستم‌های برق" : "Energy Knowledge Center & Technical Guides"}
+              </h4>
+              <p className="text-xs text-muted-foreground">
+                {lang === "fa" ? "مطالعه مقالات تخصصی، آموزش محاسبات فنی و تحلیل‌های اقتصادی روز" : "Explore technical articles, engineering sizing guides, and economic analyses"}
+              </p>
+            </div>
+          </div>
+          <Button asChild variant="outline" className="shrink-0 gap-2 border-primary/30 hover:bg-primary/10 font-bold">
+            <Link href="/knowledge" title="دانشنامه تخصصی انرژی">
+              <span>{lang === "fa" ? "دانشنامه تخصصی انرژی" : "Energy Knowledge Hub"}</span>
+              <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

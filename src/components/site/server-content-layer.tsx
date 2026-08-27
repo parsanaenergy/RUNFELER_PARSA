@@ -1,5 +1,6 @@
 import { articles, faqs, services, products, projects } from "@/lib/content";
 import { kbArticles } from "@/lib/kb-articles";
+import { renderMarkdownLinks } from "@/lib/render-links";
 
 /**
  * GEO-002: Server-Side Rendered content layer.
@@ -191,7 +192,7 @@ export function ServerContentLayer() {
                 {article.body.fa.map((section, i) => (
                   <div key={i}>
                     <h5 className="text-sm font-bold text-foreground">{section.h2}</h5>
-                    <p className="text-sm leading-7 text-muted-foreground">{section.p}</p>
+                    <p className="text-sm leading-7 text-muted-foreground">{renderMarkdownLinks(section.p)}</p>
                   </div>
                 ))}
               </div>

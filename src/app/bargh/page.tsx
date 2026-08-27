@@ -248,7 +248,7 @@ export default function BarghPillarPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            <Card className="hover:border-amber-500/50 transition-all duration-300 shadow-md">
+            <Card className="hover:border-amber-500/50 transition-all duration-300 shadow-md flex flex-col justify-between">
               <CardHeader>
                 <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-2">
                   <Sun className="h-6 w-6" />
@@ -256,16 +256,27 @@ export default function BarghPillarPage() {
                 <CardTitle className="text-xl">برق خورشیدی (Solar)</CardTitle>
                 <CardDescription>طراحی و اجرای نیروگاه‌های آنگرید و آفگرید</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <p>تولید برق پاک، کاهش هزینه‌های انرژی و احداث نیروگاه‌های خورشیدی خانگی، ویلایی و صنعتی در مشهد و سراسر کشور.</p>
-                <ul className="space-y-1.5 font-medium text-foreground">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> پنل‌های Tier-1 مونو نیم‌برش</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> اینورترهای هایبرید و منفصل از شبکه</li>
-                </ul>
+              <CardContent className="space-y-3 text-sm text-muted-foreground flex flex-col justify-between flex-1">
+                <div>
+                  <p>تولید برق پاک، کاهش هزینه‌های انرژی و احداث نیروگاه‌های خورشیدی خانگی، ویلایی و صنعتی در مشهد و سراسر کشور.</p>
+                  <ul className="space-y-1.5 font-medium text-foreground mt-3">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> پنل‌های Tier-1 مونو نیم‌برش</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> اینورترهای هایبرید و منفصل از شبکه</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-border/50">
+                  <Link
+                    href="/services/solar-plant-design-construction"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline"
+                  >
+                    راهنمای صفر تا صد احداث نیروگاه خورشیدی
+                    <ArrowLeft className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:border-blue-500/50 transition-all duration-300 shadow-md">
+            <Card className="hover:border-blue-500/50 transition-all duration-300 shadow-md flex flex-col justify-between">
               <CardHeader>
                 <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-2">
                   <BatteryCharging className="h-6 w-6" />
@@ -273,16 +284,27 @@ export default function BarghPillarPage() {
                 <CardTitle className="text-xl">برق اضطراری (UPS)</CardTitle>
                 <CardDescription>تامین جریان بدون حتی ۱ میلی‌ثانیه قطعی</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <p>محافظت از تجهیزات حساس، سرورها، بردهای کنترل تاسیسات، پکیج‌ها و سیستم‌های پزشکی در برابر قطعی و نوسان برق.</p>
-                <ul className="space-y-1.5 font-medium text-foreground">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> سیستم‌های آنلاین و تابلویی</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> بانک باتری LiFePO4 و ژل</li>
-                </ul>
+              <CardContent className="space-y-3 text-sm text-muted-foreground flex flex-col justify-between flex-1">
+                <div>
+                  <p>محافظت از تجهیزات حساس، سرورها، بردهای کنترل تاسیسات، پکیج‌ها و سیستم‌های پزشکی در برابر قطعی و نوسان برق.</p>
+                  <ul className="space-y-1.5 font-medium text-foreground mt-3">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> سیستم‌های آنلاین و تابلویی</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> بانک باتری LiFePO4 و ژل</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-border/50">
+                  <Link
+                    href="/services/emergency-power-design-install"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    طراحی و نصب سیستم برق اضطراری
+                    <ArrowLeft className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:border-purple-500/50 transition-all duration-300 shadow-md">
+            <Card className="hover:border-purple-500/50 transition-all duration-300 shadow-md flex flex-col justify-between">
               <CardHeader>
                 <div className="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center mb-2">
                   <Building2 className="h-6 w-6" />
@@ -290,16 +312,27 @@ export default function BarghPillarPage() {
                 <CardTitle className="text-xl">برق صنعتی و ساختمان</CardTitle>
                 <CardDescription>طراحی تابلو برق، سایزینگ کابل و سیم‌کشی</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <p>طراحی و اجرای تابلوهای برق قدرت و فرمان، تابلوهای تغییر وضعیت خودکار (ATS) و بالانس بار فازها.</p>
-                <ul className="space-y-1.5 font-medium text-foreground">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> محاسبه افت ولتاژ و ایمنی IEC</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> هماهنگی کلیدهای حفاظتی و SPD</li>
-                </ul>
+              <CardContent className="space-y-3 text-sm text-muted-foreground flex flex-col justify-between flex-1">
+                <div>
+                  <p>طراحی و اجرای تابلوهای برق قدرت و فرمان، تابلوهای تغییر وضعیت خودکار (ATS) و بالانس بار فازها.</p>
+                  <ul className="space-y-1.5 font-medium text-foreground mt-3">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> محاسبه افت ولتاژ و ایمنی IEC</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> هماهنگی کلیدهای حفاظتی و SPD</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-border/50">
+                  <Link
+                    href="/services/emergency-power-design-install"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline"
+                  >
+                    سیستم‌های برق اضطراری صنعتی
+                    <ArrowLeft className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:border-emerald-500/50 transition-all duration-300 shadow-md">
+            <Card className="hover:border-emerald-500/50 transition-all duration-300 shadow-md flex flex-col justify-between">
               <CardHeader>
                 <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-2">
                   <Cpu className="h-6 w-6" />
@@ -307,12 +340,23 @@ export default function BarghPillarPage() {
                 <CardTitle className="text-xl">تعمیرات تخصصی الکترونیک</CardTitle>
                 <CardDescription>تعمیر بردهای قدرتی و اینورتر در سطح قطعه</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-muted-foreground">
-                <p>عیب‌یابی پیشرفته و تعمیرات تخصصی اینورترهای خورشیدی، بردهای پکیج، کولر گازی، BMS و شارژکنترلرها.</p>
-                <ul className="space-y-1.5 font-medium text-foreground">
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> کاریاب SMD و تست اسیلوسکوپ</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> تعویض IGBT و برد کنترل</li>
-                </ul>
+              <CardContent className="space-y-3 text-sm text-muted-foreground flex flex-col justify-between flex-1">
+                <div>
+                  <p>عیب‌یابی پیشرفته و تعمیرات تخصصی اینورترهای خورشیدی، بردهای پکیج، کولر گازی، BMS و شارژکنترلرها.</p>
+                  <ul className="space-y-1.5 font-medium text-foreground mt-3">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> کاریاب SMD و تست اسیلوسکوپ</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-500" /> تعویض IGBT و برد کنترل</li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t border-border/50">
+                  <Link
+                    href="/services/electronic-board-repair-spec"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
+                  >
+                    تعمیر تخصصی برد الکترونیکی مشهد
+                    <ArrowLeft className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           </div>

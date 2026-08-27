@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { ArrowRight, Clock, BookOpen, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -112,6 +113,15 @@ export function KnowledgeSection() {
               <ArticleDialog article={article} />
             </Dialog>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Button asChild size="lg" className="gap-2 font-bold shadow-solar">
+            <Link href="/knowledge" title="دانشنامه تخصصی انرژی">
+              <span>{lang === "fa" ? "مشاهده تمام مقالات در دانشنامه تخصصی انرژی" : "Explore All Articles in Knowledge Center"}</span>
+              <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
