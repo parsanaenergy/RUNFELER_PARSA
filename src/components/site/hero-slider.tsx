@@ -80,7 +80,7 @@ export function HeroSlider({ onSelectDivision }: HeroSliderProps) {
 
   return (
     <section className="relative isolate h-[320px] overflow-hidden bg-slate-950 sm:h-[380px] lg:h-[420px]">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={current}
           initial={{ opacity: 0, scale: 1.03 }}
@@ -94,7 +94,7 @@ export function HeroSlider({ onSelectDivision }: HeroSliderProps) {
               src={slide.bgImage}
               alt={pick(slide.title)}
               fill
-              priority={current === 0}
+              priority={current === 0 || slide.id === 1}
               sizes="100vw"
               className="object-cover"
             />
@@ -141,18 +141,22 @@ export function HeroSlider({ onSelectDivision }: HeroSliderProps) {
         />
       </div>
 
-      {/* Dots */}
-      <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2">
+      {/* Dots — Enhanced accessible tap target (>= 28x28px) */}
+      <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1">
         {SLIDES.map((s, i) => (
           <button
             key={s.id}
             onClick={() => go(i)}
             aria-label={`${isFa ? "اسلاید" : "Slide"} ${s.id}`}
-            className={cn(
-              "h-2.5 rounded-full transition-all",
-              i === current ? "w-8 bg-white" : "w-2.5 bg-white/40 hover:bg-white/70",
-            )}
-          />
+            className="flex h-7 min-w-7 items-center justify-center p-1 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full"
+          >
+            <span
+              className={cn(
+                "h-2.5 rounded-full transition-all block",
+                i === current ? "w-8 bg-white" : "w-2.5 bg-white/40 hover:bg-white/70",
+              )}
+            />
+          </button>
         ))}
       </div>
     </section>

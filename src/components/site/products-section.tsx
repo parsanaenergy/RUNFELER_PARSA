@@ -4,7 +4,7 @@ import * as React from "react";
 import { ArrowRight, CheckCircle2, FileText, Download, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SectionHeader } from "./section-header";
@@ -24,7 +24,7 @@ function ProductDialog({ product }: { product: Product }) {
         <DialogTitle className="text-2xl font-bold sm:text-3xl">{pick(product.name)}</DialogTitle>
         <DialogDescription className="text-base">{pick(product.tagline)}</DialogDescription>
       </DialogHeader>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{pick(product.description)}</p>
+      <p className="mt-2 text-sm leading-relaxed text-foreground/80">{pick(product.description)}</p>
       <div className="mt-5">
         <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-foreground">{t("productSpecs")}</h4>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -98,11 +98,6 @@ export function ProductsSection({
   const category = activeCategory !== undefined ? activeCategory : localCategory;
   const setCategory = onCategoryChange !== undefined ? onCategoryChange : setLocalCategory;
 
-  const filtered = React.useMemo(
-    () => (category === "all" ? products : products.filter((p) => p.categoryKey === category)),
-    [category],
-  );
-
   return (
     <section id="products" className="scroll-mt-20 bg-muted/30 py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -114,44 +109,53 @@ export function ProductsSection({
         <AnswerCapsule>
           پارسا انرژی تامین‌کننده پنل خورشیدی، اینورتر (On-grid، هایبرید، آفگرید)، باتری LiFePO4 و سرب‌اسید، UPS، دیزل ژنراتور، کنترلر شارژ MPPT و PWM، و لوازم جانبی از برندهای معتبر است. تمام محصولات دارای دیتاشیت فنی، راهنمای نصب و گارانتی هستند. قیمت‌ها به تومان اعلام می‌شود و خرید عمده با تخفیف ممکن است.
         </AnswerCapsule>
-        <div className="mt-10 flex justify-center">
-          <Tabs value={category} onValueChange={setCategory}>
+        
+        <Tabs value={category} onValueChange={setCategory} className="mt-10">
+          <div className="flex justify-center">
             <TabsList className="flex h-auto flex-wrap justify-center gap-1 bg-background p-1.5">
               {productCategories.map((c) => (
                 <TabsTrigger key={c.key} value={c.key} className="h-8 text-xs sm:text-sm">{pick(c.label)}</TabsTrigger>
               ))}
             </TabsList>
-          </Tabs>
-        </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((product) => (
-            <Dialog key={product.slug}>
-              <DialogTrigger asChild>
-                <button className="group flex h-full w-full flex-col rounded-2xl border border-border bg-card p-6 text-start shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-                  <div className="flex items-start justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tech/10">
-                      <product.icon className="h-6 w-6 text-tech" />
-                    </div>
-                    {product.badge && <Badge className="bg-primary text-primary-foreground">{pick(product.badge)}</Badge>}
-                  </div>
-                  <div className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{product.brand}</div>
-                  <h3 className="mt-1 font-display text-lg font-bold text-foreground">{pick(product.name)}</h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">{pick(product.tagline)}</p>
-                  <div className="mt-auto flex items-center justify-between pt-5">
-                    <div>
-                      <div className="text-[11px] uppercase tracking-wide text-muted-foreground">{t(product.priceFrom.fa.includes("استعلام") ? "productPrice" : "productPriceFrom")}</div>
-                      <div className="font-display text-lg font-bold text-foreground">{pick(product.priceFrom)}</div>
-                    </div>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                      {t("viewDetails")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                    </span>
-                  </div>
-                </button>
-              </DialogTrigger>
-              <ProductDialog product={product} />
-            </Dialog>
-          ))}
-        </div>
+          </div>
+
+          {productCategories.map((c) => {
+            const list = c.key === "all" ? products : products.filter((p) => p.categoryKey === c.key);
+            return (
+              <TabsContent key={c.key} value={c.key} className="mt-10 outline-none">
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {list.map((product) => (
+                    <Dialog key={product.slug}>
+                      <DialogTrigger asChild>
+                        <button className="group flex h-full w-full flex-col rounded-2xl border border-border bg-card p-6 text-start shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                          <div className="flex items-start justify-between">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-tech/10">
+                              <product.icon className="h-6 w-6 text-tech" />
+                            </div>
+                            {product.badge && <Badge className="bg-primary text-primary-foreground">{pick(product.badge)}</Badge>}
+                          </div>
+                          <div className="mt-4 text-xs font-semibold uppercase tracking-wide text-foreground/80">{product.brand}</div>
+                          <h3 className="mt-1 font-display text-lg font-bold text-foreground">{pick(product.name)}</h3>
+                          <p className="mt-1.5 text-sm text-foreground/80 leading-relaxed">{pick(product.tagline)}</p>
+                          <div className="mt-auto flex items-center justify-between pt-5">
+                            <div>
+                              <div className="text-[11px] uppercase tracking-wide text-muted-foreground">{t(product.priceFrom.fa.includes("استعلام") ? "productPrice" : "productPriceFrom")}</div>
+                              <div className="font-display text-lg font-bold text-foreground">{pick(product.priceFrom)}</div>
+                            </div>
+                            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                              {t("viewDetails")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                            </span>
+                          </div>
+                        </button>
+                      </DialogTrigger>
+                      <ProductDialog product={product} />
+                    </Dialog>
+                  ))}
+                </div>
+              </TabsContent>
+            );
+          })}
+        </Tabs>
       </div>
     </section>
   );

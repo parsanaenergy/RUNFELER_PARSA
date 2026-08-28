@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { HeroSlider } from "@/components/site/hero-slider";
@@ -12,11 +13,21 @@ import { AboutSection } from "@/components/site/about-section";
 import { TrustSignals } from "@/components/site/trust-signals";
 import { QuickContact } from "@/components/site/quick-contact";
 import { StickyCTA } from "@/components/site/sticky-cta";
-import { DivisionDetailPage } from "@/components/site/division-detail-page";
-import { KnowledgeCenterView } from "@/components/site/knowledge-center-view";
-import { ArticleReader } from "@/components/site/article-reader";
 import { divisions, type Division } from "@/lib/content";
 import { type KB_article } from "@/lib/kb-articles";
+
+const DivisionDetailPage = dynamic(
+  () => import("@/components/site/division-detail-page").then((m) => m.DivisionDetailPage),
+  { ssr: false }
+);
+const KnowledgeCenterView = dynamic(
+  () => import("@/components/site/knowledge-center-view").then((m) => m.KnowledgeCenterView),
+  { ssr: false }
+);
+const ArticleReader = dynamic(
+  () => import("@/components/site/article-reader").then((m) => m.ArticleReader),
+  { ssr: false }
+);
 
 type View =
   | { type: "home" }

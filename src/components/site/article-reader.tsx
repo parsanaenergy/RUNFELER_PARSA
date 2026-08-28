@@ -73,9 +73,9 @@ export function ArticleReader({ article, onBack }: ArticleReaderProps) {
                   <UserCheck className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-display text-sm font-bold text-foreground sm:text-base">
+                  <h3 className="font-display text-sm font-bold text-foreground sm:text-base">
                     {isFa ? "دیدگاه و جمع‌بندی کارشناسی" : "Engineering Team Executive Summary"}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-muted-foreground">
                     {isFa ? "تیم فنی و مهندسی پارسا انرژی" : "Parsa Energy Technical Engineering Team"}
                   </p>

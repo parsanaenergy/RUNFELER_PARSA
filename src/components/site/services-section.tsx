@@ -132,7 +132,7 @@ export function ServicesSection({
                     </div>
                     <h3 className="mt-4 font-display text-lg font-bold text-foreground">{pick(service.name)}</h3>
                     <p className="mt-1.5 text-sm text-muted-foreground">{pick(service.tagline)}</p>
-                    <p className="mt-3 line-clamp-2 text-sm text-muted-foreground/90">{pick(service.description)}</p>
+                    <p className="mt-3 line-clamp-2 text-sm text-foreground/80">{pick(service.description)}</p>
                     <div className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-semibold text-primary">
                       {t("viewDetails")}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />

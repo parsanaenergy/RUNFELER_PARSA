@@ -1,28 +1,16 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LangProvider } from "@/components/lang-provider";
 import { StructuredData } from "@/components/structured-data";
-import LiveChat from "@/components/LiveChat";
+import LiveChat from "@/components/site/live-chat";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+const vazirmatn = localFont({
+  src: "../../public/fonts/vazirmatn/Vazirmatn-Variable.woff2",
+  variable: "--font-vazirmatn",
   display: "swap",
 });
 
@@ -110,7 +98,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`antialiased bg-background text-foreground font-fa ${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable}`}
+        className={`antialiased bg-background text-foreground font-fa ${vazirmatn.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LangProvider>

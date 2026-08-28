@@ -29,9 +29,9 @@ export function AnswerCapsule({
             <UserCheck className="h-5 w-5" />
           </div>
           <div>
-            <h4 className="font-display text-sm font-bold text-foreground sm:text-base">
+            <h3 className="font-display text-sm font-bold text-foreground sm:text-base">
               دیدگاه و جمع‌بندی کارشناسی
-            </h4>
+            </h3>
             <p className="text-xs text-muted-foreground">{expertName} · {expertRole}</p>
           </div>
         </div>

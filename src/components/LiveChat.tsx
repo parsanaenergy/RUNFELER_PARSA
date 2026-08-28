@@ -46,9 +46,9 @@ export default function LiveChat() {
     setSessionId(savedId);
   }, []);
 
-  // Connect to Realtime SSE stream
+  // Connect to Realtime SSE stream only when chat modal is open
   useEffect(() => {
-    if (!sessionId) return;
+    if (!sessionId || !isOpen) return;
 
     const eventSource = new EventSource(`/api/chat/stream?sessionId=${sessionId}`);
 
@@ -72,7 +72,6 @@ export default function LiveChat() {
 
     eventSource.onerror = () => {
       // EventSource automatically reconnects on disconnects/network blips.
-      // Silently close if explicitly closed or let native browser auto-reconnect handle it.
       if (eventSource.readyState === EventSource.CLOSED) {
         eventSource.close();
       }
@@ -81,7 +80,7 @@ export default function LiveChat() {
     return () => {
       eventSource.close();
     };
-  }, [sessionId]);
+  }, [sessionId, isOpen]);
 
   // Auto scroll to latest message
   useEffect(() => {

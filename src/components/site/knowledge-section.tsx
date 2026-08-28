@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, BookOpen, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SectionHeader } from "./section-header";
@@ -31,7 +31,7 @@ function ArticleDialog({ article }: { article: Article }) {
       <p className="mt-2 text-base font-medium leading-relaxed text-foreground">{pick(article.excerpt)}</p>
       <article className="mt-4 max-w-none">
         {article.body.map((para, i) => (
-          <p key={i} className="mb-3 text-sm leading-relaxed text-muted-foreground">{pick(para)}</p>
+          <p key={i} className="mb-3 text-sm leading-relaxed text-foreground/80">{pick(para)}</p>
         ))}
       </article>
       {article.faqs && article.faqs.length > 0 && (
@@ -63,10 +63,6 @@ export function KnowledgeSection() {
   const { t, pick, lang } = useLang();
   const fmt = (v: string) => (lang === "fa" ? faNum(v) : v);
   const [category, setCategory] = React.useState("all");
-  const filtered = React.useMemo(
-    () => (category === "all" ? articles : articles.filter((a) => a.categoryKey === category)),
-    [category],
-  );
 
   return (
     <section id="knowledge" className="scroll-mt-20 bg-muted/30 py-20 sm:py-24">
@@ -79,41 +75,61 @@ export function KnowledgeSection() {
         <AnswerCapsule>
           دانشنامه پارسا انرژی شامل مقالات تخصصی در حوزه میکروگرید، باتری، اینورتر، کنترلر شارژ MPPT و PWM، کابل و حفاظت، نگهداری و محاسبات مهندسی است. هر مقاله توسط تیم مهندسی نوشته شده و شامل پاسخ‌های مستقیم به پرسش‌های فنی، فرمول‌های محاسباتی و راهنمای عملی است. محتوا به‌صورت ساختاریافته برای دستیاران هوش مصنوعی و موتورهای جستجو قابل استناد است.
         </AnswerCapsule>
-        <div className="mt-10 flex justify-center">
-          <Tabs value={category} onValueChange={setCategory}>
+        
+        <Tabs value={category} onValueChange={setCategory} className="mt-10">
+          <div className="flex justify-center">
             <TabsList className="flex h-auto flex-wrap justify-center gap-1 bg-background p-1.5">
               {knowledgeCategories.map((c) => (
                 <TabsTrigger key={c.key} value={c.key} className="h-8 text-xs sm:text-sm">{pick(c.label)}</TabsTrigger>
               ))}
             </TabsList>
-          </Tabs>
+          </div>
+
+          {knowledgeCategories.map((c) => {
+            const list = c.key === "all" ? articles : articles.filter((a) => a.categoryKey === c.key);
+            return (
+              <TabsContent key={c.key} value={c.key} className="mt-10 outline-none">
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {list.map((article) => (
+                    <Dialog key={article.slug}>
+                      <DialogTrigger asChild>
+                        <button className="group flex h-full w-full flex-col rounded-2xl border border-border bg-card p-6 text-start shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                          <div className="flex items-center justify-between">
+                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tech/10">
+                              <BookOpen className="h-5 w-5 text-tech" />
+                            </div>
+                            <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                              <Clock className="h-3.5 w-3.5" />{fmt(pick(article.readTime))}
+                            </span>
+                          </div>
+                          <Badge variant="outline" className="mt-4 w-fit text-xs">{pick(article.category)}</Badge>
+                          <h3 className="mt-2 font-display text-base font-bold leading-snug text-foreground">{pick(article.title)}</h3>
+                          <p className="mt-2 line-clamp-3 text-sm text-foreground/80 leading-relaxed">{pick(article.excerpt)}</p>
+                          <div className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-semibold text-primary">
+                            {t("readArticle")}
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                          </div>
+                        </button>
+                      </DialogTrigger>
+                      <ArticleDialog article={article} />
+                    </Dialog>
+                  ))}
+                </div>
+              </TabsContent>
+            );
+          })}
+        </Tabs>
+
+        <div className="mt-12 flex justify-center">
+          <Button asChild size="lg" className="gap-2 font-bold shadow-solar">
+            <Link href="/knowledge" title="دانشنامه تخصصی انرژی">
+              <span>{lang === "fa" ? "مشاهده تمام مقالات در دانشنامه تخصصی انرژی" : "Explore All Articles in Knowledge Center"}</span>
+              <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+            </Link>
+          </Button>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((article) => (
-            <Dialog key={article.slug}>
-              <DialogTrigger asChild>
-                <button className="group flex h-full w-full flex-col rounded-2xl border border-border bg-card p-6 text-start shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tech/10">
-                      <BookOpen className="h-5 w-5 text-tech" />
-                    </div>
-                    <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                      <Clock className="h-3.5 w-3.5" />{fmt(pick(article.readTime))}
-                    </span>
-                  </div>
-                  <Badge variant="outline" className="mt-4 w-fit text-xs">{pick(article.category)}</Badge>
-                  <h3 className="mt-2 font-display text-base font-bold leading-snug text-foreground">{pick(article.title)}</h3>
-                  <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{pick(article.excerpt)}</p>
-                  <div className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-semibold text-primary">
-                    {t("readArticle")}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                  </div>
-                </button>
-              </DialogTrigger>
-              <ArticleDialog article={article} />
-            </Dialog>
-          ))}
-        </div>
+      </div>
+    </section>
 
         <div className="mt-12 flex justify-center">
           <Button asChild size="lg" className="gap-2 font-bold shadow-solar">
